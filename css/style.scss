@@ -1,0 +1,73 @@
+//Variables
+
+$pink: #c13cb2;
+$blue: #5a29dd;
+$footer-background: #31323c;
+$page-background: #eaf0f1;
+
+$gradient1: rgb(193,60,178);
+$gradient2: linear-gradient(90deg, rgba(193,60,178,1) 10%, rgba(90,41,221,1) 100%);
+
+//Add these two lines where you need the gradient
+//background: $gradient1;
+//background: $gradient2;
+
+
+
+//Style
+
+header{
+    color: white;
+    height: 250px;
+    background: $gradient1;
+    background: $gradient2;
+
+    .head{
+       
+        position: relative;
+
+        .registerLogin{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+    }
+    
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.background{
+    min-height: 800px; //temporary!
+    background-color: $page-background;
+}
+
+main{
+    background-color: white;
+    border-radius: 20px;
+    min-height: 800px; //temporary!
+}
+
+
+.social{
+    color: white;
+    background: $gradient1;
+    background: $gradient2;
+
+    height: 150px;
+    
+    .fa{
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 7px 10px;
+    }
+}
+
+footer{
+    background-color: $footer-background;
+    color: white;
+    padding: 0 10px;
+}

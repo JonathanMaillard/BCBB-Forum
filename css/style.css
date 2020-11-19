@@ -1,0 +1,50 @@
+header {
+  color: white;
+  height: 250px;
+  background: #c13cb2;
+  background: linear-gradient(90deg, #c13cb2 10%, #5a29dd 100%);
+}
+header .head {
+  position: relative;
+}
+header .head .registerLogin {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.background {
+  min-height: 800px;
+  background-color: #eaf0f1;
+}
+
+main {
+  background-color: white;
+  border-radius: 20px;
+  min-height: 800px;
+}
+
+.social {
+  color: white;
+  background: #c13cb2;
+  background: linear-gradient(90deg, #c13cb2 10%, #5a29dd 100%);
+  height: 150px;
+}
+.social .fa {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 7px 10px;
+}
+
+footer {
+  background-color: #31323c;
+  color: white;
+  padding: 0 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
