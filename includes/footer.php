@@ -7,12 +7,12 @@
 
     <footer>
         <div class="container">
-            <div class="d-flex justify-content-md-between align-items-center">
-                <div class="footer__arianne">
+            <div class="row">
+                <div class="footer__arianne col-md-3">
                     <p>Fil arianne ici</p>
                 </div>
                     
-                <div class="footer__links">
+                <div class="footer__links col-md-9">
                     <p><a href="#">Contact us</a><a href="#">The team</a><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Members</a><a href="#">Delete cookies</a> All times are UTC</p>
                 </div>
             </div>
