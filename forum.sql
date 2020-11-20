@@ -102,17 +102,13 @@ ALTER TABLE `categories`
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`post_id`),
-  ADD KEY `post_topic` (`post_topic`),
-  ADD KEY `post_by` (`post_by`);
+  ADD PRIMARY KEY (`post_id`);
 
 --
 -- Indexes for table `topics`
 --
 ALTER TABLE `topics`
-  ADD PRIMARY KEY (`topic_id`),
-  ADD KEY `topic_cat` (`topic_cat`),
-  ADD KEY `topic_by` (`topic_by`);
+  ADD PRIMARY KEY (`topic_id`);
 
 --
 -- Indexes for table `users`
@@ -151,16 +147,12 @@ ALTER TABLE `users`
 --
 -- Constraints for table `posts`
 --
-ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`post_topic`) REFERENCES `topics` (`topic_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`post_by`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
+
 
 --
 -- Constraints for table `topics`
 --
-ALTER TABLE `topics`
-  ADD CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`topic_cat`) REFERENCES `categories` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `topics_ibfk_2` FOREIGN KEY (`topic_by`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
