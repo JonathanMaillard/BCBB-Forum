@@ -10,10 +10,13 @@
 </head>
 <body>
     
-    <header class="container-fluid d-flex align-items-center">
+    <header class="container-fluid">
 
-        <div class="container head d-flex justify-content-center">
-            <h1>ROLLING STONES FORUM</h1> 
+        <div class="container head">
+
+            <div class="container main-title">
+                <h1 class="text-center">ROLLING STONES FORUM</h1>
+            <div> 
             
             <div class="registerLogin">
                 <p><a href="#">Register</a> <a href="#">Login</a>
@@ -23,7 +26,7 @@
         
     </header>
 
-    <section class="background container-fluid">
+    <section class="background container-fluid d-flex justify-content-center">
         
         <main class="container">
-            <!-- Ici viendra le fil d'arianne -->
+            

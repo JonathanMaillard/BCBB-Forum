@@ -4,11 +4,14 @@
     include "includes/header.php";
 
 
-    echo '<p>bonjour</p>';
+?>
+
+
+<h1>YOLO</h1>
 
     
 
 
-
+<?php
     include "includes/footer.php";
 ?>

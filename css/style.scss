@@ -7,10 +7,13 @@ $page-background: #eaf0f1;
 
 $gradient1: rgb(193,60,178);
 $gradient2: linear-gradient(90deg, rgba(193,60,178,1) 10%, rgba(90,41,221,1) 100%);
+$gradient3: linear-gradient(90deg, rgba(193,60,178,0.8) 10%, rgba(90,41,221,0.8) 100%);
 
 //Add these two lines where you need the gradient
 //background: $gradient1;
 //background: $gradient2;
+
+//$gradient3 is the same than 2 with transparency
 
 
 
@@ -20,10 +23,13 @@ header{
     color: white;
     height: 250px;
     background: $gradient1;
-    background: $gradient2;
+    background: $gradient3, url(../images/backgroundwebsite.jpeg);
+    background-size: cover;
+    background-position: center;
 
     .head{
        
+        z-index: 1;
         position: relative;
 
         .registerLogin{
@@ -35,20 +41,28 @@ header{
     
 }
 
-.container{
-    max-width: 1200px;
-    margin: auto;
-}
+//.container{
+//    max-width: 1200px;
+//    margin: auto;
+//}
 
 .background{
     min-height: 800px; //temporary!
     background-color: $page-background;
+
+    z-index: 1;
+    position: relative;
 }
 
 main{
     background-color: white;
-    border-radius: 20px;
+    border-radius: 8px;
     min-height: 800px; //temporary!
+
+    z-index: 2;
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
 }
 
 
@@ -58,6 +72,8 @@ main{
     background: $gradient2;
 
     height: 150px;
+
+    z-index: 1;
     
     .fa{
         border: 1px solid white;
