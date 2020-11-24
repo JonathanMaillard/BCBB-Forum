@@ -7,7 +7,7 @@ $page-background: #eaf0f1;
 
 $gradient1: rgb(193,60,178);
 $gradient2: linear-gradient(90deg, rgba(193,60,178,1) 10%, rgba(90,41,221,1) 100%);
-$gradient3: linear-gradient(90deg, rgba(193,60,178,0.8) 10%, rgba(90,41,221,0.8) 100%);
+$gradient3: linear-gradient(90deg, rgba(193,60,178,0.6) 10%, rgba(90,41,221,0.6) 100%);
 
 //Add these two lines where you need the gradient
 //background: $gradient1;
@@ -21,21 +21,28 @@ $gradient3: linear-gradient(90deg, rgba(193,60,178,0.8) 10%, rgba(90,41,221,0.8)
 
 header{
     color: white;
-    height: 250px;
+    min-height: 250px;
     background: $gradient1;
     background: $gradient3, url(../images/backgroundwebsite.jpeg);
     background-size: cover;
     background-position: center;
 
+
     .head{
-       
-        z-index: 1;
         position: relative;
 
         .registerLogin{
             position: absolute;
             right: 10px;
-            top: 10px;
+            top: 40px;
+        }
+        .main-title{
+            min-height: 250px;
+
+            h1{
+                font-weight: 400;
+                font-size: 3rem;
+            }
         }
     }
     
@@ -58,10 +65,11 @@ main{
     background-color: white;
     border-radius: 8px;
     min-height: 800px; //temporary!
+    width: 90%;
 
     z-index: 2;
     position: absolute;
-    top: -20px;
+    top: -40px;
     bottom: -20px;
 }
 
@@ -85,5 +93,20 @@ main{
 footer{
     background-color: $footer-background;
     color: white;
-    padding: 10px 0;
+    min-height: 50px;
+
+    font-size: 0.9rem;
+
+    a{
+        text-decoration: none;
+        color: $pink;
+    }
+    a:visited{
+        text-decoration: none;
+        color: $pink;
+    }
+    a:hover{
+        text-decoration: none;
+        color: $blue;
+    }
 }
