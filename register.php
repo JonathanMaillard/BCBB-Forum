@@ -9,7 +9,7 @@
 
 <h1>Register</h1>
 
-<form class="form" action="" method="POST">
+<form class="form" action="target/target_register.php" method="POST">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputUserId">ID User</label>
