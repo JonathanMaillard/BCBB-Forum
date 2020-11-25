@@ -4,6 +4,7 @@ $pink: #c13cb2;
 $blue: #5a29dd;
 $footer-background: #31323c;
 $page-background: #eaf0f1;
+$text-grey: #6b6b6b;
 
 $gradient1: rgb(193,60,178);
 $gradient2: linear-gradient(90deg, rgba(193,60,178,1) 10%, rgba(90,41,221,1) 100%);
@@ -35,6 +36,19 @@ header{
             position: absolute;
             right: 10px;
             top: 40px;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            a:visited{
+                text-decoration: none;
+                color:white;
+            }
+            a:hover{
+                text-decoration: none;
+                color: #aaaaaa;
+            }
         }
         .main-title{
             min-height: 250px;
@@ -48,10 +62,8 @@ header{
     
 }
 
-//.container{
-//    max-width: 1200px;
-//    margin: auto;
-//}
+
+
 
 .background{
     min-height: 800px; //temporary!
@@ -71,6 +83,14 @@ main{
     position: absolute;
     top: -40px;
     bottom: -20px;
+
+    .main__arianne{
+        color: $text-grey;
+        a{
+            text-decoration: none;
+            color: $text-grey;
+        }
+    }
 }
 
 

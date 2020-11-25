@@ -19,9 +19,17 @@
                 <h1 class="text-center">ROLLING STONES FORUM</h1>
             <div> 
             
-            <div class="registerLogin">
-                <p><a href="#">Register</a> <a href="#">Login</a>
-            </div>
+
+            <?php
+                if(!isset($_SESSION['pseudo'])){
+                    echo 
+                        '<div class="registerLogin">
+                            <p><a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a> <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                        </div>';
+                }   
+            ?>
+
+
         </div>
 
         

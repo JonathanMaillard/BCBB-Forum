@@ -7,7 +7,7 @@
     //Modify these varialbe according to your page
     $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
     $titre = "Home - Rolling Stones Forum";
-    $css;
+    $css = "home";
 
 
     include "includes/connect.php";
@@ -17,6 +17,7 @@
 
 <h2>Categories</h2>
 
+<div class="container categories">
 
 <?php
     //Get categories infos
@@ -31,13 +32,14 @@
 
         // Echo of categories infos
         echo 
-        '<a href="./topic.php?f='.$data['cat_id'].'">
-        <div class="categories">
+            '<a href="./topics.php?id='.$data['cat_id'].'">
+            <div class="category">
 
-        <h4>'.stripslashes(htmlspecialchars($data['cat_name'])).'</h4>
+            <h4>'.stripslashes(htmlspecialchars($data['cat_name'])).'</h4>
 
-        </div>
-        </a>';
+            </div>
+            </a>'
+        ;
 
         /*
         echo'<tr><td><img src="./images/message.gif" alt="message" /></td>
@@ -51,6 +53,10 @@
 
     } //loop end
     $query->CloseCursor();
+?>
 
+</div>
+
+<?php
     include "includes/footer.php";
 ?>

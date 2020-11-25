@@ -14,6 +14,18 @@ header .head .registerLogin {
   right: 10px;
   top: 40px;
 }
+header .head .registerLogin a {
+  text-decoration: none;
+  color: white;
+}
+header .head .registerLogin a:visited {
+  text-decoration: none;
+  color: white;
+}
+header .head .registerLogin a:hover {
+  text-decoration: none;
+  color: #aaaaaa;
+}
 header .head .main-title {
   min-height: 250px;
 }
@@ -38,6 +50,13 @@ main {
   position: absolute;
   top: -40px;
   bottom: -20px;
+}
+main .main__arianne {
+  color: #6b6b6b;
+}
+main .main__arianne a {
+  text-decoration: none;
+  color: #6b6b6b;
 }
 
 .social {
