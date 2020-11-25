@@ -31,7 +31,7 @@
 
         // Echo of categories infos
         echo 
-        '<a href="./topic.php?f='.$data['cat_id'].'">
+        '<a href="./topic.php?id='.$data['cat_id'].'">
         <div class="categories">
 
         <h4>'.stripslashes(htmlspecialchars($data['cat_name'])).'</h4>
