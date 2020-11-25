@@ -1,3 +1,9 @@
+                </div><!--end of page content -->
+
+                <aside class="col-md-3">
+                    <p>I am the aside</p>
+                </aside>
+            </div><!-- end of row -->
         </main> <!-- End of main started in header.php -->
     </section> <!-- End of section background started in header.php -->
     
@@ -7,13 +13,20 @@
 
     <footer>
         <div class="container">
-            <div class="d-flex justify-content-md-between align-items-center">
-                <div class="footer__arianne">
-                    <p>Fil arianne ici</p>
+            <div class="row">
+                <div class="footer__arianne col-md-3">
+                    <p class ="text-center text-md-left"><?php echo $arianne; ?></p>
                 </div>
                     
-                <div class="footer__links">
-                    <p><a href="#">Contact us</a><a href="#">The team</a><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Members</a><a href="#">Delete cookies</a> All times are UTC</p>
+                <div class="footer__links col-md-9">
+                    <p class ="text-center text-md-right">
+                        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contact us</a>
+                        <a href="#"><i class="fa fa-shield" aria-hidden="true"></i> The team</a>    
+                        <a href="#"><i class="fa fa-check" aria-hidden="true"></i> Terms</a>   
+                        <a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Privacy</a> 
+                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Members</a> 
+                        <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete cookies</a> 
+                        All times are UTC</p>
                 </div>
             </div>
         </div>

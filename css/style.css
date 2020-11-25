@@ -1,8 +1,10 @@
 header {
   color: white;
-  height: 250px;
+  min-height: 250px;
   background: #c13cb2;
-  background: linear-gradient(90deg, #c13cb2 10%, #5a29dd 100%);
+  background: linear-gradient(90deg, rgba(193, 60, 178, 0.6) 10%, rgba(90, 41, 221, 0.6) 100%), url(../images/backgroundwebsite.jpeg);
+  background-size: cover;
+  background-position: center;
 }
 header .head {
   position: relative;
@@ -10,23 +12,32 @@ header .head {
 header .head .registerLogin {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 40px;
 }
-
-.container {
-  max-width: 1200px;
-  margin: auto;
+header .head .main-title {
+  min-height: 250px;
+}
+header .head .main-title h1 {
+  font-weight: 400;
+  font-size: 3rem;
 }
 
 .background {
   min-height: 800px;
   background-color: #eaf0f1;
+  z-index: 1;
+  position: relative;
 }
 
 main {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 8px;
   min-height: 800px;
+  width: 90%;
+  z-index: 2;
+  position: absolute;
+  top: -40px;
+  bottom: -20px;
 }
 
 .social {
@@ -34,6 +45,7 @@ main {
   background: #c13cb2;
   background: linear-gradient(90deg, #c13cb2 10%, #5a29dd 100%);
   height: 150px;
+  z-index: 1;
 }
 .social .fa {
   border: 1px solid white;
@@ -44,7 +56,20 @@ main {
 footer {
   background-color: #31323c;
   color: white;
-  padding: 0 10px;
+  min-height: 50px;
+  font-size: 0.9rem;
+}
+footer a {
+  text-decoration: none;
+  color: #c13cb2;
+}
+footer a:visited {
+  text-decoration: none;
+  color: #c13cb2;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #5a29dd;
 }
 
 /*# sourceMappingURL=style.css.map */
