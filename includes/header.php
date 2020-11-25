@@ -26,6 +26,10 @@
                         '<div class="registerLogin">
                             <p><a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a> <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                         </div>';
+                    print_r($_SESSION['pseudo']);
+                }
+                else{
+                    print_r($_SESSION['pseudo']);
                 }   
             ?>
 
