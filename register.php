@@ -1,20 +1,21 @@
 <?php
     session_start();
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    $arianne = '<p><a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Register</p>';
+    $titre = "Inscription - Rolling Stones Forum";
+    $css = 'register';
+
     include "includes/connect.php";
     include "includes/header.php";
-
-
 ?>
 
 
 <h1>Register</h1>
 
-<form class="form" action="target/target_register.php" method="POST">
+<form class="form" action="target_register.php" method="POST">
     <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputUserId">ID User</label>
-            <input type="text" class="form-control" id="inputUserId" name="inputUserId" placeholder="Enter your ID">
-        </div>
         <div class="form-group col-md-6">
             <label for="inputUsername">Username</label>
             <input type="text" class="form-control" id="inputUsername" name="inputUsername" placeholder="Enter your name">
