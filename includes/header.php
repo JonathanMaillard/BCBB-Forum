@@ -24,12 +24,18 @@
                 if(!isset($_SESSION['pseudo'])){
                     echo 
                         '<div class="registerLogin">
-                            <p><a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a> <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                            <p><a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a> <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></p>
                         </div>';
-                    print_r($_SESSION['pseudo']);
                 }
                 else{
-                    print_r($_SESSION['pseudo']);
+
+                    $pseudo = $_SESSION['pseudo'];
+                    $id = $_SESSION['id'];
+                    
+                    echo
+                    '<div class="registerLogin">
+                        <p>Welcome, <a href="profile.php?id='.$id.'">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
+                    </div>';
                 }   
             ?>
 
