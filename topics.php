@@ -17,12 +17,12 @@
 
     $query->execute();
     
-    $result = $sth->fetch(PDO::FETCH_ASSOC);
-    print_r($result);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $cat_name = $result["cat_name"];
 
     //Modify these varialbe according to your page
-    $arianne = '<p><a href=#><i class="fa fa-home" aria-hidden="true"</i> Home</a> > Topic</p>';
-    $titre = "Topic - Rolling Stones Forum";
+    $arianne = '<p><a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a> > ' . $cat_name . ' </p>';
+    $titre = $cat_name . " - Rolling Stones Forum";
     $css = "topics";
 
 
@@ -31,21 +31,12 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
-    <link rel="stylesheet" href="topic.css">
-    <title>Topics</title>
-</head>
-<body>
-    <p class="title">Topic Icon Demos</p>
+    <p class="title"><?php echo $cat_name;?> Icon Demos</p>
 
     <p class="rules">Forum rules</p>
 
-    <button class="new">New Topic  <i class="fas fa-pen"></i></button>
+    <button class="new">New Topic  <i class="fa fa-search" aria-hidden="true"></i>
+</button>
     <div class="search">
         <input type ="text" placeholder="Search this forum..."><i class="fas fa-search"></i><i class="fas fa-cog"></i>
     </div>
@@ -73,9 +64,7 @@
     <button class="new connection">Login</button>
     <a href="">I forgot my password</a>
     <p class="subtitle">Last posts</p>
-    <p class="subtitle">Last active user</p>
-</body>
-</html>
+    <p class="subtitle">Last active user</p> 
 
 <?php
     include "includes/footer.php";
