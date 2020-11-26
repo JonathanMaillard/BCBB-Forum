@@ -7,7 +7,7 @@ include "includes/connect.php";
     session_start();
 
     // Delete certain session
-    //unset($_SESSION['pseudo']);
+    // unset($_SESSION['pseudo']);
     // Delete all session variables
     session_destroy();
 
