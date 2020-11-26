@@ -77,7 +77,8 @@ main{
     background-color: white;
     border-radius: 8px;
     min-height: 800px; //temporary!
-    width: 90%;
+    padding: 15px 15px;
+    //width: 90%;
 
     z-index: 2;
     position: absolute;
@@ -103,10 +104,31 @@ main{
 
     z-index: 1;
     
-    .fa{
-        border: 1px solid white;
+    .social__logo{
+        border: 2px solid white;
         border-radius: 50%;
-        padding: 7px 10px;
+        height: 38px;
+        width: 38px;
+        margin: 6px;
+
+        text-align: center;
+
+        font-size: 1.2rem;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:visited{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #aaaaaa;
+        .social__logo{
+            border:2px solid #aaaaaa;
+        }
     }
 }
 

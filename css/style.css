@@ -45,7 +45,7 @@ main {
   background-color: white;
   border-radius: 8px;
   min-height: 800px;
-  width: 90%;
+  padding: 15px 15px;
   z-index: 2;
   position: absolute;
   top: -40px;
@@ -66,10 +66,29 @@ main .main__arianne a {
   height: 150px;
   z-index: 1;
 }
-.social .fa {
-  border: 1px solid white;
+.social .social__logo {
+  border: 2px solid white;
   border-radius: 50%;
-  padding: 7px 10px;
+  height: 38px;
+  width: 38px;
+  margin: 6px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.social a {
+  text-decoration: none;
+  color: white;
+}
+.social a:visited {
+  text-decoration: none;
+  color: white;
+}
+.social a:hover {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+.social a:hover .social__logo {
+  border: 2px solid #aaaaaa;
 }
 
 footer {
