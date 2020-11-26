@@ -4,13 +4,18 @@ $roundCorners : 8px ;
 
 
 .categories{
-    background-color: #eaf0f1;
+    background-color: #f9f9f9;
     border-radius: $roundCorners;
     padding: 15px;
+
 }
 
 .category{
     background-color: white;
     border-radius: $roundCorners;
     padding: 15px;
+    margin: 10px;
+
+    //width: 50%;
+    //min-width: 300px;
 }

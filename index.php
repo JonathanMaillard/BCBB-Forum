@@ -17,7 +17,8 @@
 
 <h2>Categories</h2>
 
-<div class="container categories">
+<div class="container categories d-flex justify-content-between flex-wrap">
+    
 
 <?php
     //Get categories infos
@@ -32,13 +33,12 @@
 
         // Echo of categories infos
         echo 
-            '<a href="./topics.php?id='.$data['cat_id'].'">
-            <div class="container category">
+            '<div class="category">
 
-            <h4>'.stripslashes(htmlspecialchars($data['cat_name'])).'</h4>
+                <a href="./topics.php?id='.$data['cat_id'].'"><h4 class="category__title">'.stripslashes(htmlspecialchars($data['cat_name'])).'</h4></a>
+                <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
 
-            </div>
-            </a>'
+            </div>'
         ;
 
         /*
@@ -54,7 +54,7 @@
     } //loop end
     $query->CloseCursor();
 ?>
-
+    
 </div>
 
 <?php
