@@ -34,7 +34,7 @@
                     
                     echo
                     '<div class="registerLogin">
-                        <p>Welcome, <a href="profile.php?id='.$id.'">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
+                        <p>Welcome, <a href="profile.php'.$id.'">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
                     </div>';
                 }   
             ?>
