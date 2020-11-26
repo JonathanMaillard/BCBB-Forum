@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home > Profile</a>';
+    $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Profile</p>';
     $titre = "Profile - Rolling Stones Forum";
-    $css = 'style';
+    $css = 'form';
 
 
     include "includes/connect.php";   

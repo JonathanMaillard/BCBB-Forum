@@ -6,6 +6,7 @@
 
     $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Login</p>';
     $titre = "Login - Rolling Stones Forum";
+    $css = "form";
 
     include "includes/connect.php";
     include "includes/header.php";

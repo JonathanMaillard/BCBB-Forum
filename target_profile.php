@@ -4,7 +4,6 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Profile</p>';
     $titre = "Profile - Rolling Stones Forum";
 ?>
 
@@ -18,7 +17,7 @@ if(isset($_SESSION['id'])) {
    $req = $db->prepare("SELECT * FROM users WHERE user_id = ". $_SESSION['id'] ."");
    $req->execute();
    $user = $req->fetch();
-   
+
 
    if(isset($_POST['inputUsername']) AND !empty($_POST['inputUsername']) AND $_POST['inputUsername'] != $user['user_name']) {
 

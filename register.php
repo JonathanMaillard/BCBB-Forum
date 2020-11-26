@@ -6,7 +6,7 @@
 
     $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Register</p>';
     $titre = "Inscription - Rolling Stones Forum";
-    $css = 'register';
+    $css = 'form';
 
     include "includes/connect.php";
     include "includes/header.php";
