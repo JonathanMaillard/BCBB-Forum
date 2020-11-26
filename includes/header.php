@@ -17,7 +17,7 @@
 
             <div class="container main-title d-flex align-items-center justify-content-center">
                 <h1 class="text-center">ROLLING STONES FORUM</h1>
-            <div> 
+            </div> 
             
 
             <?php
@@ -34,7 +34,7 @@
                     
                     echo
                     '<div class="registerLogin">
-                        <p>Welcome, <a href="profile.php'.$id.'">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
+                        <p class="text-md-right">Welcome, <a href="profile.php">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
                     </div>';
                 }   
             ?>

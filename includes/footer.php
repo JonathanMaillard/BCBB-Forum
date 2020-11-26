@@ -8,13 +8,13 @@
     </section> <!-- End of section background started in header.php -->
     
     <section class="social d-flex justify-content-center align-items-center">
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-twitter" aria-hidden="true"></i></span></div></a>
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-apple" aria-hidden="true"></i></span></div></a>
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-facebook" aria-hidden="true"></i></span></div></a>
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-codepen" aria-hidden="true"></i></span></div></a>
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-google-plus" aria-hidden="true"></i></span></div></a>
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-digg" aria-hidden="true"></i></span></div></a>
-        <a href="#"><div class="social__logo"><span class="align-middle"><i class="fa fa-pinterest-p" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-twitter" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-apple" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-facebook" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-codepen" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-google-plus" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-digg" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-pinterest-p" aria-hidden="true"></i></span></div></a>
 
         
     </section>
