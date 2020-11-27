@@ -33,10 +33,8 @@ header .head .main-title h1 {
 }
 
 .background {
-  min-height: 800px;
   background-color: #eaf0f1;
   z-index: 1;
-  position: relative;
 }
 
 main {
@@ -45,9 +43,8 @@ main {
   min-height: 800px;
   padding: 15px 15px;
   z-index: 2;
-  position: absolute;
-  top: -40px;
-  bottom: -20px;
+  margin-top: -40px;
+  margin-bottom: -30px;
 }
 main .main__arianne {
   color: #6b6b6b;
@@ -63,6 +60,10 @@ main .main__arianne a:visited {
 main .main__arianne a:hover {
   text-decoration: none;
   color: #333333;
+}
+
+.content {
+  margin-bottom: 50px;
 }
 
 .social {
@@ -112,6 +113,106 @@ footer a:visited {
   color: #c13cb2;
 }
 footer a:hover {
+  text-decoration: none;
+  color: #5a29dd;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+}
+.search .searchTerm {
+  width: 70%;
+  border: 2px solid #cfcfcf;
+  border-right: none;
+  padding: 5px;
+  padding-left: 15px;
+  height: 36px;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  color: #333333;
+  background-color: #f4f4f4;
+  font-size: 0.8rem;
+}
+.search .searchTerm:focus {
+  color: #333333;
+}
+.search .searchButton {
+  width: 15%;
+  height: 36px;
+  border: 2px solid #cfcfcf;
+  background: #f4f4f4;
+  text-align: center;
+  color: #7b7b7b;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.search .searchButton:hover {
+  color: #333333;
+}
+.search .searchOption {
+  width: 15%;
+  height: 36px;
+  border: 2px solid #cfcfcf;
+  border-left: none;
+  background: #f4f4f4;
+  text-align: center;
+  color: #7b7b7b;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.search .searchOption:hover {
+  color: #333333;
+}
+
+.border {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 5px;
+  width: 100%;
+  background: #c13cb2;
+  background: linear-gradient(90deg, #c13cb2 10%, #5a29dd 100%);
+}
+
+.login {
+  color: #6b6b6b;
+  font-size: 0.8rem;
+}
+.login h5 {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.login input[type=text], .login input[type=password] {
+  font-size: 0.8rem;
+  border-radius: 20px;
+  background: #f4f4f4;
+}
+.login button {
+  width: 100%;
+  border-radius: 20px;
+  background: #c13cb2;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: none;
+  margin-top: 15px;
+}
+.login button:hover {
+  background: #5a29dd;
+}
+
+.user {
+  color: #6b6b6b;
+}
+.user a {
+  text-decoration: none;
+  color: #c13cb2;
+}
+.user a:visited {
+  text-decoration: none;
+  color: #c13cb2;
+}
+.user a:hover {
   text-decoration: none;
   color: #5a29dd;
 }

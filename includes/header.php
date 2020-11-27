@@ -49,9 +49,13 @@
         
         <main class="container">
             <div class="row">
+                <div class="main__arianne col-12">
+                    <p class ="text-center text-md-left"><?php echo $arianne; ?></p>
+                </div>
+            </div>
+
+            <div class="row">
                  <div class="content col-md-9">
         
-                    <div class="main__arianne">
-                        <p class ="text-center text-md-left"><?php echo $arianne; ?></p>
-                    </div>
+                    
             
