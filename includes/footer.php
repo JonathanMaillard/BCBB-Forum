@@ -1,7 +1,57 @@
                 </div><!--end of page content -->
 
                 <aside class="col-md-3">
-                    <p>I am the aside</p>
+                    
+                    
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="Search...">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                         </button>
+                         <button type="submit" class="searchOption">
+                             <i class="fa fa-cog"></i>
+                        </button>
+                    </div>
+
+                    <div class="border"></div>
+
+                    <?php
+                        if(!isset($_SESSION['pseudo'])){
+                            echo '
+                            <div class="login">
+                                <h5>Login</h5>
+        
+                                <form class="form" action="target_login.php" method="POST"> 
+        
+                                    
+                                <div class="form-group">
+                                    <label for="inputUsername">Username :</label>
+                                    <input type="text" class="form-control" id="inputUsername" name="inputUsername">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">Password :</label>
+                                    <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+                                </div>
+                                    
+        
+                                <button type="submit" class="btn btn-primary">Login</button>
+                                    
+                                </form>
+                            </div>';
+                        } else {
+                            echo '
+                            <div class="user">
+                                <h5 class="text-center">Hello !</h5>
+                                <h4 class="text-center">'.$pseudo.'</h4>
+                                <p class="text-center"><a href="profile.php">Edit your profile</a></p>
+                            </div>';
+                        }
+                    ?>
+                    
+
+                    
+                      
+
                 </aside>
             </div><!-- end of row -->
         </main> <!-- End of main started in header.php -->
