@@ -20,13 +20,14 @@ $gradient-color: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
     }
 }
 
-.form
+
+.formulary
 {
     background-color: #C5B6F3;
     border-radius: 5px;
     padding: 10px 5px;
 
-    .form-control
+    .form-bindput
     {
         background-color: #ecd9ed;
         border-left: 3px solid rgb(250, 24, 115); 
@@ -38,6 +39,7 @@ $gradient-color: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
     }
 }
 
+
 .title
 {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -45,7 +47,7 @@ $gradient-color: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
     color: #6e6d6d;
 }
 
-label
+.inputLabel
 {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     background: #BF89C3;

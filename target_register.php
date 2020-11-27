@@ -37,7 +37,7 @@
 
     <h2>Subscription successful</h2>
 
-   
+    <button type="submit" class="btn btn-primary"><a href="index.php"> Continue </a><i class="fa fa-sign-in" aria-hidden="true"></i></button>
 
 <?php
     include "includes/footer.php";
