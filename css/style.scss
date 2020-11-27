@@ -166,7 +166,7 @@ footer{
 }
 
 
-.search {
+.main-search {
     width: 100%;
     display: flex;
   
@@ -229,22 +229,22 @@ footer{
 
 }
 
-.login{
+.aside-login{
     color: $text-grey;
     font-size: 0.8rem;
 
-    h5{
+    .aside-login__title{
         font-weight: bold;
         font-size: 0.9rem;
     }
 
-    input[type=text], input[type=password]{
+    .aside-login__input{
         font-size: 0.8rem;
         border-radius:20px;
         background: $input-background;
 
     }
-    button{
+    .aside-login__btn{
         width: 100%;
         border-radius: 20px;
         background: $pink;
@@ -254,7 +254,7 @@ footer{
         margin-top: 15px;
 
     }
-    button:hover{
+    .aside-login__btn:hover{
         background: $blue;
     }
 }

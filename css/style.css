@@ -117,11 +117,11 @@ footer a:hover {
   color: #5a29dd;
 }
 
-.search {
+.main-search {
   width: 100%;
   display: flex;
 }
-.search .searchTerm {
+.main-search .searchTerm {
   width: 70%;
   border: 2px solid #cfcfcf;
   border-right: none;
@@ -134,10 +134,10 @@ footer a:hover {
   background-color: #f4f4f4;
   font-size: 0.8rem;
 }
-.search .searchTerm:focus {
+.main-search .searchTerm:focus {
   color: #333333;
 }
-.search .searchButton {
+.main-search .searchButton {
   width: 15%;
   height: 36px;
   border: 2px solid #cfcfcf;
@@ -147,10 +147,10 @@ footer a:hover {
   cursor: pointer;
   font-size: 0.8rem;
 }
-.search .searchButton:hover {
+.main-search .searchButton:hover {
   color: #333333;
 }
-.search .searchOption {
+.main-search .searchOption {
   width: 15%;
   height: 36px;
   border: 2px solid #cfcfcf;
@@ -162,7 +162,7 @@ footer a:hover {
   cursor: pointer;
   font-size: 0.8rem;
 }
-.search .searchOption:hover {
+.main-search .searchOption:hover {
   color: #333333;
 }
 
@@ -175,20 +175,20 @@ footer a:hover {
   background: linear-gradient(90deg, #c13cb2 10%, #5a29dd 100%);
 }
 
-.login {
+.aside-login {
   color: #6b6b6b;
   font-size: 0.8rem;
 }
-.login h5 {
+.aside-login .aside-login__title {
   font-weight: bold;
   font-size: 0.9rem;
 }
-.login input[type=text], .login input[type=password] {
+.aside-login .aside-login__input {
   font-size: 0.8rem;
   border-radius: 20px;
   background: #f4f4f4;
 }
-.login button {
+.aside-login .aside-login__btn {
   width: 100%;
   border-radius: 20px;
   background: #c13cb2;
@@ -197,7 +197,7 @@ footer a:hover {
   border: none;
   margin-top: 15px;
 }
-.login button:hover {
+.aside-login .aside-login__btn:hover {
   background: #5a29dd;
 }
 

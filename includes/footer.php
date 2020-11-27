@@ -3,7 +3,7 @@
                 <aside class="col-md-3">
                     
                     
-                    <div class="search">
+                    <div class="main-search">
                         <input type="text" class="searchTerm" placeholder="Search...">
                         <button type="submit" class="searchButton">
                             <i class="fa fa-search"></i>
@@ -18,23 +18,23 @@
                     <?php
                         if(!isset($_SESSION['pseudo'])){
                             echo '
-                            <div class="login">
-                                <h5>Login</h5>
+                            <div class="aside-login">
+                                <h5 class="aside-login__title">Login</h5>
         
                                 <form class="form" action="target_login.php" method="POST"> 
         
                                     
                                 <div class="form-group">
                                     <label for="inputUsername">Username :</label>
-                                    <input type="text" class="form-control" id="inputUsername" name="inputUsername">
+                                    <input type="text" class="form-control aside-login__input" id="inputUsername" name="inputUsername">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword">Password :</label>
-                                    <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+                                    <input type="password" class="form-control aside-login__input" id="inputPassword" name="inputPassword">
                                 </div>
                                     
         
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="submit" class="btn btn-primary aside-login__btn">Login</button>
                                     
                                 </form>
                             </div>';
