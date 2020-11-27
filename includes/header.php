@@ -24,7 +24,7 @@
                 if(!isset($_SESSION['pseudo'])){
                     echo 
                         '<div class="registerLogin">
-                            <p><a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a> <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></p>
+                            <p class="text-center text-md-right"><a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Register</a> <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></p>
                         </div>';
                 }
                 else{
@@ -34,7 +34,7 @@
                     
                     echo
                     '<div class="registerLogin">
-                        <p class="text-md-right">Welcome, <a href="profile.php">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
+                        <p class="text-center text-md-right">Welcome, <a href="profile.php">'.$pseudo.'</a><br><a href="disconnect.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></p>
                     </div>';
                 }   
             ?>

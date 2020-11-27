@@ -35,11 +35,49 @@
         echo 
             '<div class="category">
 
-                <a href="./topics.php?id='.$data['cat_id'].'"><h4 class="category__title">'.stripslashes(htmlspecialchars($data['cat_name'])).'</h4></a>
-                <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
+                <div class="container">
+                    <div class="row category__start">
+                        <div class="col-3">';
 
-            </div>'
-        ;
+                        if($data['cat_id'] == 1){
+                            echo "<img class='category__img' src='./images/guitar.png'>";
+                        }
+                        else if($data['cat_id'] == 2){
+                            echo "<img class='category__img' src='./images/dev.png'>";
+                        }
+                        else if($data['cat_id'] == 3){
+                            echo "<img class='category__img' src='./images/smalltalk.png'>";
+                        }
+                        else if($data['cat_id'] == 4){
+                            echo "<img class='category__img' src='./images/events.png'>";
+                        }
+                        else{
+                            echo "";
+                        }
+
+                        echo '</div>
+                        <div class="col-9">
+                            <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
+                            <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
+                        </div>
+                    </div>
+                    <div class ="row category__end">
+                        <div class="col-3 bordered">
+                            <p class="category__numbers">5</p>
+                            <p class="category__text">Topics</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="category__numbers">15</p>
+                            <p class="category__text">Posts</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="category__date">Fri Nov 27</p>
+                            <p class="category__text">Last  post</p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+        //;
 
         /*
         echo'<tr><td><img src="./images/message.gif" alt="message" /></td>

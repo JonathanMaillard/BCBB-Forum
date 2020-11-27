@@ -22,7 +22,7 @@ $gradient3: linear-gradient(90deg, rgba(193,60,178,0.6) 10%, rgba(90,41,221,0.6)
 
 header{
     color: white;
-    min-height: 250px;
+    min-height: 300px;
     background: $gradient1;
     background: $gradient3, url(../images/backgroundwebsite.jpeg);
     background-size: cover;
@@ -33,9 +33,10 @@ header{
         position: relative;
 
         .registerLogin{
-            position: absolute;
-            right: 10px;
-            top: 40px;
+            //position: absolute;
+            //right: 10px;
+            //top: 40px;
+            min-height: 100px;
 
             a{
                 text-decoration: none;
@@ -51,7 +52,7 @@ header{
             }
         }
         .main-title{
-            min-height: 250px;
+            min-height: 200px;
 
             h1{
                 font-weight: 400;
@@ -90,6 +91,14 @@ main{
         a{
             text-decoration: none;
             color: $text-grey;
+        }
+        a:visited{
+            text-decoration: none;
+            color: $text-grey;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #333333;
         }
     }
 }
@@ -151,4 +160,22 @@ footer{
         text-decoration: none;
         color: $blue;
     }
+}
+
+
+@media screen and (min-width: 992px){
+    .registerLogin{
+        position: absolute;
+        right: 10px;
+        top: 40px;
+    }
+
+    header{
+        min-height: 250px;
+
+        .main-title{
+            min-height: 250px;
+        }
+    }
+    
 }

@@ -1,6 +1,6 @@
 header {
   color: white;
-  min-height: 250px;
+  min-height: 300px;
   background: #c13cb2;
   background: linear-gradient(90deg, rgba(193, 60, 178, 0.6) 10%, rgba(90, 41, 221, 0.6) 100%), url(../images/backgroundwebsite.jpeg);
   background-size: cover;
@@ -10,9 +10,7 @@ header .head {
   position: relative;
 }
 header .head .registerLogin {
-  position: absolute;
-  right: 10px;
-  top: 40px;
+  min-height: 100px;
 }
 header .head .registerLogin a {
   text-decoration: none;
@@ -27,7 +25,7 @@ header .head .registerLogin a:hover {
   color: #aaaaaa;
 }
 header .head .main-title {
-  min-height: 250px;
+  min-height: 200px;
 }
 header .head .main-title h1 {
   font-weight: 400;
@@ -57,6 +55,14 @@ main .main__arianne {
 main .main__arianne a {
   text-decoration: none;
   color: #6b6b6b;
+}
+main .main__arianne a:visited {
+  text-decoration: none;
+  color: #6b6b6b;
+}
+main .main__arianne a:hover {
+  text-decoration: none;
+  color: #333333;
 }
 
 .social {
@@ -108,6 +114,21 @@ footer a:visited {
 footer a:hover {
   text-decoration: none;
   color: #5a29dd;
+}
+
+@media screen and (min-width: 992px) {
+  .registerLogin {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+  }
+
+  header {
+    min-height: 250px;
+  }
+  header .main-title {
+    min-height: 250px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
