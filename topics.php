@@ -35,37 +35,152 @@
 
     <p class="rules">Forum rules</p>
 
-    <button class="new">New Topic  <i class="fa fa-search" aria-hidden="true"></i>
-</button>
+    <button class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></button>
     <div class="search">
-        <input type ="text" placeholder="Search this forum..."><i class="fas fa-search"></i><i class="fas fa-cog"></i>
+        <input type ="text" placeholder="Search this forum..."><i class="fa fa-search" aria-hidden="true"></i><i class="fa fa-cog" aria-hidden="true"></i>
     </div>
-    <p class="subtitle">Announcements</p>
-    <p class="subtitle">Topics</p>
-    <button class="new">New Topic  <i class="fas fa-pen"></i></button>
+    <div class="container-fluid bg-light rounded-lg m-2">
+        <div class="banner flex row align-items-center">
+           <div class="content-header__element col-8" style="border: solid red 3">
+                <p class="banner__title">
+                    Announcements
+                </p>
+            </div>
+            <div class="content-header__element col-1">
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            </div>
+            <div class="content-header__element col-1">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            <div class="content-header__element col-2">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div id="banner__list" class="box__content">
+            <div class="content border-0 m-1">
+                <div class="banner__list-item box__content w-100 flex align-items-center">
+                    <div class="col-8">
+                        Welcome to The Rolling Stones Forum ! Oww Yeahhh!
+                    </div>
+                    <div class="banner__details col-1">
+                        18
+                    </div>
+                    <div class="banner__details col-1">
+                        357
+                    </div>
+                    <div class="banner__details col-2">
+                        <div class="flex">
+                            <div class="font-weight-light">
+                                by 
+                            </div>
+                                <strong>Camélia</strong>
+                        </div>
+                        <div class="font-weight-light">
+                            Sun Nov 30, 18:45
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-light rounded-lg m-2">
+        <div class="banner flex row align-items-center">
+           <div class="content-header__element col-8">
+                <p class="banner__title">
+                    Topics
+                </p>
+            </div>
+            <div class="content-header__element col-1">
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            </div>
+            <div class="content-header__element col-1">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            <div class="content-header__element col-2">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div id="banner__list" class="box__content">
+            <div class="content border-0 m-1">
+                <div class="banner__list-item box__content w-100 flex align-items-center">
+                    <div class="col-8">
+                        Why is it called "Oww yeahhh!" ? 
+                    </div>
+                    <div class="banner__details col-1">
+                        47
+                    </div>
+                    <div class="banner__details col-1">
+                        965
+                    </div>
+                    <div class="banner__details col-2">
+                        <div class="flex">
+                            <div class="font-weight-light">
+                                by 
+                            </div>
+                                <strong>Jonathan</strong>
+                        </div>
+                        <div class="font-weight-light">
+                            Mon Mar 17, 14:18
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="banner__list" class="box__content">
+            <div class="content border-0 m-1">
+                <div class="banner__list-item box__content w-100 flex align-items-center">
+                    <div class="col-8">
+                        Satisfaction
+                    </div>
+                    <div class="banner__details col-1">
+                        95
+                    </div>
+                    <div class="banner__details col-1">
+                        483
+                    </div>
+                    <div class="banner__details col-2">
+                        <div class="flex">
+                            <div class="font-weight-light">
+                                by 
+                            </div>
+                                <strong>Ingrid</strong>t
+                        </div>
+                        <div class="font-weight-light">
+                            Mon Mar 17, 14:18
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="banner__list" class="box__content">
+            <div class="content border-0 m-1">
+                <div class="banner__list-item box__content w-100 flex align-items-center">
+                    <div class="col-8">
+                        You can't always get what you want
+                    </div>
+                    <div class="banner__details col-1">
+                        648
+                    </div>
+                    <div class="banner__details col-1">
+                        1293
+                    </div>
+                    <div class="banner__details col-2">
+                        <div class="flex">
+                            <div class="font-weight-light">
+                                by 
+                            </div>
+                                <strong>Gaëtan</strong>
+                        </div>
+                        <div class="font-weight-light">
+                            Mon Mar 17, 14:18
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></button>
     <br>
-    <div class="search">
-        <input type ="text" placeholder="Search..."><i class="fas fa-search"></i><i class="fas fa-cog"></i>
-    </div>
-    <div class="form__login">
-        <label for="username">Username:</label>
-        <br>
-        <input class="connection" type="text" id="username" name="user__username">
-    </div>
-    <div class="form__pwd">
-        <label for="name">Password:</label>
-        <br>
-        <input class="connection" type="password" id="pwd" name="user__pwd">
-    </div>
-    <div class="form__remember">
-        <label for="remember">Remember me </label>
-        <input type="checkbox" name="yes" value="1">
-    </div>
-    <button class="new connection">Login</button>
-    <a href="">I forgot my password</a>
-    <p class="subtitle">Last posts</p>
-    <p class="subtitle">Last active user</p> 
-
 <?php
     include "includes/footer.php";
 ?>
