@@ -12,14 +12,23 @@
 
     include "includes/connect.php";
 
-    $password = hash('sha256', $_POST['inputPassword']);
+    if(isset($_POST['inputPassword']) AND !empty($_POST['inputPassword']) AND isset($_POST['inputPassword2']) AND !empty($_POST['inputPassword2'])) {
+        $password1 = hash('sha256', $_POST['inputPassword']);
+        $password2 = hash('sha256', $_POST['inputPassword2']);
 
-    $values = array(":name"=>$_POST["inputUsername"], ":email"=>$_POST["inputEmail"], ":avatar"=>$_POST["inputAvatar"], ":signature"=>$_POST["inputUserSignature"], ":password"=>$password);
+        if($password1 != $password2) {
+            include "includes/header.php";
+            echo "<p> Passwords don't match !</p>";
+            include "includes/footer.php";
+            exit();    
+        }
+    }
+
+    $values = array(":name"=>$_POST["inputUsername"], ":email"=>$_POST["inputEmail"], ":avatar"=>$_POST["inputAvatar"], ":signature"=>$_POST["inputUserSignature"], ":password"=>$password1);
 
     $req = $db->prepare("INSERT INTO users(user_name, user_email, user_avatar, user_signature, user_pass) VALUES(:name, :email, :avatar, :signature, :password)");
     
     $req->execute($values);
-
 
     include "includes/header.php";
 ?>
@@ -28,7 +37,7 @@
 
     <h2>Subscription successful</h2>
 
-
+   
 
 <?php
     include "includes/footer.php";

@@ -48,7 +48,7 @@ if(isset($_SESSION['id'])) {
             $insertmdp->execute(array($password1, $_SESSION['id']));
             
         } else {
-            $msg = "Vos deux mdp ne correspondent pas !";
+            $msg = "Password and password* must be the same !";
         }
     }
  }
