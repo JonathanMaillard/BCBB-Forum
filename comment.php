@@ -71,7 +71,7 @@
                             <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date">Ici vient la date</label>
                             <div class="commentContent">
-                            <textarea id="textarea" rows="5">Ici vient le message</textarea>
+                            <textarea id="textarea" cols= "70" rows="5">Ici vient le message</textarea>
                             </div>
                             <!-- Div 9 -->
                             <!-- Div 10 contient signature et petit bouton ^ -->
@@ -92,7 +92,7 @@
                             <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date">Ici vient la date</label>
                             <div class="commentContent">
-                            <textarea id="textarea" rows="5">Ici vient le message</textarea>
+                            <textarea id="textarea" cols= "70" rows="5">Ici vient le message</textarea>
                             </div>
                             <!-- Div 9 -->
                             <!-- Div 10 contient signature et petit bouton ^ -->
@@ -104,12 +104,9 @@
                 </div>
             </div>
         
-                <div class=buttonUp> 
                 <div class=buttonUp>
                     <button type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></button>
-                &nbsp
-
-
+                    &nbsp
                     <div class=buttonUp>   
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                         <button type="button" class="btn btn-secondary"><i class="fas fa-wrench"></i></button>
@@ -118,8 +115,7 @@
                     </div>
                     &nbsp
                     <label id="postPage">1 Post Page 1/1</label>       
-                </div> 
-                </div> 
+                </div>  
                 <div class=buttonSerie1>
                         <label id="postPage">< Return to ""</label> 
 

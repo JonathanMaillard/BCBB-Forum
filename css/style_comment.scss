@@ -2,7 +2,9 @@ $rules: #ecd5d8;
 $reply: #b06ab3;
 $tools: #f7f7f7;
 
-
+p {
+    color: grey;
+}
 .btn-secondary1{
     background-color: $rules;
     color: grey;
@@ -13,12 +15,20 @@ $tools: #f7f7f7;
     width: 100%;
     text-align: left;
 }
+.btn-secondary:hover {
+    background-color: $tools;
+    color: grey;
+}
 
 .btn-secondary{
     background-color: $tools;
     color: grey;
     border-radius: 30px;
     border-color: lightgrey;
+}
+
+.btn-primary:hover {
+    background-color: $reply;
 }
 .btn-primary{
     background-color: $reply;
@@ -73,37 +83,54 @@ $tools: #f7f7f7;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
-    margin-bottom: 10px;
+    margin-right: 10px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: start;
+   padding-top: 10px;
+
 }
 #commentContentWrite{
-
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: lightgrey;
+    border-radius: 5px;
   }
 
 #avatar {
-    width: 20%;
+    width: 70%;
     border-radius: 50%;
     border-style: solid;
     border-width: 1px;
-    border-color: $reply;
+}
+
+#userName {
+    color: #bd2c4f;
+  }
+
+#postNumber {
+    color: grey;
+}
+
+#location {
+    color: grey;
+}
+
+.date {
+    color: lightgray;
 }
 
 #textarea {
-
     border-style: none;
     border-bottom-style: solid;
     border-bottom-color: lightgrey;
     border-bottom-width: 1px;
+    color: grey
 }
 
 .signature {
-
+    color: grey
 }
 
 .detailUser {
@@ -111,13 +138,13 @@ $tools: #f7f7f7;
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
-    padding-right: 1px;
+    padding-right: 10px;
     padding-left: 1px;
-    background-color:salmon;
+
 }
 .detailMessage {
     padding-left: 30px;
-    background-color: skyblue;
+
 }
 
 #postPage {
@@ -135,11 +162,12 @@ $tools: #f7f7f7;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: red;
+    padding-top: 10px;
 }
 
 .buttonSerie2 {
     display: flex;
     flex-direction: row;
     justify-content: right;
+
 }

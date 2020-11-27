@@ -33,12 +33,13 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Title">
                 </div>
-                <textarea name="" id="commentContentWrite" cols="30" rows="10" placeholder="Message"></textarea>
-        
+                <form method="POST">
+                    <textarea id="commentContentWrite" name="message" cols="88" rows="10" placeholder=" Message"></textarea>
+                </form>
             </div> 
             <div class=buttonSerie2>
                 <div class=buttonUp>
-                    <button type="button" class="btn btn-primary" id="publish"> Publish <i class="fas fa-reply"></i></button>
+                    <button type="submit" name="message_submit" class="btn btn-primary" id="publish"> Publish <i class="fas fa-reply"></i></button>
                 </div>
         </div>
 </div>            
