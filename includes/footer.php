@@ -77,7 +77,7 @@
                 </div>
                     
                 <div class="footer__links col-md-9">
-                    <p class ="text-center text-md-right">
+                    <p class ="text-center text-md-right align-middle">
                         <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contact us</a>
                         <a href="#"><i class="fa fa-shield" aria-hidden="true"></i> The team</a>    
                         <a href="#"><i class="fa fa-check" aria-hidden="true"></i> Terms</a>   
