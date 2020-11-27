@@ -35,9 +35,17 @@
 
     <p class="rules">Forum rules</p>
 
-    <button class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></button>
     <div class="search">
-        <input type ="text" placeholder="Search this forum..."><i class="fa fa-search" aria-hidden="true"></i><i class="fa fa-cog" aria-hidden="true"></i>
+    <button class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <div class="main-search topic-search">
+            <input type="text" class="searchTerm" placeholder="Search this forum...">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+                </button>
+                <button type="submit" class="searchOption">
+                    <i class="fa fa-cog"></i>
+            </button>
+        </div>
     </div>
     <div class="container-fluid bg-light rounded-lg m-2">
         <div class="banner flex row align-items-center">
