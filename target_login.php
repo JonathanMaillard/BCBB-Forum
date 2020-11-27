@@ -45,6 +45,8 @@ include "includes/header.php";
 
 <h2><?php echo $message ?></h2>
 
+<button type="submit" class="btn btn-primary"> Continue <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+
 <?php
     include "includes/footer.php";
 ?>

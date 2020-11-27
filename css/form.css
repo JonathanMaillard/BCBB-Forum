@@ -9,16 +9,16 @@
   background-color: #5930DB;
 }
 
-.form {
+.formulary {
   background-color: #C5B6F3;
   border-radius: 5px;
   padding: 10px 5px;
 }
-.form .form-control {
+.formulary .form-bindput {
   background-color: #ecd9ed;
   border-left: 3px solid #fa1873;
 }
-.form .form-control:hover {
+.formulary .form-bindput:hover {
   border-left: 5px solid #5930DB;
 }
 
@@ -28,7 +28,7 @@
   color: #6e6d6d;
 }
 
-label {
+.inputLabel {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background: #BF89C3;
   background: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
