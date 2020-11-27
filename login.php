@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary"> Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
     
 </form>
 

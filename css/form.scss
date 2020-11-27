@@ -1,18 +1,41 @@
+// Variables 
+
+$btn-color: #BF89C3;
+$hover-color: #5930DB;
+$gradient-color: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
+
+// Style
+
 .btn
 {
-    background-color: purple;
-    border-radius: 25%;
+    background-color: $btn-color;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color: white;
+    border: none;
+
+    &:hover
+    {
+        background-color: $hover-color;
+    }
 }
 
-.form-control
+.form
 {
-    background-color: #ecd9ed;
-    border-left: 3px solid rgb(250, 24, 115);
-}
+    background-color: #C5B6F3;
+    border-radius: 5px;
+    padding: 10px 5px;
 
-.form-control:hover
-{
-    border-left: 5px solid purple; 
+    .form-control
+    {
+        background-color: #ecd9ed;
+        border-left: 3px solid rgb(250, 24, 115); 
+
+        &:hover
+        {
+            border-left: 5px solid $hover-color; 
+        }
+    }
 }
 
 .title
@@ -25,5 +48,10 @@
 label
 {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: #6e6d6d;
+    background: #BF89C3;
+    background: $gradient-color;
+    border-radius: 5px;
+    color: white;
+    padding: 7px;
+    width: 100%;
 }
