@@ -13,7 +13,7 @@
 ?>
 
 
-<h1>Subscription</h1>
+<h2 class="title">Subscription</h1>
 
 <form class="form" action="target_register.php" method="POST">
 

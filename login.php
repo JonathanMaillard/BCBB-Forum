@@ -12,9 +12,9 @@
     include "includes/header.php";
 ?>
 
-<h2>Login</h2>
+<h2 class="title">Login</h2>
 
- <form class="form" action="target_login.php" method="POST"> 
+<form class="form" action="target_login.php" method="POST"> 
 
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -29,7 +29,7 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
     
- </form>
+</form>
 
 <?php 
     include "includes/footer.php";

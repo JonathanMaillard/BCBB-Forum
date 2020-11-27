@@ -20,7 +20,7 @@
 
 ?>
 
-<h2>Profile</h2>
+<h2 class="title">Profile</h2>
 
 <form class="form" action="target_profile.php" method="POST">
 

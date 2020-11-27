@@ -1,0 +1,26 @@
+.btn {
+  background-color: purple;
+  border-radius: 25%;
+}
+
+.form-control {
+  background-color: #ecd9ed;
+  border-left: 3px solid #fa1873;
+}
+
+.form-control:hover {
+  border-left: 5px solid purple;
+}
+
+.title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  color: #6e6d6d;
+}
+
+label {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #6e6d6d;
+}
+
+/*# sourceMappingURL=form.css.map */
