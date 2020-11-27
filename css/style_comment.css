@@ -1,0 +1,133 @@
+.btn-secondary1 {
+  background-color: #ecd5d8;
+  color: grey;
+  border-radius: 10px;
+  border-left-color: #bd2c4f;
+  border-left-width: 2px;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: left;
+}
+
+.btn-secondary {
+  background-color: #f7f7f7;
+  color: grey;
+  border-radius: 30px;
+  border-color: lightgrey;
+}
+
+.btn-primary {
+  background-color: #b06ab3;
+  border-radius: 30px;
+  border-color: #b06ab3;
+}
+
+#btnGroupDrop1 {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainRightButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: grey;
+  padding-bottom: 10px;
+}
+
+.buttonSerie {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.comment {
+  background-color: #eeeded;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.commentaire {
+  background-color: lightgray;
+}
+
+.commentInside {
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+#commentContentWrite {
+  border-style: solid;
+  border-width: 2px;
+  border-color: lightgrey;
+}
+
+#avatar {
+  width: 20%;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b06ab3;
+}
+
+#textarea {
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: lightgrey;
+  border-bottom-width: 1px;
+}
+
+.detailUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  padding-right: 1px;
+  padding-left: 1px;
+  background-color: salmon;
+}
+
+.detailMessage {
+  padding-left: 30px;
+  background-color: skyblue;
+}
+
+#postPage {
+  color: grey;
+  font-size: 0.8em;
+}
+
+.buttonSerie1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: red;
+}
+
+.buttonSerie2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+/*# sourceMappingURL=style_comment.css.map */
