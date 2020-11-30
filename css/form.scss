@@ -47,15 +47,18 @@ $input-background: #f4f4f4;
 {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-size: 20px;
-    color: #6e6d6d;
+    background: $gradient-color;
+    border-radius: 20px;
+    color: white;
+    padding: 7px;
+    width: 100%;
 }
 
 .inputLabel
 {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    background: #BF89C3;
     background: $gradient-color;
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
     padding: 7px;
     width: 100%;

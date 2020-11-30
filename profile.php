@@ -22,37 +22,34 @@
 
 <h2 class="title">Profile</h2>
 
-<form class="formulary" action="target_profile.php" method="POST">
+<form class="formulary" action="target_profile.php" method="POST" enctype="multipart/form-data">
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputUsername">Username</label>
-            <input type="text" class="form-control form-bindput" id="inputUsername" name="inputUsername" placeholder="Enter your name">
+            <input type="text" class="form-control form-bindput" id="inputUsername" name="inputUsername" placeholder="User name">
         </div>
         <div class="form-group col-md-6">
-            <label for="inputAvatar">Avatar</label>
-            <input type="text" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Enter your Avatar">
+            <input type="text" class="form-control form-bindput" id="inputUserSignature" name="inputUserSignature" placeholder="Signature">
         </div>
     </div>
 
-    <div class="form-row">
+    <div class="form-row">        
         <div class="form-group col-md-6">
-            <label for="inputUserSignature">Signature</label>
-            <input type="text" class="form-control form-bindput" id="inputUserSignature" name="inputUserSignature" placeholder="Enter your Signature">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control form-bindput" id="inputPassword" name="inputPassword" placeholder="Enter your Password">
-        </div>
-        
+            <input type="password" class="form-control form-bindput" id="inputPassword" name="inputPassword" placeholder="Password">
+        </div>        
        <div class="form-group col-md-6">
-            <label for="inputPassword2">Password*</label>
-            <input type="password" class="form-control form-bindput" id="inputPassword2" name="inputPassword2" placeholder="Re-enter your Password">
+            <input type="password" class="form-control form-bindput" id="inputPassword2" name="inputPassword2" placeholder="Password (again)">
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Submit </button>
-        
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Avatar url">
+        </div>
+    </div>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Submit </button>
+       
 </form>
 
 
