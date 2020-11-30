@@ -1,8 +1,9 @@
 // Variables 
 
-$btn-color: #BF89C3;
-$hover-color: #5930DB;
+$btn-color: #c13cb2;
+$hover-color: #5a29dd;
 $gradient-color: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
+
 
 // Style
 
@@ -23,13 +24,14 @@ $gradient-color: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
 
 .formulary
 {
-    background-color: #C5B6F3;
+    background-color: #ECF6FF;
     border-radius: 5px;
     padding: 10px 5px;
 
     .form-bindput
     {
-        background-color: #ecd9ed;
+        //background-color: ;
+        opacity: 0.5;
         border-left: 3px solid rgb(250, 24, 115); 
 
         &:hover

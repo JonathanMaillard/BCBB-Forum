@@ -1,25 +1,25 @@
 .btn {
-  background-color: #BF89C3;
+  background-color: #c13cb2;
   border-radius: 20px;
   padding: 5px 20px;
   color: white;
   border: none;
 }
 .btn:hover {
-  background-color: #5930DB;
+  background-color: #5a29dd;
 }
 
 .formulary {
-  background-color: #C5B6F3;
+  background-color: #ECF6FF;
   border-radius: 5px;
   padding: 10px 5px;
 }
-.formulary .form-bindput {
-  background-color: #ecd9ed;
+.formulary .formulary__bindput {
+  opacity: 0.5;
   border-left: 3px solid #fa1873;
 }
-.formulary .form-bindput:hover {
-  border-left: 5px solid #5930DB;
+.formulary .formulary__bindput:hover {
+  border-left: 5px solid #5a29dd;
 }
 
 .title {

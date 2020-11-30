@@ -12,7 +12,6 @@
 
 ?>
 
-
 <h2>Create topic</h2>
 
 <form class="form" action="" method="POST">

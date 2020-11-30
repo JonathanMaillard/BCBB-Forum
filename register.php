@@ -50,7 +50,7 @@
         </div>
     </div>
 
-        <button type="submit" class="btn btn-primary"> Submit <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Submit </button>
         
 </form>
 
