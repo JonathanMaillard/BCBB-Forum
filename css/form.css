@@ -10,15 +10,16 @@
 }
 
 .formulary {
-  background-color: #ECF6FF;
+  background-color: #f9f9f9;
   border-radius: 5px;
   padding: 10px 5px;
 }
-.formulary .formulary__bindput {
-  opacity: 0.5;
+.formulary .form-bindput {
+  background-color: #f4f4f4;
   border-left: 3px solid #fa1873;
+  border-radius: 20px;
 }
-.formulary .formulary__bindput:hover {
+.formulary .form-bindput:hover {
   border-left: 5px solid #5a29dd;
 }
 
