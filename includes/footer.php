@@ -49,8 +49,9 @@
                     ?>
                     
 
-                    
-                      
+
+                <!-- last posts section -->
+                <?php include('includes/last_posts.php'); ?>
 
                 </aside>
             </div><!-- end of row -->

@@ -41,7 +41,7 @@
     </div>
     <div class="container-fluid bg-light rounded-lg m-2">
         <div class="banner flex row align-items-center">
-           <div class="content-header__element col-8" style="border: solid red 3">
+            <div class="content-header__element col-8" style="border: solid red 3">
                 <p class="banner__title">
                     Announcements
                 </p>
@@ -85,7 +85,7 @@
     </div>
     <div class="container-fluid bg-light rounded-lg m-2">
         <div class="banner flex row align-items-center">
-           <div class="content-header__element col-8">
+            <div class="content-header__element col-8">
                 <p class="banner__title">
                     Topics
                 </p>
