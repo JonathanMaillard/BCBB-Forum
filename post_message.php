@@ -11,6 +11,14 @@
     include "includes/connect.php";
     include "includes/header.php";
 
+    if (isset($_POST['message_submit'],$_POST['message'])){
+        if (!empty($_POST['message'])){
+
+        }
+        else{
+            $message_answer = "You can't send an empty message, please try again";
+        }
+    }
 
 ?>
 <head>
@@ -23,24 +31,26 @@
 </head>
 <body>
 
-<div class="main">
-
-        <div class="mainRight">   
+    <div class="main">
+        <div class="mainRight">  
             <div class="title">
                 <H2>Post a message</H2>
                 &nbsp
                 <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Title">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="-> Reprend le titre du topic auquel on répond?">
                 </div>
+                <h2> <?php $topic['subject'] ?> </h2>
                 <form method="POST">
-                    <textarea id="commentContentWrite" name="message" cols="88" rows="10" placeholder=" Message"></textarea>
+                    <textarea id="commentContentWrite" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
+                    <?php if (isset($message_answer)) {
+                    echo $message_answer;
+                    } ?>
+                    <div class=buttonSerie2>
+                    <div class=buttonUp>
+                        <button type="submit" name="message_submit" class="btn btn-primary" id="publish"> Publish <i class="fas fa-reply"></i></button>
                 </form>
-            </div> 
-            <div class=buttonSerie2>
-                <div class=buttonUp>
-                    <button type="submit" name="message_submit" class="btn btn-primary" id="publish"> Publish <i class="fas fa-reply"></i></button>
-                </div>
+            </div>
         </div>
-</div>            
+    </div>            
 </body>
