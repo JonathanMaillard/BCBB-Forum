@@ -19,7 +19,7 @@ if (!$req_posts) {
         {
         ?>
         <!-- last_posts first_row -->
-        <div class="last-posts card border-0 m-1 ">              
+        <div class="last-posts card m-1 border-0">              
             <div class=" card-body row d-flex ">
                 <h6 class="last-posts-list__title col">
                     <?php
@@ -33,7 +33,7 @@ if (!$req_posts) {
                 </h6>
                 <div class="last-posts-list__time-diff col font-italic font-weight-light"> 
                     <?php
-                        // get the time difference
+                        // get the time difference converting stamptime to string 
                         $current_date = strtotime(date("Y-m-d H:i:s"));
                         $post_date = strtotime(date($post['post_date'])); 
                         $seconds_ago = ($current_date - $post_date); 
