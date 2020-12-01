@@ -62,9 +62,7 @@ if (!$req_posts) {
                         }
                     ?>
                 </div> 
-
             </div>
-
         </div>
         <?php
         }
