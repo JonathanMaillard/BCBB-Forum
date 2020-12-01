@@ -6,6 +6,7 @@
 
     $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Register</p>';
     $titre = "Register - Rolling Stones Forum";
+    $css = 'form';
 ?>
 
 <?php 
@@ -24,7 +25,13 @@
         }
     }
 
-    $values = array(":name"=>$_POST["inputUsername"], ":email"=>$_POST["inputEmail"], ":avatar"=>$_POST["inputAvatar"], ":signature"=>$_POST["inputUserSignature"], ":password"=>$password1);
+
+    $default = "http://localhost/BCBB-Forum/images/default-avatar.jpg";
+    $size = 40;
+
+    $avatar = "https://gravatar.com/avatar/" . md5(strtolower(trim(htmlspecialchars($_POST['inputEmail'])))) . "?d=" . urlencode($default) . "&s=" . $size;
+
+    $values = array(":name"=>$_POST["inputUsername"], ":email"=>$_POST["inputEmail"], ":avatar"=>$avatar, ":signature"=>$_POST["inputUserSignature"], ":password"=>$password1);
 
     $req = $db->prepare("INSERT INTO users(user_name, user_email, user_avatar, user_signature, user_pass) VALUES(:name, :email, :avatar, :signature, :password)");
     
@@ -35,7 +42,12 @@
 
 
 
-    <h2>Subscription successful</h2>
+    <h2 class="title">Subscription successful</h2>
+
+    <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
+    <p class="resume">E-mail : <?php echo $_POST["inputEmail"]; ?></p>
+    <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
+    <p class="resume">Avatar : <img src="<?php echo $avatar; ?>"/></p>  
 
 
     <button type="submit" class="btn btn-primary"><a href="index.php"> Continue </a><i class="fa fa-sign-in" aria-hidden="true"></i></button>
