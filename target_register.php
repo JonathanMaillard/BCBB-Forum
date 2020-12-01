@@ -26,8 +26,8 @@
     }
 
 
-    $default = "http://localhost/BCBB-Forum/images/default-avatar.jpg";
-    $size = 40;
+    $default = "https://gravatar.com/avatar/"; // Quelle adresse pour l'avatar par défaut???
+    $size = 80;
 
     $avatar = "https://gravatar.com/avatar/" . md5(strtolower(trim(htmlspecialchars($_POST['inputEmail'])))) . "?d=" . urlencode($default) . "&s=" . $size;
 
@@ -47,7 +47,7 @@
     <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
     <p class="resume">E-mail : <?php echo $_POST["inputEmail"]; ?></p>
     <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-    <p class="resume">Avatar : <img src="<?php echo $avatar; ?>"/></p>  
+    <p class="resume">Avatar by default : <img src="<?php echo $avatar; ?>" class="imgAvatar"/></p>  
 
 
     <button type="submit" class="btn btn-primary"><a href="index.php"> Continue </a><i class="fa fa-sign-in" aria-hidden="true"></i></button>
