@@ -1,27 +1,29 @@
 <?php
 // request to get the last posts 
-$req_posts = $db->query('SELECT * FROM posts ORDER BY post_date DESC LIMIT 4');
+$req_posts = $db->query('SELECT * FROM posts ORDER BY post_date DESC LIMIT 3');
 if (!$req_posts) {
     echo 'There is no post to display' .mysql_error();
 } else {
 ?>
 
 <!-- last_posts container -->
-<div class="container bg-light rounded-lg">
+<div class="container bg-light rounded-lg mt-4 mb-2">
     <!-- last_posts header -->
-    <div class="banner flex row align-items-center">
-        Last posts
+    <div class="banner-aside flex row  align-items-center">
+        Last Posts
     </div>
-    <!-- last_posts cards_container -->
-    <div class="container d-flex flex-column ">
+    <!-- last_posts container -->
+    <div class="container-fuide d-flex flex-column py-2 ">
         <?php
         while ($post = $req_posts->fetch())
         {
         ?>
-        <!-- last_posts first_row -->
-        <div class="last-posts card m-1 border-0">              
+        <!-- last_posts title first_row -->
+        <div class="last-posts card my-2 px-2 border-0">              
             <div class=" card-body row d-flex ">
-                <h6 class="last-posts-list__title col">
+                <!-- UNCOMMENT to active the link -->
+                <!-- <a href="#" class="stretched-link"></a> -->  
+                <div class="last-posts__title">
                     <?php
                         // get the topic subject 
                         $req_topics = $db->query("SELECT topic_subject FROM topics WHERE topic_id =" .  $post['post_topic']); 
@@ -30,8 +32,16 @@ if (!$req_posts) {
                         }
                         $req_topics->closeCursor();
                     ?>
-                </h6>
-                <div class="last-posts-list__time-diff col font-italic font-weight-light"> 
+                </div>                
+                <!-- last_posts text second_row -->
+                <div class="last-posts__post-content text-secondary pt-1"> 
+                    <?php 
+                    // limit the number of characters displayed
+                    echo substr($post['post_content'], 0,50);
+                    ?>...
+                </div>
+                <!-- last_posts time-diff third_row                  -->
+                <div class="last-posts__time-diff col text-secondary text-right"> 
                     <?php
                         // get the time difference converting stamptime to string 
                         $current_date = strtotime(date("Y-m-d H:i:s"));
@@ -51,15 +61,10 @@ if (!$req_posts) {
                             echo "Less than a minute ago";
                         }
                     ?>
-                </div>                 
+                </div> 
+
             </div>
-            <!-- last_posts second_row -->
-            <div class="last-posts-list__text row "> 
-                <?php 
-                // limit the number of characters displayed
-                echo substr($post['post_content'], 0,50);
-                ?>...
-            </div>
+
         </div>
         <?php
         }
