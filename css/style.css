@@ -233,3 +233,33 @@ footer a:hover {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* style for last_post */
+
+.banner-aside {
+  padding: 1em;
+  border-radius: 0.8em 0.8em 0em 0em;
+  background: linear-gradient(90deg, #b06ab3 0%, #4668dc 100%);
+  color: seashell;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.last-posts__title{
+  padding: 0;
+  margin: 0;
+}
+
+.last-posts__time-diff{
+  padding: 0;
+  font-size: 0.6rem;
+}
+
+.last-posts__post-content{
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+
+
