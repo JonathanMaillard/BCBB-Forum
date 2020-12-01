@@ -47,7 +47,7 @@
     <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
     <p class="resume">E-mail : <?php echo $_POST["inputEmail"]; ?></p>
     <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-    <p class="resume">Avatar by default : <img src="<?php echo $avatar; ?>" class="imgAvatar"/></p>  
+    <p class="resume">Your avatar : <img src="<?php echo $avatar; ?>" class="imgAvatar"/></p>  
 
 
     <button type="submit" class="btn btn-primary"><a href="index.php"> Continue </a><i class="fa fa-sign-in" aria-hidden="true"></i></button>

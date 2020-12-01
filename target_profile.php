@@ -22,7 +22,6 @@ if(isset($_SESSION['id'])) {
 
 
    if(isset($_POST['inputUsername']) AND !empty($_POST['inputUsername']) AND $_POST['inputUsername'] != $user['user_name']) {
-
         $newInputUsername = htmlspecialchars($_POST['inputUsername']);
         $insertUsername = $db->prepare("UPDATE users SET user_name = ? WHERE user_id = ?");
         $insertUsername->execute(array($newInputUsername, $_SESSION['id']));
@@ -54,6 +53,43 @@ if(isset($_SESSION['id'])) {
         }
     }
  }
+?>
+
+<?php
+
+    
+
+?>
+
+<?php
+    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+        $tailleMax = 2097152;
+        $extensionsValides = array('jpg', 'jpeg', 'png');
+
+        if($_FILES['avatar']['size'] <= $tailleMax) {
+            $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+
+            if(in_array($extensionUpload, $extensionsValides)) {
+                $chemin = "membres/avatars/".$_SESSION['id'].".".$extensionUpload;
+                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+
+                if($resultat) {
+                    $updateavatar = $bdd->prepare('UPDATE membres SET avatar = :avatar WHERE id = :id');
+                    $updateavatar->execute(array(
+                    'avatar' => $_SESSION['id'].".".$extensionUpload,
+                    'id' => $_SESSION['id']
+                    ));
+                    header('Location: profile.php?id='.$_SESSION['id']);
+                } else {
+                    $msg = "Erreur durant l'importation de votre photo de profil";
+                }
+            } else {
+                $msg = "Votre photo de profil doit être au format jpg, jpeg ou png";
+            }
+        } else {
+            $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
+        }
+    }
 ?>
 
 <h2 class="title">Your profile has been updated</h2>

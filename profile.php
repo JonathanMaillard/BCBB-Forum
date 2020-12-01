@@ -44,7 +44,7 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input type="file" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Avatar url">
+            <input type="file" class="form-control form-bindput" id="avatar" name="avatar">
         </div>
     </div>
 
