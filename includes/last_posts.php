@@ -18,7 +18,7 @@ if (!$req_posts) {
         while ($post = $req_posts->fetch())
         {
         ?>
-        <!-- last_posts first_row -->
+        <!-- last_posts title & time-diff first_row -->
         <div class="last-posts card m-1 border-0">              
             <div class=" card-body row d-flex ">
                 <h6 class="last-posts-list__title col">
@@ -53,8 +53,8 @@ if (!$req_posts) {
                     ?>
                 </div>                 
             </div>
-            <!-- last_posts second_row -->
-            <div class="last-posts-list__text row "> 
+            <!-- last_posts text second_row -->
+            <div class="last-posts-list__text row"> 
                 <?php 
                 // limit the number of characters displayed
                 echo substr($post['post_content'], 0,50);
