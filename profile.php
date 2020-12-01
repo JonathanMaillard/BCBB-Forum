@@ -11,7 +11,7 @@
 
     if(!isset($_SESSION['id'])) {
 
-        echo "<h2> You must be logged to access this page... GET OUT!!!</h2>";
+        echo "<h2> You must be logged to access this page... </h2>";
         include "includes/footer.php";
         exit();
     }
@@ -44,7 +44,7 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input type="text" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Avatar url">
+            <input type="file" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Avatar url">
         </div>
     </div>
 
