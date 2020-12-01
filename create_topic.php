@@ -12,12 +12,8 @@
 
 ?>
 
-<<<<<<< HEAD
-<h2>Create topic</h2>
-=======
 
 <h2>Create new topic</h2>
->>>>>>> Camelia
 
 <form class="form" action="create_topic_script" method="POST">
 
