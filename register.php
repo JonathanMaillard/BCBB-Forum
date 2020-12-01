@@ -40,9 +40,6 @@
         <div class="form-group col-md-6">
             <input type="text" class="form-control form-bindput" id="inputUserSignature" name="inputUserSignature" placeholder="Signature">
         </div>
-        <div class="form-group col-md-6">
-            <input type="text" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Avatar url">
-        </div>
     </div>
 
         <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Submit </button>
