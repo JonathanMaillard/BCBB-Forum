@@ -18,16 +18,14 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputUsername">Username</label>
-            <input type="text" class="form-control" id="inputUsername" name="inputUsername" placeholder="Enter your username">
+            <input type="text" class="form-control form-bindput" id="inputUsername" name="inputUsername" placeholder="Enter your username">
         </div>
-        <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Enter your password">
+        <div class="form-group col-md-6">            
+            <input type="password" class="form-control form-bindput" id="inputPassword" name="inputPassword" placeholder="Enter your password">
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary"> Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+    <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </button>
     
 </form>
 

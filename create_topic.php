@@ -13,17 +13,17 @@
 ?>
 
 
-<h2>Create topic</h2>
+<h2>Create new topic</h2>
 
-<form class="form" action="" method="POST">
+<form class="form" action="create_topic_script" method="POST">
 
     <div class="form-group">
-        <label for="inputTopicSubject">Topic title</label>
-        <input type="text" class="form-control" id="inputTopicSubject" name="inputTopicSubject" placeholder="Enter your topic title">
+        <label for="inputTopicSubject">Topic subject</label>
+        <input type="text" class="form-control" id="inputTopicSubject" name="inputTopicSubject" placeholder="Enter the subject of your topic in one line...">
     </div>
     
     <div class="form-group">
-        <label for="inputTextarea">Text area</label>
+        <label for="inputTextarea">Description</label>
         <textarea class="form-control" id="inputTextarea" placeholder="Write you text here..." rows="10"></textarea>
     </div>
 

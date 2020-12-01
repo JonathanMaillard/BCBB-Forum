@@ -13,44 +13,36 @@
 ?>
 
 
-<h2 class="title">Subscription</h1>
+<h2 class="title">Subscription</h2>
 
-<form class="formulary" action="target_register.php" method="POST">
+
+<form class="formulary" action="target_register.php" method="POST" enctype="multipart/form-data">
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputUsername">Username</label>
-            <input type="text" class="form-control form-bindput" id="inputUsername" name="inputUsername" placeholder="Enter your name">
+            <input type="text" class="form-control form-bindput" id="inputUsername" name="inputUsername" placeholder="User name" >
         </div>
         <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputEmail">E-mail</label>
-            <input type="email" class="form-control form-bindput" id="inputEmail" name="inputEmail" placeholder="Enter your e-mail">
+            <input type="email" class="form-control form-bindput" id="inputEmail" name="inputEmail" placeholder="@ E-mail">
         </div>
     </div>  
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputAvatar">Avatar</label>
-            <input type="text" class="form-control form-bindput" id="inputAvatar" name="inputAvatar" placeholder="Enter your Avatar">
+            <input type="password" class="form-control form-bindput" id="inputPassword" name="inputPassword" placeholder="Password">
         </div>
         <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputUserSignature">Signature</label>
-            <input type="text" class="form-control form-bindput" id="inputUserSignature" name="inputUserSignature" placeholder="Enter your Signature">
+            <input type="password" class="form-control form-bindput" id="inputPassword2" name="inputPassword2" placeholder="Password (again)">
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputPassword">Password</label>
-            <input type="password" class="form-control form-bindput" id="inputPassword" name="inputPassword" placeholder="Enter your Password">
-        </div>
-        <div class="form-group col-md-6">
-            <label class="inputLabel" for="inputPassword2">Password*</label>
-            <input type="password" class="form-control form-bindput" id="inputPassword2" name="inputPassword2" placeholder="Re-enter your Password">
+            <input type="text" class="form-control form-bindput" id="inputUserSignature" name="inputUserSignature" placeholder="Signature">
         </div>
     </div>
 
-        <button type="submit" class="btn btn-primary"> Submit <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> Submit </button>
         
 </form>
 

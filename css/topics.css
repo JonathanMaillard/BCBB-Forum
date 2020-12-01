@@ -4,12 +4,75 @@
   color: #6e6d6d;
 }
 
+.search {
+  display: flex;
+  flex-direction: row;
+}
+
 .new {
+  width: 100px;
+  font-size: 15px;
   background-color: #BF89C3;
   border-radius: 20px;
   padding: 5px;
   color: white;
   border: none;
+  margin-right: 10px;
+}
+
+.topic-search {
+  width: 270px;
+  display: flex;
+}
+
+.main-search .searchTerm {
+  width: 70%;
+  border: 2px solid #cfcfcf;
+  border-right: none;
+  padding: 5px;
+  padding-left: 15px;
+  height: 36px;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  color: #333333;
+  background-color: #f4f4f4;
+  font-size: 0.8rem;
+}
+
+.main-search .searchTerm:focus {
+  color: #333333;
+}
+
+.main-search .searchButton {
+  width: 15%;
+  height: 36px;
+  border: 2px solid #cfcfcf;
+  background: #f4f4f4;
+  text-align: center;
+  color: #7b7b7b;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.main-search .searchButton:hover {
+  color: #333333;
+}
+
+.main-search .searchOption {
+  width: 15%;
+  height: 36px;
+  border: 2px solid #cfcfcf;
+  border-left: none;
+  background: #f4f4f4;
+  text-align: center;
+  color: #7b7b7b;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.main-search .searchOption:hover {
+  color: #333333;
 }
 
 .rules {
@@ -42,6 +105,8 @@
 
 .row {
   flex-wrap: wrap;
+  margin-right: -15Px;
+  margin-left: -15px;
 }
 
 .banner__title {

@@ -4,7 +4,9 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > Profile</p>';
     $titre = "Profile - Rolling Stones Forum";
+    $css = 'form';
 ?>
 
 <?php
@@ -53,6 +55,12 @@ if(isset($_SESSION['id'])) {
     }
  }
 ?>
+
+<h2 class="title">Your profile has been updated</h2>
+
+<p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
+<p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
+<p class="resume">Avatar : <img src="<?php echo $_POST["inputAvatar"];?>" alt="Avatar"/>   
 
 
 <?php 
