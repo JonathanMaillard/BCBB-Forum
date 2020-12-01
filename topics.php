@@ -7,7 +7,7 @@
 
     include "includes/connect.php";
 
-    //Get ID of the selected categories ont he board
+    //Get ID of the selected categories ont the board
     $category_id = $_GET["id"];
 
     //Get the category name in the DB
@@ -21,7 +21,7 @@
     $cat_name = $result["cat_name"];
 
     //Modify these varialbe according to your page
-    $arianne = '<p><a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a> > ' . $cat_name . ' </p>';
+    $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> > ' . $cat_name . ' </p>';
     $titre = $cat_name . " - Rolling Stones Forum";
     $css = "topics";
 
@@ -187,7 +187,7 @@
             </div>
         </div>
     </div>
-    <button class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <button onclick="create_topic.php" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></button>
     <br>
 <?php
     include "includes/footer.php";
