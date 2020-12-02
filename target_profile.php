@@ -34,11 +34,11 @@ if(isset($_SESSION['id'])) {
         $insertSignature->execute(array($newInputUserSignature, $_SESSION['id']));
     }
 
-    if(isset($_POST['inputAvatar']) AND !empty($_POST['inputAvatar']) AND $_POST['inputAvatar'] != $user['user_avatar']) {
+   /* if(isset($_POST['inputAvatar']) AND !empty($_POST['inputAvatar']) AND $_POST['inputAvatar'] != $user['user_avatar']) {
         $newInputAvatar = htmlspecialchars($_POST['inputAvatar']);
         $insertInputAvatar = $db->prepare("UPDATE users SET user_avatar = ? WHERE user_id = ?");
         $insertInputAvatar->execute(array($newInputAvatar, $_SESSION['id']));
-    } 
+    } */
 
     if(isset($_POST['inputPassword']) AND !empty($_POST['inputPassword']) AND isset($_POST['inputPassword2']) AND !empty($_POST['inputPassword2'])) {
         $password1 = hash('sha256', $_POST['inputPassword']);
@@ -52,18 +52,9 @@ if(isset($_SESSION['id'])) {
             $msg = "Password and password* must be the same !";
         }
     }
- }
-?>
 
-<?php
-
-    
-
-?>
-
-<?php
     if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
-        $tailleMax = 2097152;
+        $tailleMax = 2097152; //octets
         $extensionsValides = array('jpg', 'jpeg', 'png');
 
         if($_FILES['avatar']['size'] <= $tailleMax) {
@@ -74,12 +65,12 @@ if(isset($_SESSION['id'])) {
                 $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 
                 if($resultat) {
-                    $updateavatar = $bdd->prepare('UPDATE membres SET avatar = :avatar WHERE id = :id');
+                    $updateavatar = $db->prepare('UPDATE users SET user_avatar = :avatar WHERE user_id = :id');
                     $updateavatar->execute(array(
                     'avatar' => $_SESSION['id'].".".$extensionUpload,
                     'id' => $_SESSION['id']
                     ));
-                    header('Location: profile.php?id='.$_SESSION['id']);
+                   // header('Location: profile.php?id='.$_SESSION['id']);
                 } else {
                     $msg = "Erreur durant l'importation de votre photo de profil";
                 }
@@ -90,13 +81,14 @@ if(isset($_SESSION['id'])) {
             $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
         }
     }
+}
 ?>
 
 <h2 class="title">Your profile has been updated</h2>
 
 <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
 <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-<p class="resume">Avatar : <img src="<?php echo $_POST["inputAvatar"];?>" alt="Avatar"/>   
+<p class="resume">Avatar : <img src="<?php echo $_FILES["avatar"];?>" alt="Avatar"/>   
 
 
 <?php 
