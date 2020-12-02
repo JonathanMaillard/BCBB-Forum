@@ -54,41 +54,48 @@ if(isset($_SESSION['id'])) {
     }
 
     if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
-        $tailleMax = 2097152; //octets
-        $extensionsValides = array('jpg', 'jpeg', 'png');
+        $maxSize = 2097152; //octets
+        $validExtensions = array('jpg', 'jpeg', 'png');
 
-        if($_FILES['avatar']['size'] <= $tailleMax) {
+        if($_FILES['avatar']['size'] <= $maxSize) {
             $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
 
-            if(in_array($extensionUpload, $extensionsValides)) {
-                $chemin = $_SERVER["DOCUMENT_ROOT"]."avatars/".$_SESSION['id'].".".$extensionUpload;
-                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+            if(in_array($extensionUpload, $validExtensions)) {
+                $path ="avatars/".$_SESSION['id'].".".$extensionUpload;
+                $result = move_uploaded_file($_FILES['avatar']['tmp_name'], $path);
 
-                if($resultat) {
+                if($result) {
                     $updateavatar = $db->prepare('UPDATE users SET user_avatar = :avatar WHERE user_id = :id');
                     $updateavatar->execute(array(
                     'avatar' => $_SESSION['id'].".".$extensionUpload,
                     'id' => $_SESSION['id']
                     ));
+
                    // header('Location: profile.php?id='.$_SESSION['id']);
                 } else {
-                    $msg = "Erreur durant l'importation de votre photo de profil";
+                    $msg = "Error importing your profile picture";
                 }
             } else {
-                $msg = "Votre photo de profil doit être au format jpg, jpeg ou png";
+                $msg = "Your profile picture must be in jpg, jpeg or png format";
             }
         } else {
-            $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
+            $msg = "Your profile picture must not exceed 2MB";
         }
     }
 }
 ?>
 
+
 <h2 class="title">Your profile has been updated</h2>
 
 <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
 <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-<p class="resume">Avatar : <img src="<?php echo $_FILES["avatar"];?>" alt="Avatar"/>   
+<p class="resume">Avatar : <img src= "<?php echo $path; ?>" class="imgAvatar" width="60" alt="Avatar"/></p>
+
+
+
+
+
 
 
 <?php 

@@ -1,7 +1,8 @@
 <?php
 try
 {
-    $db = new PDO('mysql:host=85.10.205.173:3306;dbname=forum_stones', 'becodeproject', 'becodeforum',);
+    $db = new PDO('mysql:host=db.bbs-queen.neant.be; port=33060; dbname=BCBB_STONE;', 'bcbb-STONE-site', 'BCBB4RollingSSITE--',
+    array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch (Exception $e)
 {
