@@ -70,7 +70,7 @@ if(isset($_SESSION['id'])) {
                     'avatar' => $_SESSION['id'].".".$extensionUpload,
                     'id' => $_SESSION['id']
                     ));
-
+                
                    // header('Location: profile.php?id='.$_SESSION['id']);
                 } else {
                     $msg = "Error importing your profile picture";
@@ -88,14 +88,11 @@ if(isset($_SESSION['id'])) {
 
 <h2 class="title">Your profile has been updated</h2>
 
+
+
 <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
 <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-<p class="resume">Avatar : <img src= "<?php echo $path; ?>" class="imgAvatar" width="60" alt="Avatar"/></p>
-
-
-
-
-
+<p class="resume">Avatar : <img src= "<?php echo $path; ?>" class="imgAvatar" width="40" alt="Avatar"/></p>
 
 
 <?php 
