@@ -247,19 +247,32 @@ footer a:hover {
 }
 
 .last-posts__title{
-  padding: 0;
-  margin: 0;
+
 }
 
 .last-posts__time-diff{
-  padding: 0;
   font-size: 0.6rem;
 }
 
 .last-posts__post-content{
-  padding: 0;
   font-size: 0.8rem;
 }
 
 
 
+/* style for last_active_users */
+.last-active-users{
+  
+}
+
+.last-active-users__avatar-img{
+  width: 2.5rem;
+}
+
+.last-active-user__name{
+  font-size: 0.8rem;
+}
+
+.last-active-user__signature{
+  font-size: 0.8rem;
+}
