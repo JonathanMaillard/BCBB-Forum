@@ -1,0 +1,154 @@
+.title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  color: #6e6d6d;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+}
+
+.new {
+  width: 100px;
+  font-size: 15px;
+  background-color: #BF89C3;
+  border-radius: 20px;
+  padding: 5px;
+  color: white;
+  border: none;
+  margin-right: 10px;
+}
+
+.topic-search {
+  width: 270px;
+  display: flex;
+}
+
+.main-search .searchTerm {
+  width: 70%;
+  border: 2px solid #cfcfcf;
+  border-right: none;
+  padding: 5px;
+  padding-left: 15px;
+  height: 36px;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  color: #333333;
+  background-color: #f4f4f4;
+  font-size: 0.8rem;
+}
+
+.main-search .searchTerm:focus {
+  color: #333333;
+}
+
+.main-search .searchButton {
+  width: 15%;
+  height: 36px;
+  border: 2px solid #cfcfcf;
+  background: #f4f4f4;
+  text-align: center;
+  color: #7b7b7b;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.main-search .searchButton:hover {
+  color: #333333;
+}
+
+.main-search .searchOption {
+  width: 15%;
+  height: 36px;
+  border: 2px solid #cfcfcf;
+  border-left: none;
+  background: #f4f4f4;
+  text-align: center;
+  color: #7b7b7b;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.main-search .searchOption:hover {
+  color: #333333;
+}
+
+.rules {
+  background-color: #ECD5D8;
+  border-radius: 5px;
+  padding: 7px;
+  /* box-shadow: -20px 0 0 rgb(150, 1, 1); */
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15Px;
+  padding-left: 15Px;
+}
+
+.banner {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.8em 0.8em 0em 0em;
+  background: linear-gradient(90deg, #b06ab3 0%, #4668dc 100%);
+  color: seashell;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-wrap: wrap;
+  margin-right: -15Px;
+  margin-left: -15px;
+}
+
+.banner__title {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.box__content {
+  flex: 1 1 auto;
+  min-height: 1px;
+  /* padding: 1.25rem; */
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 5px;
+}
+
+.banner__list-item {
+  padding: 15px 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.banner__details {
+  color: #6a6b6e;
+}
+
+#banner__list {
+  font-size: 10px;
+  padding: 2px 0 0 0;
+}
+
+/*# sourceMappingURL=topics.css.map */

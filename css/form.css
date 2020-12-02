@@ -1,0 +1,54 @@
+.btn {
+  background-color: #c13cb2;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  border: none;
+}
+.btn:hover {
+  background-color: #5a29dd;
+}
+
+.formulary {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+.formulary .form-bindput {
+  background-color: #f4f4f4;
+  border-left: 3px solid #fa1873;
+  border-radius: 20px;
+}
+.formulary .form-bindput:hover {
+  border-left: 5px solid #5a29dd;
+}
+
+.title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  background: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
+  border-radius: 20px;
+  color: white;
+  padding: 7px;
+  width: 100%;
+}
+
+.inputLabel {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #BF89C3 10%, #5a29dd 100%);
+  border-radius: 20px;
+  color: white;
+  padding: 7px;
+  width: 100%;
+}
+
+.resume {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #6b6b6b;
+}
+
+.imgAvatar {
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=form.css.map */

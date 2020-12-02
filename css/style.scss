@@ -4,6 +4,9 @@ $pink: #c13cb2;
 $blue: #5a29dd;
 $footer-background: #31323c;
 $page-background: #eaf0f1;
+$text-grey: #6b6b6b;
+
+$input-background: #f4f4f4;
 
 $gradient1: rgb(193,60,178);
 $gradient2: linear-gradient(90deg, rgba(193,60,178,1) 10%, rgba(90,41,221,1) 100%);
@@ -21,23 +24,38 @@ $gradient3: linear-gradient(90deg, rgba(193,60,178,0.6) 10%, rgba(90,41,221,0.6)
 
 header{
     color: white;
-    min-height: 250px;
+    min-height: 300px;
     background: $gradient1;
     background: $gradient3, url(../images/backgroundwebsite.jpeg);
     background-size: cover;
     background-position: center;
 
 
+
     .head{
         position: relative;
 
         .registerLogin{
-            position: absolute;
-            right: 10px;
-            top: 40px;
+            //position: absolute;
+            //right: 10px;
+            //top: 40px;
+            min-height: 100px;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            a:visited{
+                text-decoration: none;
+                color:white;
+            }
+            a:hover{
+                text-decoration: none;
+                color: #aaaaaa;
+            }
         }
         .main-title{
-            min-height: 250px;
+            min-height: 200px;
 
             h1{
                 font-weight: 400;
@@ -48,29 +66,44 @@ header{
     
 }
 
-//.container{
-//    max-width: 1200px;
-//    margin: auto;
-//}
+
+
 
 .background{
-    min-height: 800px; //temporary!
     background-color: $page-background;
-
     z-index: 1;
-    position: relative;
+    
 }
 
 main{
     background-color: white;
     border-radius: 8px;
-    min-height: 800px; //temporary!
-    width: 90%;
+    min-height: 800px;
+    padding: 15px 15px;
 
     z-index: 2;
-    position: absolute;
-    top: -40px;
-    bottom: -20px;
+    margin-top: -40px;
+    margin-bottom: -30px;
+
+    .main__arianne{
+        color: $text-grey;
+        a{
+            text-decoration: none;
+            color: $text-grey;
+        }
+        a:visited{
+            text-decoration: none;
+            color: $text-grey;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #333333;
+        }
+    }
+}
+
+.content{
+    margin-bottom: 50px;
 }
 
 
@@ -83,10 +116,31 @@ main{
 
     z-index: 1;
     
-    .fa{
-        border: 1px solid white;
+    .social__logo{
+        border: 2px solid white;
         border-radius: 50%;
-        padding: 7px 10px;
+        height: 38px;
+        width: 38px;
+        margin: 6px;
+
+        text-align: center;
+
+        font-size: 1.2rem;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:visited{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #aaaaaa;
+        .social__logo{
+            border:2px solid #aaaaaa;
+        }
     }
 }
 
@@ -110,3 +164,132 @@ footer{
         color: $blue;
     }
 }
+
+
+.main-search {
+    width: 100%;
+    display: flex;
+  
+  
+  .searchTerm {
+    width: 70%;
+    border: 2px solid #cfcfcf;
+    border-right: none;
+    padding: 5px;
+    padding-left: 15px;
+    height: 36px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    color: #333333;
+    background-color: $input-background;
+    font-size: 0.8rem;
+  }
+  
+  .searchTerm:focus{
+    color: #333333;
+  }
+  
+  .searchButton {
+    width: 15%;
+    height: 36px;
+    border: 2px solid #cfcfcf;
+    background: $input-background;
+    text-align: center;
+    color: #7b7b7b;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .searchButton:hover{
+    color: #333333;
+  }
+  .searchOption {
+    width: 15%;
+    height: 36px;
+    border: 2px solid #cfcfcf;
+    border-left: none;
+    background: $input-background;
+    text-align: center;
+    color: #7b7b7b;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .searchOption:hover{
+    color: #333333;
+  }
+}
+
+.border{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 5px;
+    width:100%;
+    background: $gradient1;
+    background: $gradient2;
+
+}
+
+.aside-login{
+    color: $text-grey;
+    font-size: 0.8rem;
+
+    .aside-login__title{
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .aside-login__input{
+        font-size: 0.8rem;
+        border-radius:20px;
+        background: $input-background;
+
+    }
+    .aside-login__btn{
+        width: 100%;
+        border-radius: 20px;
+        background: $pink;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border: none;
+        margin-top: 15px;
+
+    }
+    .aside-login__btn:hover{
+        background: $blue;
+    }
+}
+.user{
+    color: $text-grey;
+
+    a{
+        text-decoration: none;
+        color: $pink;
+    }
+    a:visited{
+        text-decoration: none;
+        color: $pink;
+    }
+    a:hover{
+        text-decoration: none;
+        color: $blue;
+    }
+}
+
+
+@media screen and (min-width: 992px){
+    .registerLogin{
+        position: absolute;
+        right: 10px;
+        top: 40px;
+    }
+
+    header{
+        min-height: 250px;
+
+        .main-title{
+            min-height: 250px;
+        }
+    }
+    
+}
+

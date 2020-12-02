@@ -1,14 +1,72 @@
                 </div><!--end of page content -->
 
                 <aside class="col-md-3">
-                    <p>I am the aside</p>
+                    
+                    
+                    <div class="main-search">
+                        <input type="text" class="searchTerm" placeholder="Search...">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                         </button>
+                         <button type="submit" class="searchOption">
+                             <i class="fa fa-cog"></i>
+                        </button>
+                    </div>
+
+                    <div class="border"></div>
+
+                    <?php
+                        if(!isset($_SESSION['pseudo'])){
+                            echo '
+                            <div class="aside-login">
+                                <h5 class="aside-login__title">Login</h5>
+        
+                                <form class="form" action="target_login.php" method="POST"> 
+        
+                                    
+                                <div class="form-group">
+                                    <label for="inputUsername">Username :</label>
+                                    <input type="text" class="form-control aside-login__input" id="inputUsername" name="inputUsername">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">Password :</label>
+                                    <input type="password" class="form-control aside-login__input" id="inputPassword" name="inputPassword">
+                                </div>
+                                    
+        
+                                <button type="submit" class="btn btn-primary aside-login__btn">Login</button>
+                                    
+                                </form>
+                            </div>';
+                        } else {
+                            echo '
+                            <div class="user">
+                                <h5 class="text-center">Hello !</h5>
+                                <h4 class="text-center">'.$pseudo.'</h4>
+                                <p class="text-center"><a href="profile.php">Edit your profile</a></p>
+                            </div>';
+                        }
+                    ?>
+
+
+                <!-- last posts section -->
+                <?php include('includes/last_posts.php'); ?>
+
                 </aside>
             </div><!-- end of row -->
         </main> <!-- End of main started in header.php -->
     </section> <!-- End of section background started in header.php -->
     
     <section class="social d-flex justify-content-center align-items-center">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-twitter" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-apple" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-facebook" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-codepen" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-google-plus" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-digg" aria-hidden="true"></i></span></div></a>
+        <a href="#"><div class="social__logo d-flex justify-content-center align-items-center"><span class="align-middle"><i class="fa fa-pinterest-p" aria-hidden="true"></i></span></div></a>
+
+        
     </section>
 
     <footer>
@@ -19,7 +77,7 @@
                 </div>
                     
                 <div class="footer__links col-md-9">
-                    <p class ="text-center text-md-right">
+                    <p class ="text-center text-md-right align-middle">
                         <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contact us</a>
                         <a href="#"><i class="fa fa-shield" aria-hidden="true"></i> The team</a>    
                         <a href="#"><i class="fa fa-check" aria-hidden="true"></i> Terms</a>   
