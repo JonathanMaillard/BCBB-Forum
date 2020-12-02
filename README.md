@@ -1,4 +1,4 @@
 # BCBB-Forum
 
-Link to the Heroku app :
-https://bcbbrollingstones.herokuapp.com
+Link to the ROLLING STONES FORUM :
+https://testdev3.iweep.be/BCBB-Forum-main/
