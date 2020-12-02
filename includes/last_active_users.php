@@ -1,6 +1,6 @@
 <?php
 // request to get the last active users 
-$req_last_users = $db->query('SELECT * FROM users ORDER BY user_id DESC LIMIT 3');
+$req_last_users = $db->query('SELECT * FROM users ORDER BY user_last_login DESC LIMIT 3');
 if (!$req_last_users) {
     echo 'There is no users to display' .mysql_error();
 } else {
@@ -43,5 +43,4 @@ if (!$req_last_users) {
     
 <?php
 }
-
 ?>
