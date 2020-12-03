@@ -22,7 +22,6 @@ if(isset($_SESSION['id'])) {
 
 
    if(isset($_POST['inputUsername']) AND !empty($_POST['inputUsername']) AND $_POST['inputUsername'] != $user['user_name']) {
-
         $newInputUsername = htmlspecialchars($_POST['inputUsername']);
         $insertUsername = $db->prepare("UPDATE users SET user_name = ? WHERE user_id = ?");
         $insertUsername->execute(array($newInputUsername, $_SESSION['id']));
@@ -35,11 +34,11 @@ if(isset($_SESSION['id'])) {
         $insertSignature->execute(array($newInputUserSignature, $_SESSION['id']));
     }
 
-    if(isset($_POST['inputAvatar']) AND !empty($_POST['inputAvatar']) AND $_POST['inputAvatar'] != $user['user_avatar']) {
+   /* if(isset($_POST['inputAvatar']) AND !empty($_POST['inputAvatar']) AND $_POST['inputAvatar'] != $user['user_avatar']) {
         $newInputAvatar = htmlspecialchars($_POST['inputAvatar']);
         $insertInputAvatar = $db->prepare("UPDATE users SET user_avatar = ? WHERE user_id = ?");
         $insertInputAvatar->execute(array($newInputAvatar, $_SESSION['id']));
-    } 
+    } */
 
     if(isset($_POST['inputPassword']) AND !empty($_POST['inputPassword']) AND isset($_POST['inputPassword2']) AND !empty($_POST['inputPassword2'])) {
         $password1 = hash('sha256', $_POST['inputPassword']);
@@ -53,14 +52,50 @@ if(isset($_SESSION['id'])) {
             $msg = "Password and password* must be the same !";
         }
     }
- }
+
+    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+        $maxSize = 2097152; //octets
+        $validExtensions = array('jpg', 'jpeg', 'png');
+
+        if($_FILES['avatar']['size'] <= $maxSize) {
+            $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+
+            if(in_array($extensionUpload, $validExtensions)) {
+                $path ="avatars/".$_SESSION['id'].".".$extensionUpload;
+                $result = move_uploaded_file($_FILES['avatar']['tmp_name'], $path);
+
+                if($result) {
+                    $updateavatar = $db->prepare('UPDATE users SET user_avatar = :avatar WHERE user_id = :id');
+                    $updateavatar->execute(array(
+                    'avatar' => $_SESSION['id'].".".$extensionUpload,
+                    'id' => $_SESSION['id']
+                    ));
+
+                   // header('Location: profile.php?id='.$_SESSION['id']);
+                } else {
+                    $msg = "Error importing your profile picture";
+                }
+            } else {
+                $msg = "Your profile picture must be in jpg, jpeg or png format";
+            }
+        } else {
+            $msg = "Your profile picture must not exceed 2MB";
+        }
+    }
+}
 ?>
+
 
 <h2 class="title">Your profile has been updated</h2>
 
 <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
 <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-<p class="resume">Avatar : <img src="<?php echo $_POST["inputAvatar"];?>" alt="Avatar"/>   
+<p class="resume">Avatar : <img src= "<?php echo $path; ?>" class="imgAvatar" width="60" alt="Avatar"/></p>
+
+
+
+
+
 
 
 <?php 
