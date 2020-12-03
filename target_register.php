@@ -26,7 +26,7 @@
     }
 
 
-    $default = "https://gravatar.com/avatar/"; // Quelle adresse pour l'avatar par défaut???
+    $default = "https://gravatar.com/avatar/"; 
     $size = 80;
 
     $avatar = "https://gravatar.com/avatar/" . md5(strtolower(trim(htmlspecialchars($_POST['inputEmail'])))) . "?d=" . urlencode($default) . "&s=" . $size;

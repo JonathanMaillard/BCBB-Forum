@@ -51,6 +51,8 @@
 
                 <!-- last posts section -->
                 <?php include('includes/last_posts.php'); ?>
+                <!-- last active users section -->
+                <?php include('includes/last_active_users.php');?>
 
                 </aside>
             </div><!-- end of row -->
