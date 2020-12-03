@@ -51,6 +51,9 @@
                         else if($data['cat_id'] == 4){
                             echo "<img class='category__img' src='./images/events.png'>";
                         }
+                        else if($data['cat_id'] == 5){
+                            echo "<img class='category__img' src='./images/dice.png'>";
+                        }
                         else{
                             echo "";
                         }
