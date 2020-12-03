@@ -63,7 +63,7 @@ if(isset($_SESSION['id'])) {
                 if($result) {
                     $updateavatar = $db->prepare('UPDATE users SET user_avatar = :avatar WHERE user_id = :id');
                     $updateavatar->execute(array(
-                    'avatar' => $_SESSION['id'].".".$extensionUpload,
+                    'avatar' =>"avatars/" . $_SESSION['id'].".".$extensionUpload,
                     'id' => $_SESSION['id']
                     ));
                 
