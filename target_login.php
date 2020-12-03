@@ -49,7 +49,7 @@ include "includes/header.php";
 <h2 class="title">Log in</h2>
 <p class="resume"><?php echo $message ?></p>
 
-<button type="submit" class="btn btn-primary"> Continue <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+<button type="submit" class="btn btn-primary"><a href="login.php"> Continue </a><i class="fa fa-sign-in" aria-hidden="true"></i></button>
 
 <?php
     include "includes/footer.php";
