@@ -31,6 +31,8 @@ include "includes/connect.php";
             $message = "You have successfully logged in";
             $_SESSION['pseudo'] = $result['user_name'];
             $_SESSION['id'] = $result['user_id'];
+            // line for update the datetime of user_last_login
+            $db->exec('UPDATE users SET user_last_login = now() WHERE user_id ="'. $_SESSION['id'] .'"');
         }
         else {
             $message = "You have entered an incorrect password";
