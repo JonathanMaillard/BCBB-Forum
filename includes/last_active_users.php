@@ -24,7 +24,7 @@ if (!$req_last_users) {
                 <!-- <a href="#" class="stretched-link"></a> -->   
 
                 <!-- last_active_users user-avatar first_row -->
-                <img class="last-active-users__avatar-img rounded-circle mx-auto row" src="<?php echo($user['user_avatar']); ?>" alt="">                            
+                <img class="last-active-users__avatar-img rounded-circle mx-auto row" src="<?php echo($user['user_avatar']);?>" width="40" alt="">                            
                 <!-- last_active_users user-name second_row -->
                 <div class="last-active-user__name row font-weight-bold mx-auto "> 
                     <?php echo($user['user_name']);?>

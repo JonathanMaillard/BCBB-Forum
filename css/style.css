@@ -246,10 +246,6 @@ footer a:hover {
   font-weight: bold;
 }
 
-.last-posts__title{
-
-}
-
 .last-posts__time-diff{
   font-size: 0.6rem;
 }
@@ -261,13 +257,6 @@ footer a:hover {
 
 
 /* style for last_active_users */
-.last-active-users{
-  
-}
-
-.last-active-users__avatar-img{
-  width: 2.5rem;
-}
 
 .last-active-user__name{
   font-size: 0.8rem;
