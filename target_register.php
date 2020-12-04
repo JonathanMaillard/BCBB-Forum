@@ -27,7 +27,7 @@
 
 
     $default = "https://gravatar.com/avatar/"; 
-    $size = 80;
+    $size = 40;
 
     $avatar = "https://gravatar.com/avatar/" . md5(strtolower(trim(htmlspecialchars($_POST['inputEmail'])))) . "?d=" . urlencode($default) . "&s=" . $size;
 
@@ -44,9 +44,9 @@
 
     <h2 class="title">Subscription successful</h2>
 
-    <p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
-    <p class="resume">E-mail : <?php echo $_POST["inputEmail"]; ?></p>
-    <p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
+    <p class="resume">Username : <?php echo htmlspecialchars($_POST["inputUsername"]); ?></p>
+    <p class="resume">E-mail : <?php echo htmlspecialchars($_POST["inputEmail"]); ?></p>
+    <p class="resume">Signature : <?php echo htmlspecialchars($_POST["inputUserSignature"]);?></p>
     <p class="resume">Your avatar : <img src="<?php echo $avatar; ?>" class="imgAvatar"/></p>  
 
 
