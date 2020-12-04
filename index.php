@@ -65,7 +65,7 @@
                         else{
                             echo "";
                         }
-
+                        // ??? INTERCALER ICI LE CODE POUR LA MYSTERY PAGE ???
                         echo '</div>
                         <div class="col-9">
                             <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
