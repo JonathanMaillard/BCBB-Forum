@@ -3,15 +3,15 @@
         <?php while($posts_results = $req_posts_results->fetch()) { ?>
             <div class="card border-0 my-3">
                 <!-- link to the topic -->
-                <!-- <a href="comments.php?id=<?php echo $posts_results['post_id'] .'#'. $posts_results['post_id'];?>">-->
+                <!-- <a class="stretched-link" href="comments.php?id=<?php echo $posts_results['post_id'] .'#'. $posts_results['post_id'];?>"> -->
                 <div class="card-body">
                     <div class=" d-flex align-items-center row">
                         <div class="col-6" ><?= $posts_results['post_content'];?></div> 
                         <div class="col-2"></div>
                         <div class="col-2 text-center">views</div>
                         <div class="col-2">
-                        <div class="row">                       
-                            <div class="font-italic pr-1">by</div>
+                            <div class="row ">                       
+                                <div class="font-italic pr-1">by</div>
                                 <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =" .  $posts_results['post_by']); 
                                 while($user = $req_user->fetch()) { ?>
                                 <strong class="text-info"> 
@@ -23,10 +23,12 @@
                                 </strong>                    
                             </div>
                             <div class="row text-secondary">
-                                <?php
-                                    $topicDate = new DateTime($posts_results['post_date']);
-                                    echo $topicDate->format('D M d, H:i');
-                                ?>
+                                <small>
+                                    <?php
+                                        $topicDate = new DateTime($posts_results['post_date']);
+                                        echo $topicDate->format('D M d, H:i');
+                                    ?>
+                                </small>
                             </div>
                         </div>
                     </div>

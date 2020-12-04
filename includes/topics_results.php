@@ -31,10 +31,12 @@
                                 </strong>                    
                             </div>
                             <div class="row text-secondary">
-                                <?php
-                                    $topicDate = new DateTime($topic_results['topic_date']);
-                                    echo $topicDate->format('D M d, H:i');
-                                ?>
+                                <small>
+                                    <?php
+                                        $topicDate = new DateTime($topic_results['topic_date']);
+                                        echo $topicDate->format('D M d, H:i');
+                                    ?>
+                                </small>
                             </div>
                         </div> 
                     </div>

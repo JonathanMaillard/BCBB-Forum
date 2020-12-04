@@ -8,7 +8,6 @@
     include('includes/connect.php');
     include('includes/header.php');
     include('includes/req_search.php');
-   
 ?>
 
 <div class="row container-fluid">

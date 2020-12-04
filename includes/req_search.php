@@ -1,6 +1,4 @@
 <?php
-    include 'connect.php';
-
     $search_done = false;
 
     if (isset($_GET['search']) AND !empty($_GET['search'])) {
