@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+    $arianne = '<a href=index.php><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
     $titre = "Home - Rolling Stones Forum";
     $css = 'style';
 
