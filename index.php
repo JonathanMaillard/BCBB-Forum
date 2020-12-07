@@ -66,8 +66,8 @@
                         <!-- // ??? INTERCALER ICI LE CODE POUR LA MYSTERY PAGE ??? -->
                         </div>
                         <div class="col-9">
-                            <h4 class="category__title"><a href="./topics.php?id=<?php $data['cat_id']?>"> <?php echo ($data['cat_name'])?></a></h4>
-                            <p class="category__description"> <?php echo ($data['cat_description']) ?></p>
+                            <h4 class="category__title"><a href="./topics.php?id=<?php $data['cat_id'];?>"><?php echo stripslashes(htmlspecialchars($data['cat_name']));?></a></h4>
+                            <p class="category__description"> <?php echo stripslashes(htmlspecialchars($data['cat_description']));?></p>
                         </div>
                     </div>
                     <div class ="row category__end">
