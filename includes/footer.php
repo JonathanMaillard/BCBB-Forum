@@ -2,8 +2,9 @@
 
                 <aside class="col-md-3">
                     
-                    <!-- search bar include -->
-                    <?php include('includes/search_bar.php');?>
+                    <!-- search bar includes -->
+                    <?php include 'includes/req_search.php' ; ?>
+                    <?php include 'includes/search_bar.php' ;?>
 
                     <div class="border"></div>
 
