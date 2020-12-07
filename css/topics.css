@@ -79,6 +79,7 @@
   background-color: #ECD5D8;
   border-radius: 5px;
   padding: 7px;
+  width: 100%;
   /* box-shadow: -20px 0 0 rgb(150, 1, 1); */
 }
 
@@ -89,7 +90,6 @@
 }
 
 .banner {
-  width: 100%;
   padding: 1em;
   border-radius: 0.8em 0.8em 0em 0em;
   background: linear-gradient(90deg, #b06ab3 0%, #4668dc 100%);
@@ -106,8 +106,6 @@
 
 .row {
   flex-wrap: wrap;
-  margin-right: -15Px;
-  margin-left: -15px;
 }
 
 .banner__title {
