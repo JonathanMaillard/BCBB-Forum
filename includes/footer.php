@@ -4,7 +4,7 @@
                     
                     <!-- search bar include -->
                     <?php include('includes/search_bar.php');?>
-
+                    
                     <div class="border"></div>
 
                     <?php
