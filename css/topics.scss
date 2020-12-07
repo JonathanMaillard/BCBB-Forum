@@ -121,7 +121,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  // min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -132,9 +132,9 @@
   padding: 15px 0;
 }
 
-.w-100 {
-  width: 100% ;
-}
+// .w-100 {
+//   width: 100% ;
+// }
 
 .banner__details {
   color: #6a6b6e;

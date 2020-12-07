@@ -34,7 +34,7 @@
             
           
                 <div class=buttonUp>
-                    <button type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></button>
+                    <a href="" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
                 &nbsp
             
 
