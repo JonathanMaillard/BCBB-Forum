@@ -108,84 +108,51 @@
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
             </div>
         </div>
-        <div id="banner__list" class="box__content">
-            <div class="content border-0 m-1">
-                <div class="banner__list-item box__content w-100 flex align-items-center">
-                    <div class="col-8">
-                        Why is it called "Oww yeahhh!" ? 
-                    </div>
-                    <div class="banner__details col-1">
-                        47
-                    </div>
-                    <div class="banner__details col-1">
-                        965
-                    </div>
-                    <div class="banner__details col-2">
-                        <div class="flex">
-                            <div class="font-weight-light">
-                                by 
+        <?php
+        
+        $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by 
+        FROM topics t
+        WHERE topic_cat = ' . $category_id);
+
+        $query->execute(); 
+
+        while($data = $query->fetch()) { ?>
+            
+        
+                <div id="banner__list" class="box__content">
+                    <div class="content border-0 m-1">
+                        <div class="banner__list-item box__content w-100 flex align-items-center">
+                            <div class="col-8">            
+                               <?php echo $data['topic_subject']; ?>
                             </div>
-                                <strong>Jonathan</strong>
-                        </div>
-                        <div class="font-weight-light">
-                            Mon Mar 17, 14:18
+                            <div class="banner__details col-1">
+                                47
+                            </div>
+                            <div class="banner__details col-1">
+                                965
+                            </div>
+                            <div class="banner__details col-2">
+                                <div class="flex">
+                                    <div class="font-weight-light">by </div>
+                                    <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =" .  $data['topic_by']); 
+                                    while($user = $req_user->fetch()) { ?>
+                                    <a href="#" >
+                                    <strong> 
+                                    <?php
+                                        echo $user['user_name'];
+                                        }
+                                        $req_user->closeCursor();
+                                    ?>
+                                    </strong></a>
+                                <div class="font-weight-light">
+                                    <?php echo $data['topic_date'];?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="banner__list" class="box__content">
-            <div class="content border-0 m-1">
-                <div class="banner__list-item box__content w-100 flex align-items-center">
-                    <div class="col-8">
-                        Satisfaction
-                    </div>
-                    <div class="banner__details col-1">
-                        95
-                    </div>
-                    <div class="banner__details col-1">
-                        483
-                    </div>
-                    <div class="banner__details col-2">
-                        <div class="flex">
-                            <div class="font-weight-light">
-                                by 
-                            </div>
-                                <strong>Ingrid</strong>t
-                        </div>
-                        <div class="font-weight-light">
-                            Mon Mar 17, 14:18
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="banner__list" class="box__content">
-            <div class="content border-0 m-1">
-                <div class="banner__list-item box__content w-100 flex align-items-center">
-                    <div class="col-8">
-                        You can't always get what you want
-                    </div>
-                    <div class="banner__details col-1">
-                        648
-                    </div>
-                    <div class="banner__details col-1">
-                        1293
-                    </div>
-                    <div class="banner__details col-2">
-                        <div class="flex">
-                            <div class="font-weight-light">
-                                by 
-                            </div>
-                                <strong>Gaëtan</strong>
-                        </div>
-                        <div class="font-weight-light">
-                            Mon Mar 17, 14:18
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php } ?>
     </div>
     <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
     <br>
