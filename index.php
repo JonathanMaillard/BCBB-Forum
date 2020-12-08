@@ -71,8 +71,8 @@
                             <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
                             <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
                         </div>
-                    </div>
-                    <div class ="row category__end">
+                        </div>
+                        <div class ="row category__end">
                         <div class="col-3 bordered">
                             <p class="category__numbers">';
                                 $numOfTopics = $db->query("SELECT COUNT(*) AS topic_cat FROM topics WHERE topic_cat =" . $data['cat_id']);
