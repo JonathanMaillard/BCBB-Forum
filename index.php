@@ -9,6 +9,11 @@
     $titre = "Home - Rolling Stones Forum";
     $css = "home";
 
+/* 
+    if($_SERVER["REQUEST_URI"] = "/BCBB-Forum/index.php?mdp=WeAreTheChampions") {      // CODE MYSTERY
+        header("location:./topics.php?id=6");
+    }
+*/
 
     include "includes/connect.php";
     include "includes/header.php";
@@ -39,7 +44,7 @@
                     <div class="row category__start">
                         <div class="col-3">';
 
-                        if($data['cat_id'] == 1){
+                        if($data['cat_id'] == 1){   
                             echo "<img class='category__img' src='./images/guitar.png'>";
                         }
                         else if($data['cat_id'] == 2){
@@ -60,7 +65,7 @@
                         else{
                             echo "";
                         }
-
+                        // ??? INTERCALER ICI LE CODE POUR LA MYSTERY PAGE ???
                         echo '</div>
                         <div class="col-9">
                             <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
@@ -96,6 +101,7 @@
         */
 
     } //loop end
+    
     $query->CloseCursor();
 ?>
     

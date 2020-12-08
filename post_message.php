@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 <?php
-    session_start();
+session_start();
 
-    $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+    $arianne = '<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
     $titre = "Home - Rolling Stones Forum";
     $css = 'style';
 
@@ -21,13 +19,18 @@
     }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8mb4">
     <title>Comment</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/style_comment.css">
+
 </head>
 <body>
 
@@ -47,10 +50,17 @@
                     echo $message_answer;
                     } ?>
                     <div class=buttonSerie2>
-                    <div class=buttonUp>
-                        <button type="submit" name="message_submit" class="btn btn-primary" id="publish"> Publish <i class="fas fa-reply"></i></button>
+                        <div class=buttonUp>
+                            <button type="submit" name="message_submit" class="btn btn-primary" id="publish"> Publish <i class="fas fa-reply"></i></button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>            
+    </div> 
+
+<?php include "includes/footer.php" ?> 
 </body>
+
+
+
