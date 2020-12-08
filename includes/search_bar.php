@@ -1,4 +1,4 @@
-<form atcion="results_page.php?search=<?php echo $search;?>" methode="GET" class=" form-group">
+<form action="results_page.php" methode="GET" class=" form-group">
     <div class="p-1 bg-light rounded-pill shadow-sm">
         <div class="input-group">
             <input type="search" name="search" class="form-control rounded-pill border-0 bg-light" placeholder="Search..." required>
