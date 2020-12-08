@@ -98,7 +98,7 @@ p {
 }
 
 #avatar {
-  width: 70%;
+  width: 80px !important;
   border-radius: 50%;
   border-style: solid;
   border-width: 1px;

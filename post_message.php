@@ -1,10 +1,5 @@
 <?php
-session_start();
-?>
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<?php
+    session_start();
 
     $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
     $titre = "Home - Rolling Stones Forum";
@@ -24,20 +19,6 @@ session_start();
     }
 
 ?>
-<head>
-    <meta charset="utf-8">
-    <title>Comment</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="css/style_comment.css">
-
-    <link rel="stylesheet" href="emojis/css/emojis.css">
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-</head>
-<body>
 
     <div class="main">
         <div class="mainRight">  
@@ -46,11 +27,10 @@ session_start();
                 &nbsp
                 <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="-> Reprend le titre du topic auquel on répond?">
+                    <input type="text" class="form-control" id="formGroupExampleInput">
                 </div>
-                <h2> <?php $topic['subject'] ?> </h2>
-                <form method="POST">
-                    <textarea id="commentContentWrite" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
+                <form method="POST" action="post_message_script.php?topic_id=<?php echo $_GET['topic_id'];?>">
+                    <textarea id="message" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
                     <?php if (isset($message_answer)) {
                     echo $message_answer;
                     } ?>
@@ -96,7 +76,11 @@ session_start();
 
     );
     </script>
-</body>
+
+<?php
+    include "includes/footer.php";
+?>
+
 
 
 
