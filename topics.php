@@ -51,7 +51,7 @@
         <div class="banner flex row align-items-center">
             <div class="content-header__element col-8" style="border: solid red 3">
                 <p class="banner__title">
-                    Announcementsss
+                    Announcements
                 </p>
             </div>
             <div class="content-header__element col-1">
@@ -118,7 +118,6 @@
 
         while($data = $query->fetch()) { ?>
             
-        
                 <div id="banner__list" class="box__content">
                     <div class="content border-0 m-1">
                         <div class="banner__list-item box__content w-100 flex align-items-center">
@@ -154,7 +153,58 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        <?php }
+        
+        if ($category_id == 5) { 
+            
+            $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by 
+            FROM topics 
+            ORDER BY topic_date DESC
+            LIMIT 5');
+
+            $query->execute(); 
+
+            while($data = $query->fetch()) { ?>
+        
+
+            <div id="banner__list" class="box__content">
+                    <div class="content border-0 m-1">
+                        <div class="banner__list-item box__content w-100 flex align-items-center">
+                            <div class="col-8">
+                            <a href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
+                                <?php echo $data['topic_subject'];?>
+                            </a>  
+                            </div>
+                            <div class="banner__details col-1">
+                                <a>47</a>
+                            </div>
+                            <div class="banner__details col-1">
+                                965
+                            </div>
+                            <div class="banner__details col-2">
+                                <div class="flex">
+                                    <div class="font-weight-light">by </div>
+                                    <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =" .  $data['topic_by']); 
+                                    while($user = $req_user->fetch()) { ?>
+                                    <a href="#" >
+                                    <strong> 
+                                    <?php
+                                        echo $user['user_name'];
+                                        }
+                                        $req_user->closeCursor();
+                                    ?>
+                                    </strong></a>
+                                <div class="font-weight-light">
+                                    <?php echo $data['topic_date'];?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } 
+        } ?>
+        
     </div>
     <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
     <br>

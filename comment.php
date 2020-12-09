@@ -25,14 +25,7 @@
 
     include "includes/header.php";
 
-<<<<<<< HEAD
-?>
-<head>
-    <meta charset="utf-8mb4">
-    <title>Comment</title>
-=======
 ?>  
->>>>>>> Camelia
     
     <div class="main">
         <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
@@ -155,6 +148,6 @@
 
 <?php 
 
-    include "includes/footer.php";
+    // include "includes/footer.php";
 
 ?>
