@@ -36,7 +36,7 @@
     <p class="rules">Forum rules</p>
 
     <div class="search">
-    <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic<i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
         <div class="main-search topic-search">
             <input type="text" class="searchTerm" placeholder="Search this forum...">
             <button type="submit" class="searchButton">

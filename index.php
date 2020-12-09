@@ -74,7 +74,13 @@
                         </div>
                         <div class ="row category__end">
                         <div class="col-3 bordered">
-                            <p class="category__numbers">5</p>
+                            <p class="category__numbers">';
+                                $numOfTopics = $db->query("SELECT COUNT(*) AS topic_cat FROM topics WHERE topic_cat =" . $data['cat_id']);
+                                while($topics = $numOfTopics->fetch()){
+                                    echo $topics["topic_cat"];            
+                                } 
+                                $numOfTopics->CloseCursor();
+                            echo'</p>      
                             <p class="category__text">Topics</p>
                         </div>
                         <div class="col-3">

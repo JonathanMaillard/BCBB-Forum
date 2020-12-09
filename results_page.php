@@ -1,13 +1,14 @@
 <?php
     session_start();
 
-    $arianne = '<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home ></a> Search Result';
-    $titre = "Search Result - Rolling Stones Forum";
+    $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+    $titre = "Home - Rolling Stones Forum";
     $css = 'style';
     
-    include('includes/connect.php');
-    include('includes/header.php');
-    include('includes/req_search.php');
+    include 'includes/connect.php' ;
+    include 'includes/header.php';
+    include 'includes/req_search.php';
+    
 ?>
 
 <div class="row container-fluid">
@@ -52,9 +53,7 @@
     <?php include 'includes/posts_results.php';?>
 </div>
 
-<?php
-    include('includes/footer.php');
-?>
+<?php include 'includes/footer.php';?>
 
 
 

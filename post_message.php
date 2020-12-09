@@ -1,7 +1,13 @@
 <?php
+<<<<<<< HEAD
+session_start();
+
+    $arianne = '<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+=======
     session_start();
 
     $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+>>>>>>> Camelia
     $titre = "Home - Rolling Stones Forum";
     $css = 'style';
 
@@ -19,6 +25,23 @@
     }
 
 ?>
+<<<<<<< HEAD
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8mb4">
+    <title>Comment</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/style_comment.css">
+
+</head>
+<body>
+=======
+>>>>>>> Camelia
 
     <div class="main">
         <div class="mainRight">  
@@ -43,37 +66,11 @@
             </div>
         </div>
     </div> 
-    
-    <div class="emoji-box">
-        <button type="button" id="emojis" class="btn btn-primary" name="emojis">emojis</button>
-    </div>
 
-    <script src="emojis/js/DisMojiPicker.js"></script>
-
-    <script>
-        var img = document.getElementById("emojis");
-
-
-        img.addEventListener("click", () =>
-        {
-            jQuery(document).ready(function(){
-
-            console.log("jQuery est prêt !");
-
-            $("#emojis").disMojiPicker();
-
-            twemoji.parse(document.body);
-
-            $("#emojis").picker(emoji => console.log(emoji));
-            });
-
-            console.log("ok");
-        }
-
-
-
-
-
+<<<<<<< HEAD
+<?php include "includes/footer.php" ?> 
+</body>
+=======
     );
     </script>
 
@@ -81,6 +78,7 @@
     include "includes/footer.php";
 ?>
 
+>>>>>>> Camelia
 
 
 
