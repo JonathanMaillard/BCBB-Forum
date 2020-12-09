@@ -38,4 +38,12 @@ function getLastPostsDate($para) {
     return $query;
 }
 
+
+function getAllPostsFromUser($para){
+    require('includes/connect.php');
+    $query=$db->prepare('SELECT post_id FROM posts WHERE post_by IN (SELECT user_id FROM users WHERE user_id = :posts)');
+    $query->execute(array('posts'=> $para));
+    return $query;
+}
+
 ?>
