@@ -14,9 +14,9 @@
         header("location:./topics.php?id=6");
     }
 */
-
     include "includes/connect.php";
     include "includes/header.php";
+    include "includes/functions/functions.php";
 
 ?>
 
@@ -32,10 +32,10 @@
 
     $query->execute();
 
+
     //Loop on each catgory
     while($data = $query->fetch())
     {
-
         // Echo of categories infos
         echo 
             '<div class="category">
@@ -84,11 +84,19 @@
                             <p class="category__text">Topics</p>
                         </div>
                         <div class="col-3">
-                            <p class="category__numbers">15</p>
+                            <p class="category__numbers">';
+                            
+                            $posts = getAllPostsFromBoard($data['cat_id']);
+                            echo $posts->rowCount();
+
+                            echo '</p>
                             <p class="category__text">Posts</p>
                         </div>
                         <div class="col-6">
-                            <p class="category__date">Fri Nov 27</p>
+                            <p class="category__date">';
+                            
+                            
+                            echo '</p>
                             <p class="category__text">Last  post</p>
                         </div>
                     </div>
