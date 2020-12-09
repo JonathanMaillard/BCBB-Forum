@@ -14,9 +14,9 @@
         header("location:./topics.php?id=6");
     }
 */
-
     include "includes/connect.php";
     include "includes/header.php";
+    include "includes/functions/functions.php";
 
 ?>
 
@@ -32,10 +32,10 @@
 
     $query->execute();
 
+
     //Loop on each catgory
     while($data = $query->fetch())
     {
-
         // Echo of categories infos
         echo 
             '<div class="category">
@@ -71,18 +71,32 @@
                             <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
                             <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
                         </div>
-                    </div>
-                    <div class ="row category__end">
+                        </div>
+                        <div class ="row category__end">
                         <div class="col-3 bordered">
-                            <p class="category__numbers">5</p>
+                            <p class="category__numbers">';
+                                $numOfTopics = $db->query("SELECT COUNT(*) AS topic_cat FROM topics WHERE topic_cat =" . $data['cat_id']);
+                                while($topics = $numOfTopics->fetch()){
+                                    echo $topics["topic_cat"];            
+                                } 
+                                $numOfTopics->CloseCursor();
+                            echo'</p>      
                             <p class="category__text">Topics</p>
                         </div>
                         <div class="col-3">
-                            <p class="category__numbers">15</p>
+                            <p class="category__numbers">';
+                            
+                            $posts = getAllPostsFromBoard($data['cat_id']);
+                            echo $posts->rowCount();
+
+                            echo '</p>
                             <p class="category__text">Posts</p>
                         </div>
                         <div class="col-6">
-                            <p class="category__date">Fri Nov 27</p>
+                            <p class="category__date">';
+                            
+                            
+                            echo '</p>
                             <p class="category__text">Last  post</p>
                         </div>
                     </div>

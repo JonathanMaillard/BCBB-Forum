@@ -36,7 +36,7 @@
     <p class="rules">Forum rules</p>
 
     <div class="search">
-    <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic<i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
         <div class="main-search topic-search">
             <input type="text" class="searchTerm" placeholder="Search this forum...">
             <button type="submit" class="searchButton">
@@ -51,7 +51,7 @@
         <div class="banner flex row align-items-center">
             <div class="content-header__element col-8" style="border: solid red 3">
                 <p class="banner__title">
-                    Announcements
+                    Announcementsss
                 </p>
             </div>
             <div class="content-header__element col-1">
@@ -123,10 +123,12 @@
                     <div class="content border-0 m-1">
                         <div class="banner__list-item box__content w-100 flex align-items-center">
                             <div class="col-8">            
-                               <?php echo $data['topic_subject']; ?>
+                            <a href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
+                                <?php echo $data['topic_subject'];?>
+                            </a>  
                             </div>
                             <div class="banner__details col-1">
-                                47
+                                <a>47</a>
                             </div>
                             <div class="banner__details col-1">
                                 965

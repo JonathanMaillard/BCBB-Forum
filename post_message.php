@@ -1,7 +1,13 @@
 <?php
+<<<<<<< HEAD
 session_start();
 
     $arianne = '<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+=======
+    session_start();
+
+    $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
+>>>>>>> Camelia
     $titre = "Home - Rolling Stones Forum";
     $css = 'style';
 
@@ -19,6 +25,7 @@ session_start();
     }
 
 ?>
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -33,6 +40,8 @@ session_start();
 
 </head>
 <body>
+=======
+>>>>>>> Camelia
 
     <div class="main">
         <div class="mainRight">  
@@ -41,11 +50,10 @@ session_start();
                 &nbsp
                 <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="-> Reprend le titre du topic auquel on répond?">
+                    <input type="text" class="form-control" id="formGroupExampleInput">
                 </div>
-                <h2> <?php $topic['subject'] ?> </h2>
-                <form method="POST">
-                    <textarea id="commentContentWrite" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
+                <form method="POST" action="post_message_script.php?topic_id=<?php echo $_GET['topic_id'];?>">
+                    <textarea id="message" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
                     <?php if (isset($message_answer)) {
                     echo $message_answer;
                     } ?>
@@ -59,8 +67,18 @@ session_start();
         </div>
     </div> 
 
+<<<<<<< HEAD
 <?php include "includes/footer.php" ?> 
 </body>
+=======
+    );
+    </script>
+
+<?php
+    include "includes/footer.php";
+?>
+
+>>>>>>> Camelia
 
 
 
