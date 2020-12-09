@@ -88,7 +88,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: start;
-   padding-top: 10px;
+    padding-top: 10px;
 
 }
 #commentContentWrite{
@@ -99,7 +99,7 @@ p {
   }
 
 #avatar {
-    width: 70%;
+    width: 80px !important;
     border-radius: 50%;
     border-style: solid;
     border-width: 1px;
@@ -169,5 +169,4 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: right;
-
 }
