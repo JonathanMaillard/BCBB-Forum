@@ -33,14 +33,14 @@
 
             <div class="title">
             <H2>Topic Read</H2>
-            &nbsp
+             
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
             
           
                 <div class=buttonUp>
                     <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
-                &nbsp
+                 
             
 
                 <div class=buttonUp>   
@@ -49,7 +49,7 @@
                     <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 </div>
-                &nbsp
+                 
                 <div class=buttonUp> 
                     <div class="btn-group" role="group" aria-label="Second group">
                     <button type="button" class="btn btn-secondary">Search this topic...</button>
@@ -92,7 +92,7 @@
                             <label id="location">Location</label>  
                         </div>
                         <!-- Div 7 -->
-                        <!-- Div 8 contient date, signe quote, contenu commentaire, signature, petit bouton ^)-->
+                        <!-- Div 8 contient date, signe quote, contenu commentaire, signature, petit bouton ^-->
                         <div class="detailMessage">
                             <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date"><?php echo $data['post_date'] ?></label>
@@ -124,14 +124,14 @@
         
                 <div class=buttonUp>
                     <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
-                    &nbsp
+                     
                     <div class=buttonUp>   
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                         <button type="button" class="btn btn-secondary"><i class="fas fa-wrench"></i></button>
                         <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     </div>
-                    &nbsp
+                     
                     <label id="postPage">1 Post Page 1/1</label>       
                 </div>  
                 <div class=buttonSerie1>
@@ -145,3 +145,9 @@
                 </div>  
         </div>
     </div>
+
+<?php 
+
+    include "includes/footer.php";
+
+?>
