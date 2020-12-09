@@ -2,12 +2,14 @@
     <?php if ($req_topics_results -> rowCount() > 0) { ?>
         <?php while($topic_results = $req_topics_results->fetch()) { ?>
             <div class="card border-0 my-3">
-                <!-- link to the topic -->
-                <!-- <a class="stretched-link" href="comments.php?id=<?php echo $topic_results['topic_id'];?>"></a> -->
                 <div class="card-body">
                     <div class=" d-flex align-items-center row">
-                        <div class="col-6"><?= $topic_results['topic_subject'];?></div>
-                        <div class="col-2 text-center">
+                        <div class="col-6">
+                            <a class=" text-decoration-none text-secondary" href="comment.php?topic_id=<?php echo $topic_results['topic_id'];?>">
+                                    <?= $topic_results['topic_subject'];?>
+                            </a>
+                        </div>
+                        <div class="col-2 text-center text-secondary">
                             <?php
                                 $req_posts_num = $db->prepare("SELECT post_id FROM posts WHERE post_topic = :topic_id");                                                        
                                 $req_posts_num->execute(array('topic_id' => $topic_results['topic_id']));
@@ -16,7 +18,9 @@
                                 $req_posts_num->closeCursor();
                             ?>
                         </div>
-                        <div class="col-2 text-center">views</div> 
+                        <div class="col-2 text-center text-secondary">
+                            <?php echo $topic_results['topic_views'];?>
+                        </div> 
                         <div class="col-2">
                             <div class="row">                       
                                 <div class="font-italic pr-1">by</div>

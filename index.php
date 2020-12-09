@@ -16,7 +16,7 @@
 */
     include "includes/connect.php";
     include "includes/header.php";
-    include "includes/functions/functions.php";
+    require_once "includes/functions/functions.php";
 
 ?>
 

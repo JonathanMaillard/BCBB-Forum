@@ -46,4 +46,15 @@ function getAllPostsFromUser($para){
     return $query;
 }
 
+
+function incrementTopicViews() {
+    require('includes/connect.php');
+    $query = $db->prepare("UPDATE topics SET topic_views = topic_views + 1 WHERE topic_id = :topicId");
+    $query->execute(array(
+        'topicId' => $_GET['topic_id']
+    ));
+    return $query;
+}
+
+
 ?>

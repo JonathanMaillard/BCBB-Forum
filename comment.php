@@ -5,9 +5,15 @@
     error_reporting(E_ALL);
 
     include "includes/connect.php";
+    require_once "includes/functions/functions.php";
+
+
+    incrementTopicViews();
 
     // GET ID of the selected topic
     $topic_id = $_GET["topic_id"];
+
+
 
     // GET the topic name in the DB
 

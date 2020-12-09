@@ -55,13 +55,11 @@
         <div class="card border-0 my-3">
             <div class="card-body">
                 <div class=" d-flex align-items-center row">
-                    <div class="col-6">
+                    <div class="col-6 text-secondary">
                         Welcome to The Rolling Stones Forum ! Oww Yeahhh!
                     </div>
-                    <div class="col-2 text-center">
-                        00
-                    </div>
-                    <div class="col-2 text-center">00</div> 
+                    <div class="col-2 text-center text-secondary">0</div>
+                    <div class="col-2 text-center text-secondary">0</div> 
                     <div class="col-2">
                         <div class="row">                       
                             <div class="font-italic pr-1">by</div>
@@ -99,7 +97,7 @@
         </div>
         <?php
         
-        $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by 
+        $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by, topic_views
         FROM topics t
         WHERE topic_cat = ' . $category_id);
 
@@ -110,11 +108,11 @@
                 <div class="card-body">
                     <div class=" d-flex align-items-center row">
                         <div class="col-6">
-                            <a class=" text-decoration-none " href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
+                            <a class=" text-decoration-none text-secondary" href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
                                 <?= $data['topic_subject'];?>
                             </a>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-2 text-center text-secondary">
                             <?php
                                 $req_posts_num = $db->prepare("SELECT post_id FROM posts WHERE post_topic = :topic_id");                                                        
                                 $req_posts_num->execute(array('topic_id' => $data['topic_id']));
@@ -123,7 +121,11 @@
                                 $req_posts_num->closeCursor();
                             ?>
                         </div>
-                        <div class="col-2 text-center">views</div> 
+                        <div class="col-2 text-center text-secondary">
+                            <?php 
+                                echo $data['topic_views'];
+                            ?>
+                        </div> 
                         <div class="col-2">
                             <div class="row">                       
                                 <div class="font-italic pr-1">by</div>

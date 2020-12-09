@@ -20,7 +20,7 @@ if (!$req_posts) {
         ?>
         <!-- last_posts title first_row -->
         <div class="last-posts card my-2 px-2 border-0">              
-            <div class=" card-body row d-flex ">
+            <div class=" card-body">
                 <!-- UNCOMMENT to active the link -->
                 <!-- <a href="#" class="stretched-link"></a> -->  
                 <div class="last-posts__title">
@@ -41,7 +41,7 @@ if (!$req_posts) {
                     ?>...
                 </div>
                 <!-- last_posts time-diff third_row                  -->
-                <div class="last-posts__time-diff col text-secondary text-right"> 
+                <div class="last-posts__time-diff text-secondary text-right mt-2"> 
                     <?php
                         // get the time difference converting stamptime to string 
                         $current_date = strtotime(date("Y-m-d H:i:s"));
