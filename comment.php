@@ -11,6 +11,10 @@
     include "includes/connect.php";
     include "includes/header.php";
 
+    // echo $_POST["message"];
+        // if (isset ($_POST["message"])) {
+        //     echo $_POST["message"];
+        // }
 
 ?>
 <head>
@@ -65,18 +69,12 @@
                             <label id="postNumber">Total Posts</label>
                             <label id="location">Location</label>  
                         </div>
-                        <!-- Div 7 -->
-                        <!-- Div 8 contient date, signe quote, contenu commentaire, signature, petit bouton ^)-->
                         <div class="detailMessage">
-                            <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date">Ici vient la date</label>
                             <div class="commentContent">
-                            <textarea id="textarea" cols= "70" rows="5">Ici vient le message</textarea>
+                            <textarea id="textarea" cols= "70" rows="5"></textarea>
                             </div>
-                            <!-- Div 9 -->
-                            <!-- Div 10 contient signature et petit bouton ^ -->
                             <label class= "signature">Ici vient la signature</label>
-                            <!-- Div 10 -->
                         </div> 
                     </div>
                     <div class="commentInside">
@@ -86,18 +84,12 @@
                             <label id="postNumber">Total Posts</label>
                             <label id="location">Location</label>  
                         </div>
-                        <!-- Div 7 -->
-                        <!-- Div 8 contient date, signe quote, contenu commentaire, signature, petit bouton ^)-->
                         <div class="detailMessage">
-                            <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date">Ici vient la date</label>
                             <div class="commentContent">
                             <textarea id="textarea" cols= "70" rows="5">Ici vient le message</textarea>
                             </div>
-                            <!-- Div 9 -->
-                            <!-- Div 10 contient signature et petit bouton ^ -->
                             <label class= "signature">Ici vient la signature</label>
-                            <!-- Div 10 -->
                         </div> 
                     </div>
                     

@@ -1,7 +1,8 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php
-    session_start();
 
     $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
     $titre = "Home - Rolling Stones Forum";
@@ -10,15 +11,29 @@
 
     include "includes/connect.php";
     include "includes/header.php";
-
+    if(isset($_SESSION['id'])) {
     if (isset($_POST['message_submit'],$_POST['message'])){
         if (!empty($_POST['message'])){
 
+            // $response = htmlspecialchars($_POST['message']);
+
+            $creationDate = date("Y-m-d H:i:s");
+                
+            $values = array(':topic_subject'=>$_POST['topic_subject'], ':post_date'=>$creationDate, ':post_by'=>$_SESSION['id'], ":topic_subject"=>$_GET['topic_id']);
+            $req = $db->prepare('INSERT INTO posts(message, post_date, post_by, topic_subject) VALUES(:message, :post_date, :post_by, :topic_subject)');
+            $req->execute($values);
+            
+            $postId = $db->ins();
+            $values2 = array(':content'=>$_POST['message'], ':post_date'=>$creationDate, ':post_topic'=>$topicId, ':post_by'=>$_SESSION['id']);
+            $req = $db->prepare('INSERT INTO posts (post_content, post_date, post_topic, post_by) VALUES(:content, :post_date, :post_topic, :post_by)');
+            $req->execute($values2);
+            
         }
         else{
             $message_answer = "You can't send an empty message, please try again";
         }
     }
+}
 
 ?>
 <head>
@@ -38,10 +53,10 @@
                 &nbsp
                 <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="-> Reprend le titre du topic auquel on répond?">
+                    <input id="topic_subject" type="text" class="form-control" id="formGroupExampleInput" placeholder="-> Reprend le titre du topic auquel on répond?">
                 </div>
-                <h2> <?php $topic['subject'] ?> </h2>
-                <form method="POST">
+                <!-- <h2> <?php $topic['topic_subject'] ?> </h2> -->
+                <form action="" method="POST">
                     <textarea id="commentContentWrite" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
                     <?php if (isset($message_answer)) {
                     echo $message_answer;
