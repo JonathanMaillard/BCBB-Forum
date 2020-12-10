@@ -2,17 +2,11 @@
 
                 <aside class="col-md-3">
                     
-                    
-                    <div class="main-search">
-                        <input type="text" class="searchTerm" placeholder="Search...">
-                        <button type="submit" class="searchButton">
-                            <i class="fa fa-search"></i>
-                         </button>
-                         <button type="submit" class="searchOption">
-                             <i class="fa fa-cog"></i>
-                        </button>
-                    </div>
 
+                    <!-- search bar includes -->
+                    <?php include 'includes/req_search.php' ; ?>
+                    <?php include 'includes/search_bar.php' ;?>
+                  
                     <div class="border"></div>
 
                     <?php

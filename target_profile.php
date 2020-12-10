@@ -34,12 +34,6 @@ if(isset($_SESSION['id'])) {
         $insertSignature->execute(array($newInputUserSignature, $_SESSION['id']));
     }
 
-   /* if(isset($_POST['inputAvatar']) AND !empty($_POST['inputAvatar']) AND $_POST['inputAvatar'] != $user['user_avatar']) {
-        $newInputAvatar = htmlspecialchars($_POST['inputAvatar']);
-        $insertInputAvatar = $db->prepare("UPDATE users SET user_avatar = ? WHERE user_id = ?");
-        $insertInputAvatar->execute(array($newInputAvatar, $_SESSION['id']));
-    } */
-
     if(isset($_POST['inputPassword']) AND !empty($_POST['inputPassword']) AND isset($_POST['inputPassword2']) AND !empty($_POST['inputPassword2'])) {
         $password1 = hash('sha256', $_POST['inputPassword']);
         $password2 = hash('sha256', $_POST['inputPassword2']);
@@ -53,9 +47,11 @@ if(isset($_SESSION['id'])) {
         }
     }
 
-    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+// CHANGEMENT DE L'AVATAR PAR LE USER AVEC LE BOUTON "PARCOURIR"
+
+    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {  //if(isset($_FILES['avatar']) AND $_FILES['avatar']['error'] == 0) {
         $maxSize = 2097152; //octets
-        $validExtensions = array('jpg', 'jpeg', 'png');
+        $validExtensions = array('jpg', 'jpeg', 'png', 'gif');
 
         if($_FILES['avatar']['size'] <= $maxSize) {
             $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
@@ -67,16 +63,16 @@ if(isset($_SESSION['id'])) {
                 if($result) {
                     $updateavatar = $db->prepare('UPDATE users SET user_avatar = :avatar WHERE user_id = :id');
                     $updateavatar->execute(array(
-                    'avatar' => $_SESSION['id'].".".$extensionUpload,
+                    'avatar' =>"avatars/" . $_SESSION['id'].".".$extensionUpload,
                     'id' => $_SESSION['id']
                     ));
-
+                
                    // header('Location: profile.php?id='.$_SESSION['id']);
                 } else {
                     $msg = "Error importing your profile picture";
                 }
             } else {
-                $msg = "Your profile picture must be in jpg, jpeg or png format";
+                $msg = "Your profile picture must be in jpg, jpeg, png or gif format";
             }
         } else {
             $msg = "Your profile picture must not exceed 2MB";
@@ -88,14 +84,11 @@ if(isset($_SESSION['id'])) {
 
 <h2 class="title">Your profile has been updated</h2>
 
-<p class="resume">Username : <?php echo $_POST["inputUsername"]; ?></p>
-<p class="resume">Signature : <?php echo $_POST["inputUserSignature"];?></p>
-<p class="resume">Avatar : <img src= "<?php echo $path; ?>" class="imgAvatar" width="60" alt="Avatar"/></p>
 
 
-
-
-
+<p class="resume">Username : <?php echo htmlspecialchars($_POST["inputUsername"]); ?></p>
+<p class="resume">Signature : <?php echo htmlspecialchars($_POST["inputUserSignature"]);?></p>
+<p class="resume">Avatar : <img src= "<?php echo $path; ?>" class="imgAvatar" width="40" alt="Avatar"/></p>
 
 
 <?php 

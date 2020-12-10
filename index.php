@@ -9,9 +9,14 @@
     $titre = "Home - Rolling Stones Forum";
     $css = "home";
 
-
+/* 
+    if($_SERVER["REQUEST_URI"] = "/BCBB-Forum/index.php?mdp=WeAreTheChampions") {      // CODE MYSTERY
+        header("location:./topics.php?id=6");
+    }
+*/
     include "includes/connect.php";
     include "includes/header.php";
+    include "includes/functions/functions.php";
 
 ?>
 
@@ -27,10 +32,10 @@
 
     $query->execute();
 
+
     //Loop on each catgory
     while($data = $query->fetch())
     {
-
         // Echo of categories infos
         echo 
             '<div class="category">
@@ -39,7 +44,7 @@
                     <div class="row category__start">
                         <div class="col-3">';
 
-                        if($data['cat_id'] == 1){
+                        if($data['cat_id'] == 1){   
                             echo "<img class='category__img' src='./images/guitar.png'>";
                         }
                         else if($data['cat_id'] == 2){
@@ -51,27 +56,44 @@
                         else if($data['cat_id'] == 4){
                             echo "<img class='category__img' src='./images/events.png'>";
                         }
+                        else if($data['cat_id'] == 5){
+                            echo "<img class='category__img' src='./images/dice.png'>";
+                        }
+                        else if($data['cat_id'] == 6){
+                            echo "<img class='category__img' src='./images/mystery.png'>";
+                        }
                         else{
                             echo "";
                         }
-
+                        // ??? INTERCALER ICI LE CODE POUR LA MYSTERY PAGE ???
                         echo '</div>
                         <div class="col-9">
                             <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
                             <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
                         </div>
-                    </div>
-                    <div class ="row category__end">
+                        </div>
+                        <div class ="row category__end">
                         <div class="col-3 bordered">
-                            <p class="category__numbers">5</p>
+                            <p class="category__numbers">';
+                                $topics= getAllTopicsFromCategories($data['cat_id']);
+                                echo $topics->rowCount();
+                                echo'</p>      
                             <p class="category__text">Topics</p>
                         </div>
                         <div class="col-3">
-                            <p class="category__numbers">15</p>
+                            <p class="category__numbers">';
+                                $posts = getAllPostsFromCategories($data['cat_id']);
+                                echo $posts->rowCount();
+                            echo '</p>
                             <p class="category__text">Posts</p>
                         </div>
                         <div class="col-6">
-                            <p class="category__date">Fri Nov 27</p>
+                            <p class="category__date">';
+                                $req_posts = getLastPostsDate($data['cat_id']);
+                                $post = $req_posts->fetch();
+                                $date = new DateTime($post['post_date']);
+                                echo $date->format('D M d');
+                            echo '</p>
                             <p class="category__text">Last  post</p>
                         </div>
                     </div>
@@ -90,6 +112,7 @@
         */
 
     } //loop end
+    
     $query->CloseCursor();
 ?>
     

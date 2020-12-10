@@ -16,7 +16,7 @@
 <h2 class="title">Subscription</h2>
 
 
-<form class="formulary" action="target_register.php" method="POST" enctype="multipart/form-data">
+<form class="formulary" action="target_register.php" method="POST">
 
     <div class="form-row">
         <div class="form-group col-md-6">
