@@ -37,8 +37,12 @@ if (!$req_posts) {
                 <div class="last-posts__post-content text-secondary pt-1"> 
                     <?php 
                     // limit the number of characters displayed
-                    echo substr($post['post_content'], 0,50);
-                    ?>...
+                    if (strlen($post['post_content']) <= 50 ) {
+                        echo $post['post_content'];
+                    }else{
+                        echo substr($post['post_content'], 0,50);?>...<?php
+                    }                       
+                    ?>
                 </div>
                 <!-- last_posts time-diff third_row                  -->
                 <div class="last-posts__time-diff text-secondary text-right mt-2"> 
