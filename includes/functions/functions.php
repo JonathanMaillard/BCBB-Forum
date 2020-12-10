@@ -1,4 +1,10 @@
 <?php
+function getCategories($id){
+    require('includes/connect.php');
+    $query=$db->prepare('SELECT * FROM categories WHERE cat_id = ?');
+    $query->execute([$id]);
+    return $query;
+}
 
 function getAllTopicsFromCategories($para){
     require('includes/connect.php');

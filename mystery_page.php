@@ -7,20 +7,21 @@
     
     include 'includes/connect.php' ;
     include 'includes/header.php';
+    require_once "includes/functions/functions.php";
+
+
+    $cat = getCategories($_GET['id'])->fetch();
     
 ?>
 
 <?php 
-    if ( 0 ) { ?>
-
-    <?php    
+    if ($_SERVER['REQUEST_URI'] == "/BCBB-Forum/mystery_page.php?id=6rollingpsw") {
+        header("Location: topics.php?id=". $cat['cat_id']);    
     }else{ ?>
-        <div class="text-center">
-            <div class="">
-                <img class="img-fluid" src="./images/mystery.png" alt="acces_denied">
-            </div>
+        <div class="container text-center">
+                <img class="img-fluid my-5" src="./images/mystery.png" alt="acces_denied">
             <div class="text-center display-4">
-                Get your access badge by participating and being active on the forum.    
+                Get your password by participating and being active on the forum.    
             </div>
         </div>
     <?php }

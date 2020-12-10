@@ -9,11 +9,6 @@
     $titre = "Home - Rolling Stones Forum";
     $css = "home";
 
-/* 
-    if($_SERVER["REQUEST_URI"] = "/BCBB-Forum/index.php?mdp=WeAreTheChampions") {      // CODE MYSTERY
-        header("location:./topics.php?id=6");
-    }
-*/
     include "includes/connect.php";
     include "includes/header.php";
     require_once "includes/functions/functions.php";
@@ -74,8 +69,6 @@
                                 }else{
                                     echo '<a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>';
                                 }
-
-
 
                             echo '<p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
                         </div>
