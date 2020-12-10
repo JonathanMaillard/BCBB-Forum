@@ -58,8 +58,8 @@
                     <div class="col-6 text-secondary">
                         Welcome to The Rolling Stones Forum ! Oww Yeahhh!
                     </div>
-                    <div class="col-2 text-center text-secondary">0</div>
-                    <div class="col-2 text-center text-secondary">0</div> 
+                    <div class="col-2 text-center text-secondary">47</div>
+                    <div class="col-2 text-center text-secondary">189</div> 
                     <div class="col-2">
                         <div class="row">                       
                             <div class="font-italic pr-1">by</div>
@@ -164,7 +164,7 @@
             $query->execute(); 
 
             while($data = $query->fetch()) { ?>
-                    <div class="card border-0 my-3">
+            <div class="card border-0 my-3">
                 <div class="card-body">
                     <div class=" d-flex align-items-center row">
                         <div class="col-6">
