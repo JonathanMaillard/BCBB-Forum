@@ -25,14 +25,7 @@
 
     include "includes/header.php";
 
-<<<<<<< HEAD
-?>
-<head>
-    <meta charset="utf-8mb4">
-    <title>Comment</title>
-=======
 ?>  
->>>>>>> Camelia
     
     <div class="main">
         <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
@@ -95,7 +88,20 @@
                                     </strong>
                                 </a>
                             </label>
-                            <label id="postNumber">Total Posts</label>
+                            <label id="postNumber">
+                                <?php $req_total = $db-> query('SELECT COUNT(post_id) AS numberPosts FROM posts WHERE post_by = '. $data['post_by']);
+                                while($total = $req_total->fetch()) { ?>
+                                    <a href="#"> 
+                                        <strong>
+                                            <?php 
+                                                echo $total['numberPosts'];
+                                    }
+                                                $req_total->closeCursor();
+                                            ?>
+                                        </strong>
+                                    </a>
+                    
+                            </label>
                             <label id="location">Location</label>  
                         </div>
                         <!-- Div 7 -->
@@ -155,6 +161,6 @@
 
 <?php 
 
-    include "includes/footer.php";
+    // include "includes/footer.php";
 
 ?>

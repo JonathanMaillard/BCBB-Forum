@@ -75,27 +75,24 @@
                         <div class ="row category__end">
                         <div class="col-3 bordered">
                             <p class="category__numbers">';
-                                $numOfTopics = $db->query("SELECT COUNT(*) AS topic_cat FROM topics WHERE topic_cat =" . $data['cat_id']);
-                                while($topics = $numOfTopics->fetch()){
-                                    echo $topics["topic_cat"];            
-                                } 
-                                $numOfTopics->CloseCursor();
-                            echo'</p>      
+                                $topics= getAllTopicsFromCategories($data['cat_id']);
+                                echo $topics->rowCount();
+                                echo'</p>      
                             <p class="category__text">Topics</p>
                         </div>
                         <div class="col-3">
                             <p class="category__numbers">';
-                            
-                            $posts = getAllPostsFromBoard($data['cat_id']);
-                            echo $posts->rowCount();
-
+                                $posts = getAllPostsFromCategories($data['cat_id']);
+                                echo $posts->rowCount();
                             echo '</p>
                             <p class="category__text">Posts</p>
                         </div>
                         <div class="col-6">
                             <p class="category__date">';
-                            
-                            
+                                $req_posts = getLastPostsDate($data['cat_id']);
+                                $post = $req_posts->fetch();
+                                $date = new DateTime($post['post_date']);
+                                echo $date->format('D M d');
                             echo '</p>
                             <p class="category__text">Last  post</p>
                         </div>
