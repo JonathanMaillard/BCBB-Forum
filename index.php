@@ -68,31 +68,52 @@
                         // ??? INTERCALER ICI LE CODE POUR LA MYSTERY PAGE ???
                         echo '</div>
                         <div class="col-9">
-                            <h4 class="category__title"><a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>
-                            <p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
+                            <h4 class="category__title">';
+                                if ($data['cat_id'] == 6) {
+                                    echo '<a href="./mystery_page.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>';
+                                }else{
+                                    echo '<a href="./topics.php?id='.$data['cat_id'].'">'.stripslashes(htmlspecialchars($data['cat_name'])).'</a></h4>';
+                                }
+
+
+
+                            echo '<p class="category__description">'.stripslashes(htmlspecialchars($data['cat_description'])).'</p>
                         </div>
                         </div>
                         <div class ="row category__end">
                         <div class="col-3 bordered">
                             <p class="category__numbers">';
-                                $topics= getAllTopicsFromCategories($data['cat_id']);
-                                echo $topics->rowCount();
+                                if ($data['cat_id'] == 5) {
+                                    
+                                }else{
+                                    $topics= getAllTopicsFromCategories($data['cat_id']);
+                                    echo $topics->rowCount();
+                                }
                                 echo'</p>      
                             <p class="category__text">Topics</p>
                         </div>
                         <div class="col-3">
                             <p class="category__numbers">';
-                                $posts = getAllPostsFromCategories($data['cat_id']);
-                                echo $posts->rowCount();
+                                if ($data['cat_id'] == 5) {
+                                    
+                                }else{
+                                    $posts = getAllPostsFromCategories($data['cat_id']);
+                                    echo $posts->rowCount();    
+                                }
                             echo '</p>
                             <p class="category__text">Posts</p>
                         </div>
                         <div class="col-6">
                             <p class="category__date">';
-                                $req_posts = getLastPostsDate($data['cat_id']);
-                                $post = $req_posts->fetch();
-                                $date = new DateTime($post['post_date']);
-                                echo $date->format('D M d');
+                                if ($data['cat_id'] == 5) {
+
+                                    
+                                }else{
+                                    $req_posts = getLastPostsDate($data['cat_id']);
+                                    $post = $req_posts->fetch();
+                                    $date = new DateTime($post['post_date']);
+                                    echo $date->format('D M d');    
+                                }
                             echo '</p>
                             <p class="category__text">Last  post</p>
                         </div>
