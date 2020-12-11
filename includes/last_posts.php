@@ -22,7 +22,7 @@ if (!$req_posts) {
         <div class="last-posts card my-2 px-2 border-0">              
         <div class=" card-body">
             <!-- UNCOMMENT to active the link -->
-            <!-- <a href="comment.php?topic_id=<?php echo $post['post_topic'];?>" class="stretched-link"></a>   -->
+            <a href="comment.php?topic_id=<?php echo $post['post_topic'];?>" class="stretched-link"></a>  
             <div class="last-posts__title">
                 <?php
                     // get the topic subject 
