@@ -1,6 +1,6 @@
 <?php
 // request to get the last posts 
-$req_posts = $db->query('SELECT * FROM posts ORDER BY post_date DESC LIMIT 3');
+$req_posts = $db->query('SELECT * FROM posts WHERE post_search = 0 ORDER BY post_date DESC LIMIT 3');
 if (!$req_posts) {
     echo 'There is no post to display' .mysql_error();
 } else {
