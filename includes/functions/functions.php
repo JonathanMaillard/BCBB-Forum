@@ -1,8 +1,8 @@
 <?php
-function getCategories($id){
+function getCategories($para){
     require('includes/connect.php');
     $query=$db->prepare('SELECT * FROM categories WHERE cat_id = ?');
-    $query->execute([$id]);
+    $query->execute([$para]);
     return $query;
 }
 

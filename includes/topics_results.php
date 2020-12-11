@@ -1,5 +1,5 @@
 <?php if ($search_done == true) { ?>
-    <?php if ($req_topics_results -> rowCount() > 0) { ?>
+    <?php if ($req_topics_results -> rowCount() > 0 ) { ?>
         <?php while($topic_results = $req_topics_results->fetch()) { ?>
             <div class="card border-0 my-3">
                 <div class="card-body">
