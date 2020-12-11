@@ -31,13 +31,39 @@
         <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
         <div class="mainRight">   
 
+            <?php
+
+            // GET the id of the user who created the topic
+
+            $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
+            $query->execute();
+
+            $info = $query->fetch(PDO::FETCH_ASSOC);
+            $topicUser = $info["topic_by"];
+
+            while ($info = $query->fetch()){
+                if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
+                    ?> 
+                        <form class="form" action="lock_topic.php" method="POST">
+                                <button class="btn btn-primary" name="lock">Lock topic</button>
+                        </form>
+                    <?php
+                    }
+                    
+                    if($info["topic_locked"]){
+                    ?>
+                    <span class="text-muted">[Locked]</span>
+                    <?php
+                    }
+                    
+            } ?>
+
             <div class="title">
-            <H2>Topic Read</H2>
+            <H2>Topic Read</H2> 
              
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
-            
-          
+
                 <div class=buttonUp>
                     <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
                  
@@ -94,7 +120,7 @@
                                     <a href="#"> 
                                         <strong>
                                             <?php 
-                                                echo $total['numberPosts'];
+                                                echo 'Posts : ' . $total['numberPosts'];
                                     }
                                                 $req_total->closeCursor();
                                             ?>
@@ -159,7 +185,9 @@
         </div>
     </div>
 
-<?php 
+                            <?php
+
+ 
 
     // include "includes/footer.php";
 
