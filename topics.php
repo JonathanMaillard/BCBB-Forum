@@ -55,13 +55,11 @@
         <div class="card border-0 my-3">
             <div class="card-body">
                 <div class=" d-flex align-items-center row">
-                    <div class="col-6">
+                    <div class="col-6 text-secondary">
                         Welcome to The Rolling Stones Forum ! Oww Yeahhh!
                     </div>
-                    <div class="col-2 text-center">
-                        00
-                    </div>
-                    <div class="col-2 text-center">00</div> 
+                    <div class="col-2 text-center text-secondary">47</div>
+                    <div class="col-2 text-center text-secondary">189</div> 
                     <div class="col-2">
                         <div class="row">                       
                             <div class="font-italic pr-1">by</div>
@@ -99,7 +97,7 @@
         </div>
         <?php
         
-        $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by 
+        $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by, topic_views
         FROM topics t
         WHERE topic_cat = ' . $category_id);
 
@@ -110,11 +108,11 @@
                 <div class="card-body">
                     <div class=" d-flex align-items-center row">
                         <div class="col-6">
-                            <a class=" text-decoration-none " href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
+                            <a class=" text-decoration-none text-secondary" href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
                                 <?= $data['topic_subject'];?>
                             </a>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-2 text-center text-secondary">
                             <?php
                                 $req_posts_num = $db->prepare("SELECT post_id FROM posts WHERE post_topic = :topic_id");                                                        
                                 $req_posts_num->execute(array('topic_id' => $data['topic_id']));
@@ -123,7 +121,11 @@
                                 $req_posts_num->closeCursor();
                             ?>
                         </div>
-                        <div class="col-2 text-center">views</div> 
+                        <div class="col-2 text-center text-secondary">
+                            <?php 
+                                echo $data['topic_views'];
+                            ?>
+                        </div> 
                         <div class="col-2">
                             <div class="row">                       
                                 <div class="font-italic pr-1">by</div>
@@ -154,7 +156,7 @@
         
         if ($category_id == 5) { 
             
-            $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by 
+            $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by, topic_views
             FROM topics 
             ORDER BY topic_date DESC
             LIMIT 5');
@@ -162,43 +164,55 @@
             $query->execute(); 
 
             while($data = $query->fetch()) { ?>
-        
-
-            <div id="banner__list" class="box__content">
-                    <div class="content border-0 m-1">
-                        <div class="banner__list-item box__content w-100 flex align-items-center">
-                            <div class="col-8">
-                            <a href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
-                                <?php echo $data['topic_subject'];?>
-                            </a>  
-                            </div>
-                            <div class="banner__details col-1">
-                                <a>47</a>
-                            </div>
-                            <div class="banner__details col-1">
-                                965
-                            </div>
-                            <div class="banner__details col-2">
-                                <div class="flex">
-                                    <div class="font-weight-light">by </div>
-                                    <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =" .  $data['topic_by']); 
-                                    while($user = $req_user->fetch()) { ?>
-                                    <a href="#" >
-                                    <strong> 
+            <div class="card border-0 my-3">
+                <div class="card-body">
+                    <div class=" d-flex align-items-center row">
+                        <div class="col-6">
+                            <a class=" text-decoration-none text-secondary" href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
+                                <?= $data['topic_subject'];?>
+                            </a>
+                        </div>
+                        <div class="col-2 text-center text-secondary">
+                            <?php
+                                $req_posts_num = $db->prepare("SELECT post_id FROM posts WHERE post_topic = :topic_id");                                                        
+                                $req_posts_num->execute(array('topic_id' => $data['topic_id']));
+                                $posts_cnt = $req_posts_num->rowCount();
+                                echo $posts_cnt;
+                                $req_posts_num->closeCursor();
+                            ?>
+                        </div>
+                        <div class="col-2 text-center text-secondary">
+                            <?php 
+                                echo $data['topic_views'];
+                            ?>
+                        </div> 
+                        <div class="col-2">
+                            <div class="row">                       
+                                <div class="font-italic pr-1">by</div>
+                                <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =" .  $data['topic_by']); 
+                                while($user = $req_user->fetch()) { ?>
+                                <strong class="text-info"> 
                                     <?php
                                         echo $user['user_name'];
                                         }
                                         $req_user->closeCursor();
                                     ?>
-                                    </strong></a>
-                                <div class="font-weight-light">
-                                    <?php echo $data['topic_date'];?>
-                                </div>
+                                </strong>                    
                             </div>
-                        </div>
-                    </div>  
+                            <div class="row text-secondary">
+                                <small>
+                                    <?php
+                                        $topicDate = new DateTime($data['topic_date']);
+                                        echo $topicDate->format('D M d, H:i');
+                                    ?>
+                                </small>
+                            </div>
+                        </div> 
+                    </div>
+                    
                 </div>
             </div>
+
         <?php } 
         } ?>
         

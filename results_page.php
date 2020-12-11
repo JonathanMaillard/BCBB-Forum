@@ -44,7 +44,7 @@
             <!-- <i class="fa fa-comments-o" aria-hidden="true"></i> -->
         </div>
         <div class="content-header__element col-2 text-center">
-            <i class="fa fa-eye" aria-hidden="true"></i>
+            <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
         </div>
         <div class="content-header__element col-2 text-center">
             <i class="fa fa-clock-o" aria-hidden="true"></i>

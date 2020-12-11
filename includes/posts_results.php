@@ -2,13 +2,15 @@
     <?php if ($req_posts_results -> rowCount() > 0) { ?>
         <?php while($posts_results = $req_posts_results->fetch()) { ?>
             <div class="card border-0 my-3">
-                <!-- link to the topic -->
-                <!-- <a class="stretched-link" href="comments.php?id=<?php echo $posts_results['post_id'] .'#'. $posts_results['post_id'];?>"> -->
                 <div class="card-body">
                     <div class=" d-flex align-items-center row">
-                        <div class="col-6" ><?= $posts_results['post_content'];?></div> 
-                        <div class="col-2"></div>
-                        <div class="col-2 text-center">views</div>
+                        <div class="col-6">
+                            <a class=" text-decoration-none text-secondary" href="comment.php?topic_id=<?php echo $data['topic_id'];?>">
+                                <?= $posts_results['post_content'];?>
+                            </a>
+                        </div>
+                        <div class="col-2 text-secondary"></div>
+                        <div class="col-2 text-center text-secondary"></div>
                         <div class="col-2">
                             <div class="row ">                       
                                 <div class="font-italic pr-1">by</div>

@@ -19,7 +19,7 @@ if (!$req_last_users) {
         {
         ?>
             <!-- last_active_users cards-->
-            <div class="last-active-users card col px-2 py-2 border-0 my-2"> 
+            <div class="last-active-users card col px-2 py-2 border-0 my-2 text-center"> 
                 <!-- UNCOMMENT next line to active the link -->
                 <!-- <a href="#" class="stretched-link"></a> -->   
 
@@ -30,8 +30,14 @@ if (!$req_last_users) {
                     <?php echo($user['user_name']);?>
                 </div>
                 <!-- last_active_users user-signature third_row -->
-                <div class="last-active-user__signature row mx-auto text-secondary text-truncate"> 
-                    <?php echo($user['user_signature']);?>
+                <div class="last-active-user__signature row mx-auto text-secondary "> 
+                    <?php
+                        if (strlen($user['user_signature']) <= 20) {
+                            echo($user['user_signature']);
+                        }else{
+                            echo substr($user['user_signature'], 0, 20);?>...<?php
+                        }
+                    ?>
                 </div> 
             </div>
         <?php
