@@ -73,17 +73,8 @@
              
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
-<<<<<<< HEAD
-            
-          
-                <!-- <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a> -->
-=======
 
-                <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
->>>>>>> development
+                
                  
             
 
@@ -164,9 +155,6 @@
                        
                             <label class= "date"><?php echo $data['post_date'] ?></label>
                             <div class="commentContent">
-<<<<<<< HEAD
-                            <div id="textarea" cols= "70" rows="5"><?php echo $data['post_content'] ?></textarea>
-=======
                             
 
                             <?php 
@@ -186,7 +174,6 @@
                             <div id="textarea" cols= "70" rows="5"><?php echo $emojis ?>
                             </div>
 
->>>>>>> development
                             </div>
                     
                             <label class= "signature">
