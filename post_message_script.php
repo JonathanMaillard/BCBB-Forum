@@ -27,11 +27,11 @@ if(isset($_SESSION['id'])) {
     "post_date"=>$creationDate,
     "post_topic"=>$_GET['topic_id'],
     "post_by"=>$_SESSION['id']));
-
 }
 
 
 include "includes/footer.php";
 
 
-?>
+?>$msg['$_POST["message"'] = str_replace(':)', '<img src="emojis/emo_smiley.png"/>', $msg[$_POST["message']);
+       

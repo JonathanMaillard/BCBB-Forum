@@ -5,9 +5,15 @@
     error_reporting(E_ALL);
 
     include "includes/connect.php";
+    require_once "includes/functions/functions.php";
+
+
+    incrementTopicViews();
 
     // GET ID of the selected topic
     $topic_id = $_GET["topic_id"];
+
+
 
     // GET the topic name in the DB
 
@@ -136,7 +142,25 @@
                             <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date"><?php echo $data['post_date'] ?></label>
                             <div class="commentContent">
-                            <textarea id="textarea" cols= "70" rows="5"><?php echo $data['post_content'] ?></textarea>
+                            
+
+                            <?php 
+
+                            $emoji_replace = array(":)", ":-)", ":smile:", ">:(", ">:-(", ":angry:", "<3", ":love:", ":'", ":'(", ":cry:", ":D", ":-D", ":lol:", ";)", ";-)", ":wink:", "8)", "8-)", ":nerd:", ":(", ":-(", ":sad:" );
+
+                            $emoji_new = array('<img src="emojis/emo_smile.png"/>', '<img src="emojis/emo_smile.png">', '<img src="emojis/emo_smile.png">', '<img src="emojis/emo_angry.png">', '<img src="emojis/emo_angry.png">',
+                                                '<img src="emojis/emo_angry.png">', '<img src="emojis/emo_love.png">', '<img src="emojis/emo_love.png">', '<img src="emojis/emo_cry.png">',
+                                                '<img src="emojis/emo_cry.png">', '<img src="emojis/emo_cry.png">', '<img src="emojis/emo_lol.png">', '<img src="emojis/emo_lol.png">', '<img src="emojis/emo_lol.png">',
+                                                '<img src="emojis/emo_wink.png">', '<img src="emojis/emo_wink.png">', '<img src="emojis/emo_wink.png">','<img src="emojis/emo_nerd.png">', '<img src="emojis/emo_nerd.png">',
+                                                '<img src="emojis/emo_nerd.png">', '<img src="emojis/emo_sad.png">', '<img src="emojis/emo_sad.png">', '<img src="emojis/emo_sad.png">' );
+                            
+                            $emojis = str_replace($emoji_replace, $emoji_new, $data['post_content']); 
+                            
+                            ?>
+
+                            <div id="textarea" cols= "70" rows="5"><?php echo $emojis ?>
+                            </div>
+
                             </div>
                             <!-- Div 9 -->
                             <!-- Div 10 contient signature et petit bouton ^ -->
