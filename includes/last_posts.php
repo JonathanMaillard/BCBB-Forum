@@ -70,7 +70,7 @@ if (!$req_posts) {
                         } else if ($seconds_ago >= 60) {
                             echo intval($seconds_ago / 60) . " minutes ago";
                         } else {
-                            echo "a minute ago";
+                            echo "Less than 1 minute ago";
                         }
                     ?></em>
                 </div> 
