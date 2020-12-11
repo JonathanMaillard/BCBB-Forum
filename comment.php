@@ -29,9 +29,13 @@
     $titre = "Home - Rolling Stones Forum";
     $css = 'style_comment';
 
+    
+
     include "includes/header.php";
 
 ?>  
+    
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     
     <div class="main">
         <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
@@ -70,23 +74,26 @@
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
 
-                <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
+                
                  
             
 
-                <div class=buttonUp>   
+                <div class=buttonUp> 
+                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
+                    </a>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <button type="button" class="btn btn-secondary"><i class="fas fa-wrench"></i></button>
+                    <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
+                    </button>
                     <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 </div>
-                 
+                &nbsp
                 <div class=buttonUp> 
                     <div class="btn-group" role="group" aria-label="Second group">
                     <button type="button" class="btn btn-secondary">Search this topic...</button>
-                    <button type="button" class="btn btn-secondary"><i class="fas fa-search"></i></button>
-                    <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
+                    <button type="button" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                    <!-- <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button> -->
                 </div>
                 <label id="postPage">1 Post Page 1/1</label>
             </div>
@@ -106,7 +113,14 @@
             <div class="comment">
                     <div class="commentInside">
                         <div class="detailUser">
-                            <img id="avatar" src="images/shithot_119538.png" alt="">
+                        <?php $req_avatar = $db->query("SELECT user_id, user_avatar FROM users WHERE user_id =". $data['post_by']);
+                                while($avatar = $req_avatar->fetch()){ ?>
+                                    <img id="avatar" src="<?php echo($avatar["user_avatar"]); ?>">
+                                <?php } ?>
+                                    
+
+                            <!-- <img id="avatar" src="" alt=""> -->
+                        
                             <label id="userName">
                                 <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =". $data['post_by']);
                                 while($user = $req_user->fetch()) { ?>
@@ -136,10 +150,9 @@
                             </label>
                             <label id="location">Location</label>  
                         </div>
-                        <!-- Div 7 -->
-                        <!-- Div 8 contient date, signe quote, contenu commentaire, signature, petit bouton ^-->
+                    
                         <div class="detailMessage">
-                            <!-- Div 9 contient date, signe Quote, contenu commentaire -->
+                       
                             <label class= "date"><?php echo $data['post_date'] ?></label>
                             <div class="commentContent">
                             
@@ -162,8 +175,7 @@
                             </div>
 
                             </div>
-                            <!-- Div 9 -->
-                            <!-- Div 10 contient signature et petit bouton ^ -->
+                    
                             <label class= "signature">
                                 <?php $req_user = $db->query("SELECT user_id, user_signature FROM users WHERE user_id =". $data['post_by']);
                                 while($user = $req_user->fetch()) { ?>
@@ -177,7 +189,6 @@
                                     </strong>
                                 </a>
                             </label>
-                            <!-- Div 10 -->
                         </div> 
                     </div>
                     
@@ -186,19 +197,19 @@
             <?php } ?>
         
                 <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
-                     
-                    <div class=buttonUp>   
+                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
+                    </a>  
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-secondary"><i class="fas fa-wrench"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
+                        </button>
                         <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     </div>
                      
-                    <label id="postPage">1 Post Page 1/1</label>       
+                    <label id="postPage2">1 Post Page 1/1</label>       
                 </div>  
                 <div class=buttonSerie1>
-                        <label id="postPage">< Return to ""</label> 
+                        <label id="postPage3">< Return to ""</label> 
 
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <button type="button" class="btn btn-secondary">< Jump</button>
@@ -213,6 +224,6 @@
 
  
 
-    // include "includes/footer.php";
+    include "includes/footer.php";
 
 ?>
