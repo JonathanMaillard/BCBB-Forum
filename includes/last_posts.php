@@ -40,7 +40,7 @@ if (!$req_posts) {
                     if (strlen($post['post_content']) <= 50 ) {
                         echo $post['post_content'];
                     }else{
-                        echo substr($post['post_content'], 0,50);?>...<?php
+                        echo substr($post['post_content'], 0,500);?>...<?php
                     }                       
                     ?>
                 </div>
