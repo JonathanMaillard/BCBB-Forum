@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    $arianne = '<a href=#><i class="fa fa-home" aria-hidden="true"></i> Home</a>';
-    $titre = "Home - Rolling Stones Forum";
+    $arianne = '<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Home</a> > Results';
+    $titre = "Results - Rolling Stones Forum";
     $css = 'style';
     
     include 'includes/connect.php' ;
