@@ -33,5 +33,4 @@ if(isset($_SESSION['id'])) {
 include "includes/footer.php";
 
 
-?>$msg['$_POST["message"'] = str_replace(':)', '<img src="emojis/emo_smiley.png"/>', $msg[$_POST["message']);
-       
+?>

@@ -37,10 +37,24 @@ if (!$req_posts) {
             <div class="last-posts__post-content text-secondary pt-1"> 
                 <?php 
                 // limit the number of characters displayed
-                if (strlen($post['post_content']) <= 50 ) {
-                    echo $post['post_content'];
+                 
+
+                    $emoji_replace = array(":)", ":-)", ":smile:", ">:(", ">:-(", ":angry:", "<3", ":love:", ":'", ":'(", ":cry:", ":D", ":-D", ":lol:", ";)", ";-)", ":wink:", "8)", "8-)", ":nerd:", ":(", ":-(", ":sad:" );
+
+                    $emoji_new = array('<img src="emojis/emo_smile.png"/>', '<img src="emojis/emo_smile.png">', '<img src="emojis/emo_smile.png">', '<img src="emojis/emo_angry.png">', '<img src="emojis/emo_angry.png">',
+                                        '<img src="emojis/emo_angry.png">', '<img src="emojis/emo_love.png">', '<img src="emojis/emo_love.png">', '<img src="emojis/emo_cry.png">',
+                                        '<img src="emojis/emo_cry.png">', '<img src="emojis/emo_cry.png">', '<img src="emojis/emo_lol.png">', '<img src="emojis/emo_lol.png">', '<img src="emojis/emo_lol.png">',
+                                        '<img src="emojis/emo_wink.png">', '<img src="emojis/emo_wink.png">', '<img src="emojis/emo_wink.png">','<img src="emojis/emo_nerd.png">', '<img src="emojis/emo_nerd.png">',
+                                        '<img src="emojis/emo_nerd.png">', '<img src="emojis/emo_sad.png">', '<img src="emojis/emo_sad.png">', '<img src="emojis/emo_sad.png">' );
+                    
+                    $emojis = str_replace($emoji_replace, $emoji_new, $post['post_content']); 
+                            
+                 
+
+                if (strlen($emojis) <= 50 ) {
+                    echo $emojis;
                 }else{
-                    echo substr($post['post_content'], 0,500);?>...<?php
+                    echo substr($emojis, 0,500);?>...<?php
                 }                       
                 ?>
             </div>
