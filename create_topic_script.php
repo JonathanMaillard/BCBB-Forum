@@ -30,8 +30,18 @@ if(isset($_SESSION['id'])) {
 
 }
 
+echo "Your topic is created!";
 
-include "includes/footer.php";
+// $topicCreated = $db->lastInsertId();
 
+?>
+
+<br>
+
+<a href="comment.php?topic_id=<?php echo $topicId;?>" class="btn btn-primary">View topic </a>
+
+<?php
+
+    include "includes/footer.php";
 
 ?>

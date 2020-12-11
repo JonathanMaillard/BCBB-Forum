@@ -13,16 +13,15 @@
 
 include "includes/connect.php";
 
-echo 'You should be connected to add a new topic';
-
 include "includes/header.php";
 
 ?>
 
-<h2 class="title">Log in</h2>
-<p class="resume"><?php echo $message ?></p>
 
-<button type="submit" class="btn btn-primary"> Continue <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+
+<p>You have to be connected to add a new topic.</p>
+
+<a href="login.php" type="submit" class="btn btn-primary"> Log in <i class="fa fa-sign-in" aria-hidden="true"></i></a>
 
 <?php
     include "includes/footer.php";
