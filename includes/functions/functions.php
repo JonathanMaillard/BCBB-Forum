@@ -6,6 +6,7 @@ function getCategories($para){
     return $query;
 }
 
+
 function getAllTopicsFromCategories($para){
     require('includes/connect.php');
     $query=$db->prepare('SELECT topic_id FROM topics WHERE topic_cat IN (SELECT cat_id FROM categories WHERE cat_id = :topics)');
