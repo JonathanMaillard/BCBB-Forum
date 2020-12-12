@@ -164,7 +164,7 @@
                                                         '<img src="emojis/emo_nerd.png">', '<img src="emojis/emo_sad.png">', '<img src="emojis/emo_sad.png">', '<img src="emojis/emo_sad.png">' );
                                     $emojis = str_replace($emoji_replace, $emoji_new, $data['post_content']); 
                                 ?>
-                                <div  class="post_content" id="textarea" cols= "70" rows="5"><?php echo $emojis ?></div>
+                                <div  class="post-content" id="textarea" cols= "70" rows="5"><?php echo $emojis ?></div>
                             </div>
                     
                             <label class= "signature">
