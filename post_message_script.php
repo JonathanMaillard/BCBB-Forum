@@ -7,6 +7,8 @@
     $arianne = '<p><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a> Profile</p>';
     $titre = "Profile - Rolling Stones Forum";
     $css = 'form';
+
+    // $topicId = $_GET['topic_id'];
 ?>
 
 <?php
@@ -28,6 +30,7 @@ if(isset($_SESSION['id'])) {
     "post_topic"=>$_GET['topic_id'],
     "post_by"=>$_SESSION['id']));
 
+    // header("Location: ../comment.php?topic_id=$topicId");
 }
 
 
@@ -35,3 +38,4 @@ include "includes/footer.php";
 
 
 ?>
+       

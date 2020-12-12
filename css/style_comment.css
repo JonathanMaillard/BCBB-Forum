@@ -138,7 +138,7 @@ p {
   align-items: center;
   padding-top: 10px;
   padding-right: 10px;
-  padding-left: 1px;
+  padding-left: 2em;
 }
 
 .detailMessage {
@@ -146,6 +146,18 @@ p {
 }
 
 #postPage {
+  color: grey;
+  font-size: 0.8em;
+  padding-left: 25em;
+}
+
+#postPage2 {
+  color: grey;
+  font-size: 0.8em;
+  padding-left: 40em;
+}
+
+#postPage3 {
   color: grey;
   font-size: 0.8em;
 }
