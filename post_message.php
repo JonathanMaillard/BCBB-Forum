@@ -11,6 +11,7 @@ session_start();
 
     if (isset($_POST['message_submit'],$_POST['message'])){
         $message = htmlspecialchars($_POST['message']);
+
         if (!empty($message)){
 
         }
