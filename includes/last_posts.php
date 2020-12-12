@@ -34,7 +34,7 @@ if (!$req_posts) {
                 ?>
             </div>                
             <!-- last_posts text second_row -->
-            <div class="last-posts__post-content text-secondary pt-1"> 
+            <div class="last-posts__post-content post-content text-secondary pt-1"> 
                 <?php 
                 // limit the number of characters displayed
                 if (strlen($post['post_content']) <= 50 ) {
@@ -85,4 +85,8 @@ if (!$req_posts) {
     
 <?php
 }
+
+
+include "includes/marked.php";
+
 ?>
