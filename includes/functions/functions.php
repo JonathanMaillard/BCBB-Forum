@@ -8,18 +8,17 @@ function getCategories($para){
 
 function getAllTopicsFromCategories($para){
     require('includes/connect.php');
-    $query=$db->prepare('SELECT topic_id FROM topics WHERE topic_cat IN (SELECT cat_id FROM categories WHERE cat_id = :posts)');
-    $query->execute(array('posts'=> $para));
+    $query=$db->prepare('SELECT topic_id FROM topics WHERE topic_cat IN (SELECT cat_id FROM categories WHERE cat_id = :topics)');
+    $query->execute(array('topics'=> $para));
     return $query;
 }
 
 function getAllPostsFromCategories($para) {
     require('includes/connect.php');
-    $query = $db->prepare('SELECT post_id FROM posts WHERE post_topic IN (SELECT topic_id FROM topics WHERE topic_cat = :topics)');
-    $query->execute(array('topics' => $para));
+    $query = $db->prepare('SELECT post_id FROM posts WHERE post_topic IN (SELECT topic_id FROM topics WHERE topic_cat = :posts)');
+    $query->execute(array('posts' => $para));
     return $query;
 }
-
 
 function getLastPostsDate($para) {
     require('includes/connect.php');
