@@ -29,71 +29,38 @@
     $titre = "Home - Rolling Stones Forum";
     $css = 'style_comment';
 
-    
-
     include "includes/header.php";
 
 ?>  
-    
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     
     <div class="main">
         <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
         <div class="mainRight">   
 
-            <?php
-
-            // GET the id of the user who created the topic
-
-            $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
-            $query->execute();
-
-            $info = $query->fetch(PDO::FETCH_ASSOC);
-            $topicUser = $info["topic_by"];
-
-            while ($info = $query->fetch()){
-                if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
-                    ?> 
-                        <form class="form" action="lock_topic.php" method="POST">
-                                <button class="btn btn-primary" name="lock">Lock topic</button>
-                        </form>
-                    <?php
-                    }
-                    
-                    if($info["topic_locked"]){
-                    ?>
-                    <span class="text-muted">[Locked]</span>
-                    <?php
-                    }
-                    
-            } ?>
-
             <div class="title">
-            <H2>Topic Read</H2> 
+            <H2>Topic Read</H2>
              
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
-
-                
+            
+          
+                <div class=buttonUp>
+                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
                  
             
 
-                <div class=buttonUp> 
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>
+                <div class=buttonUp>   
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
-                    </button>
+                    <button type="button" class="btn btn-secondary"><i class="fas fa-wrench"></i></button>
                     <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 </div>
-                &nbsp
+                 
                 <div class=buttonUp> 
                     <div class="btn-group" role="group" aria-label="Second group">
                     <button type="button" class="btn btn-secondary">Search this topic...</button>
-                    <button type="button" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                    <!-- <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button> -->
+                    <button type="button" class="btn btn-secondary"><i class="fas fa-search"></i></button>
+                    <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
                 </div>
                 <label id="postPage">1 Post Page 1/1</label>
             </div>
@@ -113,14 +80,7 @@
             <div class="comment">
                     <div class="commentInside">
                         <div class="detailUser">
-                        <?php $req_avatar = $db->query("SELECT user_id, user_avatar FROM users WHERE user_id =". $data['post_by']);
-                                while($avatar = $req_avatar->fetch()){ ?>
-                                    <img id="avatar" src="<?php echo($avatar["user_avatar"]); ?>">
-                                <?php } ?>
-                                    
-
-                            <!-- <img id="avatar" src="" alt=""> -->
-                        
+                            <img id="avatar" src="images/shithot_119538.png" alt="">
                             <label id="userName">
                                 <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =". $data['post_by']);
                                 while($user = $req_user->fetch()) { ?>
@@ -140,7 +100,7 @@
                                     <a href="#"> 
                                         <strong>
                                             <?php 
-                                                echo 'Posts : ' . $total['numberPosts'];
+                                                echo $total['numberPosts'];
                                     }
                                                 $req_total->closeCursor();
                                             ?>
@@ -150,16 +110,17 @@
                             </label>
                             <label id="location">Location</label>  
                         </div>
-                    
+                        <!-- Div 7 -->
+                        <!-- Div 8 contient date, signe quote, contenu commentaire, signature, petit bouton ^-->
                         <div class="detailMessage">
-                       
+                            <!-- Div 9 contient date, signe Quote, contenu commentaire -->
                             <label class= "date"><?php echo $data['post_date'] ?></label>
                             <div class="commentContent">
                             
 
                             <?php 
 
-                            $emoji_replace = array(":)", ":-)", ":smile:", ">:(", ">:-(", ":angry:", "<3", ":love:", ":'", ":'(", ":cry:", ":D", ":-D", ":lol:", ";)", ";-)", ":wink:", "8)", "8-)", ":nerd:", ":(", ":-(", ":sad:" );
+                            $emoji_replace = array(":)", ":-)", ":smile:", ":@", ":-@", ":angry:", "<3", ":love:", ":'", ":'(", ":cry:", ":D", ":-D", ":lol:", ";)", ";-)", ":wink:", "8)", "8-)", ":nerd:", ":(", ":-(", ":sad:" );
 
                             $emoji_new = array('<img src="emojis/emo_smile.png"/>', '<img src="emojis/emo_smile.png">', '<img src="emojis/emo_smile.png">', '<img src="emojis/emo_angry.png">', '<img src="emojis/emo_angry.png">',
                                                 '<img src="emojis/emo_angry.png">', '<img src="emojis/emo_love.png">', '<img src="emojis/emo_love.png">', '<img src="emojis/emo_cry.png">',
@@ -169,13 +130,14 @@
                             
                             $emojis = str_replace($emoji_replace, $emoji_new, $data['post_content']); 
                             
-                            ?>
+                            ?> 
 
                             <div id="textarea" cols= "70" rows="5"><?php echo $emojis ?>
                             </div>
 
                             </div>
-                    
+                            <!-- Div 9 -->
+                            <!-- Div 10 contient signature et petit bouton ^ -->
                             <label class= "signature">
                                 <?php $req_user = $db->query("SELECT user_id, user_signature FROM users WHERE user_id =". $data['post_by']);
                                 while($user = $req_user->fetch()) { ?>
@@ -189,6 +151,7 @@
                                     </strong>
                                 </a>
                             </label>
+                            <!-- Div 10 -->
                         </div> 
                     </div>
                     
@@ -197,19 +160,19 @@
             <?php } ?>
         
                 <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>  
+                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
+                     
+                    <div class=buttonUp>   
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
-                        </button>
+                        <button type="button" class="btn btn-secondary"><i class="fas fa-wrench"></i></button>
                         <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     </div>
                      
-                    <label id="postPage2">1 Post Page 1/1</label>       
+                    <label id="postPage">1 Post Page 1/1</label>       
                 </div>  
                 <div class=buttonSerie1>
-                        <label id="postPage3">< Return to ""</label> 
+                        <label id="postPage">< Return to ""</label> 
 
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <button type="button" class="btn btn-secondary">< Jump</button>
@@ -220,10 +183,8 @@
         </div>
     </div>
 
-                            <?php
+<?php 
 
- 
-
-    include "includes/footer.php";
+    // include "includes/footer.php";
 
 ?>
