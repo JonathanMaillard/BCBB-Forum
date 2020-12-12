@@ -32,8 +32,16 @@
 ?>
     <div class="container-fluid m-2 p-0">
         <p class="title"><?php echo $cat_name;?> Icon Demos</p>
-        <p class="rules">Forum rules</p>   
-        <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>   
+        <p class="rules">Forum rules</p>
+        <?php
+            if(isset($_SESSION['id'])) { ?>
+                <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+           <?php } 
+           else { ?>
+            <a href="not_connected.php" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+           <?php }
+        ?>
+           
     </div>
 
 
