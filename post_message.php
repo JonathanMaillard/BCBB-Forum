@@ -10,7 +10,8 @@ session_start();
     include "includes/header.php";
 
     if (isset($_POST['message_submit'],$_POST['message'])){
-        if (!empty($_POST['message'])){
+        $message = htmlspecialchars($_POST['message']);
+        if (!empty($message)){
 
         }
         else{
@@ -43,7 +44,10 @@ session_start();
             </div>
         </div>
     </div> 
-    
+
+
+<script>const simplemde = new SimpleMDE();</script>
+
 <?php
     include "includes/footer.php";
 ?>
