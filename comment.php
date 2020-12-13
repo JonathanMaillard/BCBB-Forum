@@ -153,11 +153,25 @@
                             </label>
                             <!-- Div 10 -->
                         </div> 
+
                     </div>
                     
                 </div>
             </div>
             <?php } ?>
+
+            <div class="container d-flex emojis">
+
+                <form method="post" action="#">
+
+                    <button type="submit" class="like" id="<?=$post_id?>" value="like" name="like"><img src="emojis/emo_smile.png" alt="like"/> 0</button>
+                    <button type="submit" class="dislike" id="<?=$post_id?>" value="dislike" name="dislike"><img src="emojis/emo_sad.png" alt="dislike"/> 0</button>
+                    <button type="submit" class="love" id="<?=$post_id?>" value="love" name="love"><img src="emojis/emo_love.png" alt="love"/> 0</button>
+                    <button type="submit" class="angry" id="<?=$post_id?>" value="angry" name="angry"><img src="emojis/emo_angry.png" alt="angry"/> 0</button>
+                    <button type="submit" class="nerd" id="<?=$post_id?>" value="nerd" name="nerd"><img src="emojis/emo_nerd.png" alt="nerd"/> 0</button>
+
+                </form>
+            </div>
         
                 <div class=buttonUp>
                     <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
@@ -171,6 +185,7 @@
                      
                     <label id="postPage">1 Post Page 1/1</label>       
                 </div>  
+
                 <div class=buttonSerie1>
                         <label id="postPage">< Return to ""</label> 
 
@@ -178,7 +193,8 @@
                             <button type="button" class="btn btn-secondary">< Jump</button>
                             <div class="btn-group" role="group">
                             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        </div>  
+                        </div> 
+
                 </div>  
         </div>
     </div>
