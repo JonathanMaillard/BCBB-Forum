@@ -5,6 +5,7 @@
   color: white;
   border: none;
 }
+
 .btn:hover {
   background-color: #5a29dd;
 }
@@ -14,11 +15,13 @@
   border-radius: 5px;
   padding: 10px 5px;
 }
+
 .formulary .form-bindput {
   background-color: #f4f4f4;
   border-left: 3px solid #fa1873;
   border-radius: 20px;
 }
+
 .formulary .form-bindput:hover {
   border-left: 5px solid #5a29dd;
 }
@@ -50,5 +53,8 @@
 .imgAvatar {
   border-radius: 50%;
 }
+
+/*# sourceMappingURL=form.css.map */
+/*# sourceMappingURL=form.scss.map */
 
 /*# sourceMappingURL=form.css.map */
