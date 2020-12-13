@@ -45,9 +45,9 @@ if (!$req_posts) {
                     $emojis = str_replace($emoji_replace, $emoji_new, $post['post_content']); 
                 // limit the number of characters displayed
                 if (strlen($emojis) <= 300 ) {
-                    echo $emojis;
+                    ?><div class="post-content"><?php echo $emojis;?></div><?php
                 }else{
-                    echo substr($emojis, 0,300);?>...<?php
+                    ?> <div class="post-content"><?php echo substr($emojis, 0,300);?>...</div> <?php
                 }                       
                 ?>
             </div>
