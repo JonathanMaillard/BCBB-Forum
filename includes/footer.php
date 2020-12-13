@@ -85,6 +85,8 @@
             </div>
         </div>
     </footer>
+
+    <?php include "includes/marked.php";?>
     
     <!-- link to BootStrap's script -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>

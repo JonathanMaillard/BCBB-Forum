@@ -22,9 +22,7 @@ $query->execute();
 $topic_cat = $query->fetch(PDO::FETCH_ASSOC);
 
 if(isset($_SESSION['id'])) {
-
     if ($topic_cat['topic_cat'] == 6) {
-
         $creationDate = date("Y-m-d H:i:s");
     
         $req = $db->prepare('INSERT INTO posts(post_content, post_date, post_topic, post_by, post_search)
@@ -35,7 +33,7 @@ if(isset($_SESSION['id'])) {
         "post_topic"=>$_GET['topic_id'],
         "post_by"=>$_SESSION['id'],
         "post_search" => 1));
-    
+        header('Location: comment.php?topic_id='. $_GET['topic_id']); 
     }else{
         $creationDate = date("Y-m-d H:i:s");
         
@@ -47,6 +45,7 @@ if(isset($_SESSION['id'])) {
         "post_topic"=>$_GET['topic_id'],
         "post_by"=>$_SESSION['id'],
         "post_search" => 0));
+        header('Location: comment.php?topic_id='. $_GET['topic_id']);
     }
 } 
 
