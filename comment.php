@@ -212,6 +212,5 @@
     </div>
 
 <?php 
-    include "includes/marked.php";
     include "includes/footer.php";
 ?>
