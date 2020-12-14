@@ -27,15 +27,15 @@ _____________________________________________________________________________
 
 ![Camélia Jarek](images/team_pictures/Camelia.jpeg "Camélia Jarek")
  Camélià Jarek
- -
+ 
 ![Ingrid Feijt](images/team_pictures/ingrid.jpeg "Ingrid Feijt")
  Ingrid Feijt
- -
+ 
 ![Kévin Cassart](images/team_pictures/kevin.jpeg "Kévin Cassart")
  Kévin Cassart
- -
+ 
 ![Gaëtan Massart](images/team_pictures/gaetan.jpeg "Gaëtan Massart")
  Gaëtan Massart
- -
+ 
 
 
