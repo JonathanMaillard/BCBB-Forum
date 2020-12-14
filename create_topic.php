@@ -9,6 +9,8 @@
     include "includes/connect.php";
     include "includes/header.php";
 
+    require_once "includes/functions/functions.php";
+
 
 ?>
 

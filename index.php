@@ -76,8 +76,8 @@
                         <div class ="row category__end">
                         <div class="col-3 bordered">
                             <p class="category__numbers">';
-                                if ($data['cat_id'] == 5) {
-                                    
+                                if ($data['cat_id'] == 5) { //static result (for now)
+                                    echo "5";
                                 }else{
                                     $topics= getAllTopicsFromCategories($data['cat_id']);
                                     echo $topics->rowCount();
@@ -87,8 +87,8 @@
                         </div>
                         <div class="col-3">
                             <p class="category__numbers">';
-                                if ($data['cat_id'] == 5) {
-                                    
+                                if ($data['cat_id'] == 5) {  // static result (for now)
+                                    echo "17";
                                 }else{
                                     $posts = getAllPostsFromCategories($data['cat_id']);
                                     echo $posts->rowCount();    
@@ -98,9 +98,8 @@
                         </div>
                         <div class="col-6">
                             <p class="category__date">';
-                                if ($data['cat_id'] == 5) {
-
-                                    
+                                if ($data['cat_id'] == 5) { // static result (for now)
+                                    echo "Wed Dec 09";
                                 }else{
                                     $req_posts = getLastPostsDate($data['cat_id']);
                                     $post = $req_posts->fetch();
