@@ -34,13 +34,12 @@
     include "includes/header.php";
 
 ?>  
-    
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    
+    <!-- div qui contient partie gauche et droite -->
     <div class="main">
-        <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
-        <div class="mainRight">   
-
+        
+    <!-- div qui contient partie de gauche -->
+        <div class="mainLeft">   
+            
             <?php
 
             // GET the id of the user who created the topic
@@ -51,6 +50,7 @@
             $info = $query->fetch(PDO::FETCH_ASSOC);
             $topicUser = $info["topic_by"];
 
+                
             while ($info = $query->fetch()){
                 if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
                     ?> 
@@ -70,30 +70,61 @@
 
             <div class="title">
             <H2>Topic Read</H2> 
-             
-            <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
-            </div>
-
-                
-                 
+            <?php 
             
+            $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
+            $query->execute();
 
-                <div class=buttonUp> 
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
-                    </button>
-                    <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                </div>
+            $info = $query->fetch(PDO::FETCH_ASSOC);
+            $topicUser = $info["topic_by"];
+
+            if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
+                ?> 
+                    <form method="post" action="lock_topic.php?topic_id=<?php echo $topic_id?>">
+                        <button>Lock topic</button>
+                    </form>
+                <?php
+            } ?>
+
+         
+        <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
+        </div>
+            
+                <?php
+                $query=$db->prepare('SELECT topic_locked FROM topics WHERE topic_id = ' . $topic_id);
+                $query->execute();
+
+                $info = $query->fetch(PDO::FETCH_ASSOC);
+                if($info["topic_locked"]){
+                ?>
+                <span class="text-muted">[Locked]</span>
+                <div class=buttonUp>
+                <button disabled>Post Reply <i class="fa fa-reply"></i></button>
+                <?php
+                    echo 'You can\'t reply to a topic locked';
+                }
+                else { ?>
+                    <div class=buttonUp>
+                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
+                <?php }
+                ?>
+                <!-- ICI -->
+
+            <div class=buttonUp> 
+                <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
+                </a>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
+                </button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            </div>
                 &nbsp
-                <div class=buttonUp> 
-                    <div class="btn-group" role="group" aria-label="Second group">
+            <div class=buttonUp> 
+                <div class="btn-group" role="group" aria-label="Second group">
                     <button type="button" class="btn btn-secondary">Search this topic...</button>
                     <button type="button" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                    <!-- <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button> -->
+                </button>
                 </div>
                 <label id="postPage">1 Post Page 1/1</label>
             </div>
@@ -109,20 +140,21 @@
 
         while($data = $query->fetch()) { ?>
 
-        <div class="mainRightComment">
+        <!--  Partie contenant les détails users + commentaire -->
+        <div class="mainLeftComment">
             <div class="comment">
-                    <div class="commentInside">
-                        <div class="detailUser">
-                        <?php $req_avatar = $db->query("SELECT user_id, user_avatar FROM users WHERE user_id =". $data['post_by']);
-                                while($avatar = $req_avatar->fetch()){ ?>
-                                    <img id="avatar" src="<?php echo($avatar["user_avatar"]); ?>">
-                                <?php } ?>
-                                    
-
-                            <!-- <img id="avatar" src="" alt=""> -->
+                <div class="commentInside">
+                    <div class="detailUser">
                         
-                            <label id="userName">
-                                <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =". $data['post_by']);
+                        <?php $req_avatar = $db->query("SELECT user_id, user_avatar FROM users WHERE user_id =". $data['post_by']);
+                            while($avatar = $req_avatar->fetch()){ ?>
+                            <img id="avatar" src="<?php echo($avatar["user_avatar"]); ?>">
+                        <?php } ?>
+                            &nbsp
+                            
+                        <label id="userName">
+                            
+                            <?php $req_user = $db->query("SELECT user_id, user_name FROM users WHERE user_id =". $data['post_by']);
                                 while($user = $req_user->fetch()) { ?>
                                 <a href="#"> 
                                     <strong>
@@ -133,9 +165,9 @@
                                         ?>
                                     </strong>
                                 </a>
-                            </label>
-                            <label id="postNumber">
-                                <?php $req_total = $db-> query('SELECT COUNT(post_id) AS numberPosts FROM posts WHERE post_by = '. $data['post_by']);
+                        </label>
+                        <label id="postNumber">
+                            <?php $req_total = $db-> query('SELECT COUNT(post_id) AS numberPosts FROM posts WHERE post_by = '. $data['post_by']);
                                 while($total = $req_total->fetch()) { ?>
                                     <a href="#"> 
                                         <strong>
@@ -146,17 +178,15 @@
                                             ?>
                                         </strong>
                                     </a>
-                    
-                            </label>
-                            <label id="location">Location</label>  
+                        </label>
+                        <label id="location">Location</label>  
                         </div>
                     
                         <div class="detailMessage">
-                       
                             <label class= "date"><?php echo $data['post_date'] ?></label>
+                            
                             <div class="commentContent">
                             
-
                             <?php 
 
                             $emoji_replace = array(":)", ":-)", ":smile:", ">:(", ">:-(", ":angry:", "<3", ":love:", ":'", ":'(", ":cry:", ":D", ":-D", ":lol:", ";)", ";-)", ":wink:", "8)", "8-)", ":nerd:", ":(", ":-(", ":sad:" );
@@ -171,11 +201,9 @@
                             
                             ?>
 
-                            <div id="textarea" cols= "70" rows="5"><?php echo $emojis ?>
-                            </div>
+                            <div id="textarea" cols= "70" rows="10"><?php echo $emojis ?>
+                        </div>
 
-                            </div>
-                    
                             <label class= "signature">
                                 <?php $req_user = $db->query("SELECT user_id, user_signature FROM users WHERE user_id =". $data['post_by']);
                                 while($user = $req_user->fetch()) { ?>
@@ -191,7 +219,6 @@
                             </label>
                         </div> 
                     </div>
-                    
                 </div>
             </div>
             <?php } ?>
@@ -204,7 +231,7 @@
                         </button>
                         <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                    </div>
+                        </div>
                      
                     <label id="postPage2">1 Post Page 1/1</label>       
                 </div>  
@@ -217,13 +244,11 @@
                             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                         </div>  
                 </div>  
-        </div>
-    </div>
-
-                            <?php
-
+            </div>
  
-
-    include "includes/footer.php";
-
-?>
+    <div class="aside">
+        <?php
+        include "includes/footer.php";
+        ?>
+    </div>
+</div>
