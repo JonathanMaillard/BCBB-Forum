@@ -34,7 +34,7 @@ _____________________________________________________________________________
 ## THE TEAM
 
 ![Camélia Jarek](images/team_pictures/Camelia.jpeg "Camélia Jarek")
- Camélià Jarek
+ Camélia Jarek
  
 ![Ingrid Feijt](images/team_pictures/ingrid.jpeg "Ingrid Feijt")
  Ingrid Feijt
