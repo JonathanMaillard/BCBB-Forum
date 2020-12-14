@@ -5,6 +5,7 @@ $tools: #f7f7f7;
 p {
     color: grey;
 }
+
 .btn-secondary1{
     background-color: $rules;
     color: grey;
@@ -27,6 +28,7 @@ p {
     border-color: lightgrey;
 }
 
+
 .btn-primary:hover {
     background-color: $reply;
 }
@@ -45,7 +47,8 @@ p {
 }
 .main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;;
 }
 
 .mainRightButton {
@@ -64,9 +67,6 @@ p {
     padding-bottom: 5px;
     padding-top: 10px;
 }
-.mainRightComment {
-
-}
 
 .comment {
     background-color: rgb(238, 237, 237);
@@ -75,6 +75,7 @@ p {
 }
 .commentaire {
     background-color: lightgray;
+    margin-top: 10px;
 }
 
 .commentInside {
@@ -87,7 +88,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding-top: 10px;
+    padding-top: 40px;
 
 }
 #commentContentWrite{
@@ -100,8 +101,6 @@ p {
 #avatar {
     width: 80px !important;
     border-radius: 50%;
-    border-style: solid;
-    border-width: 1px;
 }
 
 #userName {
