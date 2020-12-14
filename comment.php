@@ -50,23 +50,20 @@
 
             $info = $query->fetch(PDO::FETCH_ASSOC);
             $topicUser = $info["topic_by"];
+            $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
+            $query->execute();
 
-            while ($info = $query->fetch()){
-                if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
-                    ?> 
-                        <form class="form" action="lock_topic.php" method="POST">
-                                <button class="btn btn-primary" name="lock">Lock topic</button>
-                        </form>
-                    <?php
-                    }
-                    
-                    if($info["topic_locked"]){
-                    ?>
-                    <span class="text-muted">[Locked]</span>
-                    <?php
-                    }
-                    
+            $info = $query->fetch(PDO::FETCH_ASSOC);
+            $topicUser = $info["topic_by"];
+
+            if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
+                ?> 
+                    <form method="post" action="lock_topic.php">
+                        <button>Lock topic</button>
+                    </form>
+                <?php
             } ?>
+            
 
             <div class="title">
             <H2>Topic Read</H2> 
