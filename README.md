@@ -26,8 +26,10 @@ _____________________________________________________________________________
 ### Team
 
 - Camélià Jarek
-- Ingrid Feijt
-- Kévin Cassart
-- Gaëtan Massart
-
 ![Camélia Jarek](team_pictures/Camelia.jpeg "Camélia Jarek")
+- Ingrid Feijt
+![Ingrid Feijt](team_pictures/ingrid.jpeg "Ingrid Feijt")
+- Kévin Cassart
+![Kévin Cassart](team_pictures/kevin.jpeg "Kévin Cassart")
+- Gaëtan Massart
+![Gaëtan Massart](team_pictures/gaetan.jpeg "Gaëtan Massart")
