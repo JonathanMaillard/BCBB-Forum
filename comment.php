@@ -39,13 +39,45 @@
 
             <div class="title">
             <H2>Topic Read</H2>
+
+            <?php 
+            
+                $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
+                $query->execute();
+
+                $info = $query->fetch(PDO::FETCH_ASSOC);
+                $topicUser = $info["topic_by"];
+
+                if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
+                    ?> 
+                        <form method="post" action="lock_topic.php?topic_id=<?php echo $topic_id?>">
+                            <button>Lock topic</button>
+                        </form>
+                    <?php
+                } ?>
+
              
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
-            
-          
-                <div class=buttonUp>
+                
+                <?php
+                    $query=$db->prepare('SELECT topic_locked FROM topics WHERE topic_id = ' . $topic_id);
+                    $query->execute();
+
+                    $info = $query->fetch(PDO::FETCH_ASSOC);
+                    if($info["topic_locked"]){
+                ?>
+                    <span class="text-muted">[Locked]</span>
+                    <div class=buttonUp>
+                    <button disabled>Post Reply <i class="fas fa-reply"></i></button>
+                <?php
+                    echo 'You can\'t reply to a topic locked';
+                    }
+                    else { ?>
+                        <div class=buttonUp>
                     <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
+                <?php }
+                ?>
                  
             
 
@@ -149,9 +181,26 @@
                 </div>
             </div>
             <?php } ?>
+
+            
         
-                <div class=buttonUp>
+                <?php
+                    $query=$db->prepare('SELECT topic_locked FROM topics WHERE topic_id = ' . $topic_id);
+                    $query->execute();
+
+                    $info = $query->fetch(PDO::FETCH_ASSOC);
+                    if($info["topic_locked"]){
+                ?>
+                    <div class=buttonUp>
+                    <button disabled>Post Reply <i class="fas fa-reply"></i></button>
+                <?php
+                    echo 'You can\'t reply to a topic locked';
+                    }
+                    else { ?>
+                        <div class=buttonUp>
                     <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
+                <?php }
+                ?>
                      
                     <div class=buttonUp>   
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
