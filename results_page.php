@@ -12,8 +12,8 @@
 ?>
 
 <div class="row container-fluid">
-    <div class="col">
-        <h2>Search results for <em><?php echo $search;?></em> </h2>
+    <div class="col text-secondary">
+        <h2><em><?php echo $countTotalResult;?></em> results for <em><?php echo $search;?></em> </h2>
     </div>
 </div>
 
