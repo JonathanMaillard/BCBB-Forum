@@ -27,10 +27,10 @@ session_start();
             <div class="title">
                 <H2>Post a message</H2>
                 &nbsp
-                <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
-                <div class="form-group">
+                <a href="#" class="btn btn-secondary1 btn-md rules" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
+                <!-- <div class="form-group">
                     <input type="text" class="form-control" id="formGroupExampleInput">
-                </div>
+                </div> -->
                 <form method="POST" action="post_message_script.php?topic_id=<?php echo $_GET['topic_id'];?>">
                     <textarea id="message" name="message" cols="88" rows="10" placeholder=" Your message"></textarea>
                     <?php if (isset($message_answer)) {

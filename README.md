@@ -1,4 +1,7 @@
 # BCBB-Forum
 
-Link to the Heroku app :
+### Link to Rolling Stones Forum :
+
 https://bcbbrollingstones.herokuapp.com
+
+_____________________________________________________________________________
