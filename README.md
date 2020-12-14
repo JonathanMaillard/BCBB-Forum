@@ -6,7 +6,15 @@ https://bcbbrollingstones.herokuapp.com
 
 _____________________________________________________________________________
 
-In this Forum, you will able to 
+## In this forum you can:
+
+- Subscribe
+- Edit your profile
+- Edit your Avatar
+- create your topics
+- lock your topics
+- write messages
+- react to other messages
 
 
 
