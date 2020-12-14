@@ -1,5 +1,6 @@
 # BCBB-Forum
 
+<<<<<<< HEAD
 ## Link to Rolling Stones Forum :
 
 https://bcbbrollingstones.herokuapp.com
@@ -46,4 +47,9 @@ _____________________________________________________________________________
  Gaëtan Massart
  
 
+=======
+Link to the ROLLING STONES FORUM :
+
+https://bcbbrollingstones.herokuapp.com/
+>>>>>>> 77e42e54c652be4a972a8f299bac6efa23af9c21
 
