@@ -30,4 +30,4 @@ _____________________________________________________________________________
 - Kévin Cassart
 - Gaëtan Massart
 
-![Camélia Jarek](team_pictures/camelia.jpeg "Camélia Jarek")
+![Camélia Jarek](team_pictures/Camelia.jpeg "Camélia Jarek")
