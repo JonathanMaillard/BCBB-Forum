@@ -76,22 +76,10 @@
             
 
                 <div class=buttonUp> 
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
-                    </button>
-                    <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
                 </div>
                 &nbsp
-                <div class=buttonUp> 
-                    <div class="btn-group" role="group" aria-label="Second group">
-                    <button type="button" class="btn btn-secondary">Search this topic...</button>
-                    <button type="button" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                    <!-- <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button> -->
-                </div>
+
                 <label id="postPage">1 Post Page 1/1</label>
             </div>
         </div>
@@ -102,12 +90,12 @@
         FROM posts 
         WHERE post_topic = ' . $topic_id);
 
-        $query->execute(); 
+        $query->execute(); ?>
 
-        while($data = $query->fetch()) { ?>
+        <?php while($data = $query->fetch()) { ?>
 
         <div class="mainRightComment">
-            <div class="comment">
+            <div class="container bg-light rounded-lg m-2">
                     <div class="commentInside">
                         <div class="detailUser">
                         <?php $req_avatar = $db->query("SELECT user_id, user_avatar FROM users WHERE user_id =". $data['post_by']);
@@ -149,7 +137,7 @@
                         </div>
                     
                         <div class="detailMessage">
-                       
+
                             <label class= "date"><?php echo $data['post_date'] ?></label>
                             <div class="commentContent">
                                 <?php 
@@ -184,29 +172,8 @@
             </div>
             <?php } ?>
         
-                <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>  
-                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
-                        </button>
-                        <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                    </div>
-                     
-                    <label id="postPage2">1 Post Page 1/1</label>       
-                </div>  
-                <div class=buttonSerie1>
-                        <label id="postPage3">< Return to ""</label> 
 
-                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                            <button type="button" class="btn btn-secondary">< Jump</button>
-                            <div class="btn-group" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        </div>  
-                </div>  
-        </div>
-    </div>
+            <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i></a>  
 
 <?php 
     include "includes/footer.php";
