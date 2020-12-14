@@ -6,6 +6,10 @@ https://bcbbrollingstones.herokuapp.com
 
 _____________________________________________________________________________
 
+In this Forum, you will able to 
+
+
+
 
 ### Technology used
 
@@ -26,3 +30,4 @@ _____________________________________________________________________________
 - Kévin Cassart
 - Gaëtan Massart
 
+![Camélia Jarek](team_pictures/ingrid.jpeg "Camélia Jarek")
