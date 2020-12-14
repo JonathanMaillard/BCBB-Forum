@@ -37,6 +37,30 @@
         <!-- Div2 à droite (contient chemin, titre, forum rules, trois boutons (reply, tools et search) + "1 post page 1/1" et totalité des commentaires) -->
         <div class="mainRight">   
 
+            <?php
+
+            // GET the id of the user who created the topic
+
+            $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
+            $query->execute();
+
+            $info = $query->fetch(PDO::FETCH_ASSOC);
+            $topicUser = $info["topic_by"];
+            $query=$db->prepare('SELECT topic_by FROM topics WHERE topic_id = ' . $topic_id);
+            $query->execute();
+
+            $info = $query->fetch(PDO::FETCH_ASSOC);
+            $topicUser = $info["topic_by"];
+
+            if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
+                ?> 
+                    <form method="post" action="lock_topic.php">
+                        <button>Lock topic</button>
+                    </form>
+                <?php
+            } ?>
+            
+
             <div class="title">
             <H2>Topic Read</H2>
              
