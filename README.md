@@ -26,7 +26,7 @@ _____________________________________________________________________________
 ### Team
 
 - Camélià Jarek
-
+![Camélia Jarek]
 - Ingrid Feijt
 
 - Kévin Cassart
