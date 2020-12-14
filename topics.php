@@ -165,7 +165,7 @@
         if ($category_id == 5) { 
             
             $query=$db->prepare('SELECT topic_id, topic_subject, topic_date, topic_cat, topic_by, topic_views
-            FROM topics 
+            FROM topics WHERE topic_cat != 6
             ORDER BY topic_date DESC
             LIMIT 5');
 
