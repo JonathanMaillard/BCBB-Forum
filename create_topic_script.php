@@ -20,12 +20,12 @@ include "includes/header.php";
     if(isset($_SESSION['id']) & $_GET['cat_id'] == 6) {
         $creationDate = date("Y-m-d H:i:s");
         
-        $values = array(":subject"=>$_POST["subject"], ":topic_date"=>$creationDate, ":topic_by"=>$_SESSION['id'], ":topic_cat"=>$_GET['cat_id'], ":topic_search"=> 1);
+        $values = array(":subject"=>htmlspecialchars($_POST["subject"]), ":topic_date"=>$creationDate, ":topic_by"=>$_SESSION['id'], ":topic_cat"=>$_GET['cat_id'], ":topic_search"=> 1);
         $req = $db->prepare('INSERT INTO topics (topic_subject, topic_date, topic_by, topic_cat, topic_search) VALUES(:subject, :topic_date, :topic_by, :topic_cat, :topic_search)');
         $req->execute($values);
     
         $topicId = $db->lastInsertId();
-        $values2 = array(":content"=>$_POST["message"], ":post_date"=>$creationDate, ":post_topic"=>$topicId, ":post_by"=>$_SESSION['id']);
+        $values2 = array(":content"=>htmlspecialchars($_POST["message"]), ":post_date"=>$creationDate, ":post_topic"=>$topicId, ":post_by"=>$_SESSION['id']);
         $req = $db->prepare('INSERT INTO posts (post_content, post_date, post_topic, post_by) VALUES(:content, :post_date, :post_topic, :post_by)');
         $req->execute($values2);
     
@@ -34,12 +34,12 @@ include "includes/header.php";
 
             $creationDate = date("Y-m-d H:i:s");
             
-            $values = array(":subject"=>$_POST["subject"], ":topic_date"=>$creationDate, ":topic_by"=>$_SESSION['id'], ":topic_cat"=>$_GET['cat_id']);
+            $values = array(":subject"=>htmlspecialchars($_POST["subject"]), ":topic_date"=>$creationDate, ":topic_by"=>$_SESSION['id'], ":topic_cat"=>$_GET['cat_id']);
             $req = $db->prepare('INSERT INTO topics (topic_subject, topic_date, topic_by, topic_cat) VALUES(:subject, :topic_date, :topic_by, :topic_cat)');
             $req->execute($values);
         
             $topicId = $db->lastInsertId();
-            $values2 = array(":content"=>$_POST["message"], ":post_date"=>$creationDate, ":post_topic"=>$topicId, ":post_by"=>$_SESSION['id']);
+            $values2 = array(":content"=>htmlspecialchars($_POST["message"]), ":post_date"=>$creationDate, ":post_topic"=>$topicId, ":post_by"=>$_SESSION['id']);
             $req = $db->prepare('INSERT INTO posts (post_content, post_date, post_topic, post_by) VALUES(:content, :post_date, :post_topic, :post_by)');
             $req->execute($values2);
         }

@@ -35,7 +35,7 @@
         <p class="rules">Forum rules</p>
         <?php
             if(isset($_SESSION['id'])) { ?>
-                <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new text-decoration-none">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
            <?php } 
            else { ?>
             <a href="not_connected.php" class="new">New Topic  <i class="fa fa-pencil" aria-hidden="true"></i></a>
@@ -227,7 +227,7 @@
     </div>
 
     <div class=" d-inline m-2 p-0">  
-        <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new">New Topic <i class="fa fa-pencil" aria-hidden="true"></i></a>
+        <a href="create_topic.php?cat_id=<?php echo $category_id;?>" class="new text-decoration-none">New Topic <i class="fa fa-pencil" aria-hidden="true"></i></a>
     </div>
     
 <?php

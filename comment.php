@@ -56,17 +56,10 @@
             $info = $query->fetch(PDO::FETCH_ASSOC);
             $topicUser = $info["topic_by"];
 
-            if(isset($_SESSION['id']) AND $topicUser == $_SESSION['id']) {
-                ?> 
-                    <form method="post" action="lock_topic.php">
-                        <button>Lock topic</button>
-                    </form>
-                <?php
-            } ?>
+        ?>
             
 
             <div class="title">
-<<<<<<< HEAD
             <H2>Topic Read</H2>
 
             <?php 
@@ -89,38 +82,25 @@
             <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
             </div>
                 
-                <?php
+                    <?php
                     $query=$db->prepare('SELECT topic_locked FROM topics WHERE topic_id = ' . $topic_id);
                     $query->execute();
 
                     $info = $query->fetch(PDO::FETCH_ASSOC);
                     if($info["topic_locked"]){
-                ?>
+                    ?>
                     <span class="text-muted">[Locked]</span>
                     <div class=buttonUp>
                     <button disabled>Post Reply <i class="fas fa-reply"></i></button>
-                <?php
-                    echo 'You can\'t reply to a topic locked';
+                    <?php
+                        echo 'You can\'t reply to a topic locked';
                     }
                     else { ?>
                         <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
-                <?php }
-                ?>
-=======
-            <H2>Topic Read</H2> 
-             
-            <a href="#" class="btn btn-secondary1 btn-md" tabindex="-1" role="button" aria-disabled="true">Forum Rules</a>
-            </div>
-
-                
->>>>>>> development
+                        <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fas fa-reply"></i></a>
+                    <?php }
+                    ?>
                  
-            
-
-                <div class=buttonUp> 
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
                     </button>
@@ -229,7 +209,6 @@
 
             
         
-<<<<<<< HEAD
                 <?php
                     $query=$db->prepare('SELECT topic_locked FROM topics WHERE topic_id = ' . $topic_id);
                     $query->execute();
@@ -249,11 +228,6 @@
                 ?>
                      
                     <div class=buttonUp>   
-=======
-                <div class=buttonUp>
-                    <a href="post_message.php?topic_id=<?php echo $topic_id;?>" type="button" class="btn btn-primary">Post Reply <i class="fa fa-reply" aria-hidden="true"></i>
-                    </a>  
->>>>>>> development
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                         <button type="button" class="btn btn-secondary"><i class="fa fa-wrench" aria-hidden="true"></i>
                         </button>
